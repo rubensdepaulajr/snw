@@ -1,0 +1,40 @@
+﻿<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+        BuildGrid();
+        $("#ddlOperadora").change(GetCompetencia);
+        $("#ddlCompetencia").hide();
+        GetOperadora();
+    });
+
+    function GetOperadora() {
+        $("#ddlOperadora").empty();
+        $("#ddlOperadora").append(new Option('[Todos]', null));
+        $.getJSON('@Url.Action("GetOperadora", "Tiss")',
+                   function (data) {
+                       $.each(data.rows, function (i, row) {
+                           $("#ddlOperadora").append(new Option(row.Text, row.Value));
+                       });
+                   });
+               }
+
+    function GetCompetencia() {
+        $("#ddlCompetencia").empty();
+        $("#ddlCompetencia").append(new Option('[Todos]', null));
+        $("#ddlCompetencia").show();
+        $.getJSON('@Url.Action("GetCompetenciaFinalizada", "Tiss")',
+                   { pIdOperadora: this.value, pIsFinalizada: '@Model.IsFinalizada' },
+                   function (data) {
+                       $.each(data.rows, function (i, row) {
+                           $("#ddlCompetencia").append(new Option(row.Text, row.Value));
+                       });
+                   });
+    }
+
+</script>
+
+<div>
+    <select id="ddlOperadora"></select>
+    <select id="ddlCompetencia"></select>
+    <input type="button" id="btnPesquisar" value="Pesquisar" />
+</div>

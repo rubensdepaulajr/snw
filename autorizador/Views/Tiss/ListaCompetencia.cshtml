@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "View1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+        BuildGrid();
+        $("#btnPesquisar").click(Search);
+    });
+
+    function BuildGrid() {
+		jQuery("#grid").jqGrid({
+			url: '@Url.Action("GetCompetencia", "Tiss")',
+			datatype: 'json',
+			mtype: 'GET',
+			colNames: ['Operadora','Competência', 'Data Início', 'Data Fim', ''],
+			colModel: [
+            { name: 'Operadora', index: 'Operadora', width: 170, align: 'center' },
+			{ name: 'Competencia', index: 'Competência', width: 200, align: 'center' },
+			{ name: 'DataInicio', index: 'DataInicio', width: 200, align: 'center'},
+            { name: 'DataFim', index: 'DataFim', width: 200, align: 'center'},
+			{ name: 'Id', index: 'Id', width: 60, align: 'center', formatter: CompetenciaFormatter}],
+			pager: jQuery('#pager'),
+			rowNum: 15,
+			rowList: [5, 10, 20, 50],
+			sortname: 'Id',
+			sortorder: "desc",
+			loadComplete: function() {
+				$("tr.jqgrow:odd").removeClass('ui-widget-content');
+				$("tr.jqgrow:odd").addClass('rowColor')  
+			},
+            gridComplete: function(){
+                if($(".ui-pg-input").val() == 1){
+                    var top_rowid = $('#grid tbody:first-child tr:nth-child(2)').attr('id');
+
+                    var countCols = jQuery('#grid').jqGrid('getGridParam', 'colNames').length;
+
+                    for (j=0;j<= countCols;j++)
+                        jQuery("#grid").setCell(top_rowid, j, '', 'selectedRow', '', 'true');
+                }
+            },
+			viewrecords: true,
+			imgpath: '/scripts/themes/coffee/images',
+			caption: 'Faturamento em Aberto',
+			height: 350
+		}).navGrid('#pager', {add:false, edit:false, search:false, del:false}, {}, {}, {});
+	}
+
+    function BuildLote(pId, pObject) {
+
+        if(pObject.src.indexOf('@Url.Content("~/Images/loading.gif")') != -1){
+            ShowMessage('Mensagem', 'Processando...Aguarde!', false, 5000);
+            return;
+        }
+
+        var confirmar = confirm('Confirmar a geração dos lotes?');
+
+        if(confirmar){
+
+             pObject.src = '@Url.Content("~/Images/loading.gif")';
+
+		     $.ajax({
+
+                        type: "POST",
+                        url: '@Url.Action("BuildLote", "Tiss")',
+                        dataType: "json",
+                        contentType: "application/json",
+                        async: true,
+                        data: "{'pId': '" + pId + "'}",
+                        complete: function(response, status){ 
+                                              ShowMessage('Mensagem', response.responseText + ' lote(s) gerado(s) com sucesso!', false, 5000);
+                                              pObject.src = '@Url.Content("~/Images/fechar.png")';
+                                              jQuery("#grid").trigger("reloadGrid",[{page:1}]);
+                                            },
+                        error: function(){
+                                             pObject.src = '@Url.Content("~/Images/fechar.png")';
+                                         }
+                    });
+
+        }
+	}
+
+    function CompetenciaFormatter(cell, options, row) {
+		return "<img src='@Url.Content("~/Images/fechar.png")' onclick=\"BuildLote(" + cell + ",this);\" class=\"cursor\" id=\"upload\" border=\"0\" alt=\"Fechar Faturamento\" title=\"Fechar Faturamento\" />";
+	}
+
+     function Search() {
+        $("#grid").setGridParam({
+            postData: { "search": true, "pCompetencia": $("#ddlCompetencia").val(), "pOperadora": $("#ddlOperadora").val() }, "page": 1
+        }).trigger("reloadGrid");
+    }
+
+</script>
+
+@{Html.RenderPartial("Search", new { IsFinalizada = false });}
+<table id="grid" class="scroll" cellpadding="0" cellspacing="0"></table>
+<div id="pager" class="scroll" style="text-align:center;"></div>

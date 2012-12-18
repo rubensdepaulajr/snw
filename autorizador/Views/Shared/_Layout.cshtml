@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        @Styles.Render("~/Content/jqgrid")
+        @Styles.Render("~/Content/purr")
+         @Styles.Render("~/Content/upload")
+        @Scripts.Render("~/Scripts/jquery-1.7.1.min.js")
+        @Scripts.Render("~/Scripts/jquery-ui-1.8.18.js")
+        @Scripts.Render("~/Scripts/grid.locale-pt.js")
+        @Scripts.Render("~/Scripts/jquery.jqGrid.min.js")
+        @Scripts.Render("~/Scripts/jquery.purr.js")
+        @Scripts.Render("~/Scripts/jquery.uploadify-3.1.min.js")
+        @Scripts.Render("~/Scripts/util.js")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="">
+                @*<div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>*@
+                <div class="">
+                     @*<section id="login">
+                       @Html.Partial("_LoginPartial")
+                    </section>*@
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Competência", "ListaCompetencia", "Tiss")</li>
+                            <li>@Html.ActionLink("Lote", "ListaLote", "Tiss")</li>
+                            <li>@Html.ActionLink("Upload", "UploadXmlAvulso", "Tiss")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            @*<div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>*@
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

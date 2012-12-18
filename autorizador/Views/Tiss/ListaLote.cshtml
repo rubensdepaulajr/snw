@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "View1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+        BuildGrid();
+        $("#btnPesquisar").click(Search);
+    });
+
+    function BuildGrid() {
+		$("#grid").jqGrid({
+			url: '@Url.Action("GetLote", "Tiss")',
+			datatype: 'json',
+			mtype: 'GET',
+			colNames: ['Operadora','Arquivo', 'Competência', 'Data Fechamento', ''],
+			colModel: [
+            { name: 'Operadora', index: 'Operadora', width: 170, align: 'center' },
+			{ name: 'Arquivo', index: 'Arquivo', width: 500, align: 'center' },
+			{ name: 'Competência', index: 'Competência', width: 100, align: 'center'},
+            { name: 'DataCriacao', index: 'DataCriacao', width: 130, align: 'center'},
+			{ name: 'Id', index: 'Id', width: 60, align: 'center', formatter: CompetenciaFormatter}],
+			pager: jQuery('#pager'),
+			rowNum: 15,
+			rowList: [5, 10, 20, 50],
+			sortname: 'Id',
+			sortorder: "desc",
+			loadComplete: function() {
+				$("tr.jqgrow:odd").removeClass('ui-widget-content');
+				$("tr.jqgrow:odd").addClass('rowColor')  
+			},
+            gridComplete: function(){
+                if($(".ui-pg-input").val() == 1){
+                    var top_rowid = $('#grid tbody:first-child tr:nth-child(2)').attr('id');
+
+                    var countCols = jQuery('#grid').jqGrid('getGridParam', 'colNames').length;
+
+                    for (j=0;j<= countCols;j++)
+                        jQuery("#grid").setCell(top_rowid, j, '', 'selectedRow', '', 'true');
+                }
+            },
+			viewrecords: true,
+			imgpath: '/scripts/themes/coffee/images',
+			caption: 'XML Gerados e Enviados',
+			height: 350
+		}).navGrid('#pager', {add:false, edit:false, search:false, del:false}, {}, {}, {});
+	}
+
+    function GetArquivo(pId) {
+        document.location.href = '@Url.Action("GetArquivo", "Tiss")' + "?pIdLote=" + pId;
+	}
+
+    function CompetenciaFormatter(cell, options, row) {
+		return "<img src='@Url.Content("~/Images/download.png")' onclick=\"GetArquivo(" + cell + ");\" class=\"cursor\" id=\"upload\" border=\"0\" height=\"32px\" width=\"32px\" alt=\"Download\" title=\"Download\" />";
+	}
+
+    function Search(){
+        $("#grid").setGridParam({
+            postData:{"search":true, "pCompetencia": $("#ddlCompetencia").val(), "pOperadora": $("#ddlOperadora").val()}, "page": 1
+        }).trigger("reloadGrid");
+    }
+
+</script>
+
+@{Html.RenderPartial("Search", new { IsFinalizada = true });}
+<table id="grid" class="scroll" cellpadding="0" cellspacing="0"></table>
+<div id="pager" class="scroll" style="text-align:center;"></div>

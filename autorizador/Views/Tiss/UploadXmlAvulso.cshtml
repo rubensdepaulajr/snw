@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+
+        var auth = '@(Request.Cookies[FormsAuthentication.FormsCookieName] == null ? string.Empty : Request.Cookies[FormsAuthentication.FormsCookieName].Value)';
+        var session = '@Session.SessionID';
+
+        $('#file_upload').uploadify({
+            'height': '22',
+            'width' : '300',
+            'formData': {'ASPSESSID': session, 'AUTHID': auth },
+            'swf': '@Url.Content("~/Scripts/uploadify.swf")',
+            'cancelImg': '@Url.Content("~/Images/cancel.png")',
+            'buttonText': 'Enviar Arquivo',
+            'uploader': '@Url.Action("Upload", "Tiss")',
+            'fileDesc': 'Image Files',
+            'fileExt': '*.mpp',
+            'multi': false,
+            'auto': true,
+            'sizeLimit': '4000000',
+            'onUploadComplete': function (file) {
+                BuildGrid();
+                ShowMessage('Mensgem', 'Arquivo Processado. Verifique o Resultado.', false, 5000);
+            },
+            'onUploadSucess': function (file, data, response) {
+                ShowMessage('Mensgem', response + ' ' + file.name, false, 5000);
+            },
+            'onUploadError': function (file, errorCode, errorMsg, errorString) {                
+                if(errorMsg == @Sweb.TotalTiss.Util.HttpStatusCode.NOT_IMPLEMENTED){
+                    ShowMessage('Mensgem', ' Hash Inválido!', false, 5000);
+                }else{
+                    ShowMessage('Mensgem', 'Erro Desconhecido!', false, 5000);
+                }
+            }
+        });
+                
+    });
+        
+    
+    function BuildGrid() {
+		$("#grid").jqGrid({
+			url: '@Url.Action("LoadMessages", "Tiss")',
+			datatype: 'json',
+			mtype: 'GET',
+			colNames: ['Identificação Guia', 'Autorizada?','Erro na importação?', 'Mensagem'],
+			colModel: [
+            { name: 'Identificação Guia', index: 'Out_IdGia', width: 170, align: 'center' },
+            { name: 'Autorizada?', index: 'Out_Atz', width: 120, align: 'center' },
+            { name: 'Erro na importação?', index: 'Out_Err', width: 150, align: 'center'},
+            { name: 'Mensagem', index: 'Out_IdMsg', width: 500, align: 'center'}],
+			pager: jQuery('#pager'),
+			rowNum: @Int32.MaxValue,
+			rowList: [5, 10],
+			sortname: 'id',
+			sortorder: "desc",
+			loadComplete: function() {
+				$("tr.jqgrow:odd").removeClass('ui-widget-content');
+				$("tr.jqgrow:odd").addClass('rowColor')  
+			},
+            gridComplete: function(){
+                if($(".ui-pg-input").val() == 1){
+                    var top_rowid = $('#grid tbody:first-child tr:nth-child(2)').attr('id');
+
+                    var countCols = jQuery('#grid').jqGrid('getGridParam', 'colNames').length;
+
+                    for (j=0;j<= countCols;j++)
+                        jQuery("#grid").setCell(top_rowid, j, '', 'selectedRow', '', 'true');
+                }
+            },
+			viewrecords: true,
+			imgpath: '/scripts/themes/coffee/images',
+			caption: 'XML Avulso',
+			height: 350
+		}).navGrid('#pager', {add:false, edit:false, search:false, del:false}, {}, {}, {});
+
+    }
+
+</script>
+
+<input type="file" name="file_upload" id="file_upload" />
+<table id="grid" class="scroll" cellpadding="0" cellspacing="0"></table>
+<div id="pager" class="scroll" style="text-align:center;"></div>
