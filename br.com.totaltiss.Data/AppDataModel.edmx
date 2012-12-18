@@ -1,0 +1,1056 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AppModelStoreContainer">
+          <EntitySet Name="Ans_Msg" EntityType="AppModel.Store.Ans_Msg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="AppModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Ctt" EntityType="AppModel.Store.Atz_Ctt" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Grp" EntityType="AppModel.Store.Atz_Grp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Pdm" EntityType="AppModel.Store.Atz_Pdm" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Tab" EntityType="AppModel.Store.Atz_Tab" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Tpd" EntityType="AppModel.Store.Atz_Tpd" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Atz_Tpp" EntityType="AppModel.Store.Atz_Tpp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_Ope" EntityType="AppModel.Store.Cad_Ope" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_Prd" EntityType="AppModel.Store.Cad_Prd" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_PrdCtt" EntityType="AppModel.Store.Cad_PrdCtt" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Fat_Fch" EntityType="AppModel.Store.Fat_Fch" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sgn_GrpMsg" EntityType="AppModel.Store.Sgn_GrpMsg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sgn_Ppl" EntityType="AppModel.Store.Sgn_Ppl" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Atz_Crd_Atz_Tpd" Association="AppModel.Store.FK_Atz_Crd_Atz_Tpd">
+            <End Role="Atz_Tpd" EntitySet="Atz_Tpd" />
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Atz_Pdm_Atz_Grp" Association="AppModel.Store.FK_Atz_Pdm_Atz_Grp">
+            <End Role="Atz_Grp" EntitySet="Atz_Grp" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cad_PrdCtt_Atz_Ctt" Association="AppModel.Store.FK_Cad_PrdCtt_Atz_Ctt">
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+            <End Role="Cad_PrdCtt" EntitySet="Cad_PrdCtt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cad_PrdCtt_Atz_Prd" Association="AppModel.Store.FK_Cad_PrdCtt_Atz_Prd">
+            <End Role="Cad_Prd" EntitySet="Cad_Prd" />
+            <End Role="Cad_PrdCtt" EntitySet="Cad_PrdCtt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fat_Fch_Atz_Ctt" Association="AppModel.Store.FK_Fat_Fch_Atz_Ctt">
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+            <End Role="Fat_Fch" EntitySet="Fat_Fch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fat_Fch_Cad_Ope" Association="AppModel.Store.FK_Fat_Fch_Cad_Ope">
+            <End Role="Cad_Ope" EntitySet="Cad_Ope" />
+            <End Role="Fat_Fch" EntitySet="Fat_Fch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sgn_GrpMsg_Ans_Msg" Association="AppModel.Store.FK_Sgn_GrpMsg_Ans_Msg">
+            <End Role="Ans_Msg" EntitySet="Ans_Msg" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sgn_GrpMsg_aspnet_Roles" Association="AppModel.Store.FK_Sgn_GrpMsg_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sgn_GrpMsg_Cad_Ope" Association="AppModel.Store.FK_Sgn_GrpMsg_Cad_Ope">
+            <End Role="Cad_Ope" EntitySet="Cad_Ope" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <AssociationSet Name="RefAtz_Tab621" Association="AppModel.Store.RefAtz_Tab621">
+            <End Role="Atz_Tab" EntitySet="Atz_Tab" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+          <AssociationSet Name="RefAtz_Tpp21" Association="AppModel.Store.RefAtz_Tpp21">
+            <End Role="Atz_Tpp" EntitySet="Atz_Tpp" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ans_Msg">
+          <Key>
+            <PropertyRef Name="IdMsg" />
+          </Key>
+          <Property Name="IdMsg" Type="smallint" Nullable="false" />
+          <Property Name="Msg_Dsc" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Msg_DscAtz" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Msg_Grp" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Msg_Loc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsOpe" Type="bit" />
+        </EntityType>
+        <EntityType Name="Atz_Ctt">
+          <Key>
+            <PropertyRef Name="IdCtt" />
+          </Key>
+          <Property Name="IdCtt" Type="bigint" Nullable="false" />
+          <Property Name="Ctt_IdTpd" Type="tinyint" Nullable="false" />
+          <Property Name="Ctt_IdCns" Type="varchar" MaxLength="7" />
+          <Property Name="Ctt_Nme" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="Ctt_NmeRsm" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="Ctt_Doc" Type="varchar" MaxLength="18" />
+          <Property Name="Ctt_NumCns" Type="varchar" MaxLength="15" />
+          <Property Name="Ctt_EstCns" Type="char" MaxLength="2" />
+          <Property Name="Ctt_CodCne" Type="char" MaxLength="7" />
+          <Property Name="Ctt_Sit" Type="char" MaxLength="1" />
+          <Property Name="Ctt_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="Ctt_Tel2" Type="varchar" MaxLength="20" />
+          <Property Name="Ctt_Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Ctt_Eml" Type="varchar" MaxLength="50" />
+          <Property Name="Ctt_NmeCto" Type="varchar" MaxLength="70" />
+          <Property Name="Ctt_TipDoc" Type="char" MaxLength="1" />
+          <Property Name="Ctt_DatFim" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Atz_Grp">
+          <Key>
+            <PropertyRef Name="IdGrp" />
+          </Key>
+          <Property Name="IdGrp" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Grp_Dsc" Type="varchar" MaxLength="30" />
+          <Property Name="Grp_QtdCh_" Type="int" />
+        </EntityType>
+        <EntityType Name="Atz_Pdm">
+          <Key>
+            <PropertyRef Name="IdPdm" />
+          </Key>
+          <Property Name="IdPdm" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Pdm_IdTab" Type="tinyint" Nullable="false" />
+          <Property Name="Pdm_IdTpp" Type="tinyint" Nullable="false" />
+          <Property Name="Pdm_IdGrp" Type="tinyint" Nullable="false" />
+          <Property Name="Pdm_Cod" Type="varchar" MaxLength="20" />
+          <Property Name="Pdm_Dsc" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Pdm_AltCpx" Type="bit" Nullable="false" />
+          <Property Name="Pdm_DscRsm" Type="varchar" Nullable="false" MaxLength="35" />
+          <Property Name="Pdm_Sxo" Type="char" MaxLength="1" />
+          <Property Name="Pdm_IddMin" Type="tinyint" />
+          <Property Name="Pdm_IddMax" Type="tinyint" />
+          <Property Name="Pdm_QtdMax" Type="tinyint" />
+          <Property Name="Pdm_QtdDia" Type="tinyint" />
+          <Property Name="Pdm_QtdMes" Type="tinyint" />
+          <Property Name="Pdm_QtdAno" Type="smallint" />
+          <Property Name="Pdm_Rtn" Type="smallint" />
+          <Property Name="Pdm_Esp" Type="bit" Nullable="false" />
+          <Property Name="Pdm_Prf" Type="bit" />
+          <Property Name="_nomegfi" Type="varchar" MaxLength="50" />
+          <Property Name="Pdm_Atv" Type="bit" />
+          <Property Name="Pdm_QtdCh_" Type="numeric" Scale="2" />
+          <Property Name="Pdm_BlqUrg" Type="bit" />
+          <Property Name="Pdm_QtdFlm" Type="numeric" Scale="4" />
+          <Property Name="Pdm_CodAmb" Type="varchar" MaxLength="20" />
+          <Property Name="Pdm_DscAmb" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Atz_Tab">
+          <Key>
+            <PropertyRef Name="IdTab" />
+          </Key>
+          <Property Name="IdTab" Type="tinyint" Nullable="false" />
+          <Property Name="Tab_Dsc" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Atz_Tpd">
+          <Key>
+            <PropertyRef Name="IdTpd" />
+          </Key>
+          <Property Name="IdTpd" Type="tinyint" Nullable="false" />
+          <Property Name="Tpd_Dsc" Type="varchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Atz_Tpp">
+          <Key>
+            <PropertyRef Name="IdTpp" />
+          </Key>
+          <Property Name="IdTpp" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Tpp_Dsc" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Cad_Ope">
+          <Key>
+            <PropertyRef Name="IdOpe" />
+          </Key>
+          <Property Name="IdOpe" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ope_Nme" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Ope_RegAns" Type="int" Nullable="false" />
+          <Property Name="Ope_Cnp" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="Ope_DatIni" Type="smalldatetime" Nullable="false" />
+          <Property Name="Ope_DatFim" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Cad_Prd">
+          <Key>
+            <PropertyRef Name="IdPrd" />
+          </Key>
+          <Property Name="IdPrd" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Prd_IdRde" Type="smallint" Nullable="false" />
+          <Property Name="Prd_IdItg" Type="int" />
+          <Property Name="Prd_TipItg" Type="char" MaxLength="1" />
+          <Property Name="Prd_Nme" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Prd_CodAns" Type="varchar" MaxLength="20" />
+          <Property Name="Prd_SisGst" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Cad_PrdCtt">
+          <Key>
+            <PropertyRef Name="IdPrt" />
+          </Key>
+          <Property Name="IdPrt" Type="int" Nullable="false" />
+          <Property Name="Prt_IdPrd" Type="int" Nullable="false" />
+          <Property Name="Prd_IdCtt" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fat_Fch">
+          <Key>
+            <PropertyRef Name="IdFch" />
+          </Key>
+          <Property Name="IdFch" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fch_IdOpe" Type="smallint" Nullable="false" />
+          <Property Name="Fch_IdCtt" Type="bigint" />
+          <Property Name="Fch_Cpc" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="Fch_Ano" Type="smallint" Nullable="false" />
+          <Property Name="Fch_Mes" Type="tinyint" Nullable="false" />
+          <Property Name="Fch_Ent" Type="date" />
+          <Property Name="Fch_DatIni" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fch_DatFim" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fch_Lot" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sgn_GrpMsg">
+          <Key>
+            <PropertyRef Name="Grm_IdOpe" />
+            <PropertyRef Name="Grm_RoleId" />
+            <PropertyRef Name="Grm_IdMsg" />
+          </Key>
+          <Property Name="Grm_IdOpe" Type="smallint" Nullable="false" />
+          <Property Name="Grm_RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Grm_IdMsg" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sgn_Ppl">
+          <Key>
+            <PropertyRef Name="IdPpl" />
+          </Key>
+          <Property Name="IdPpl" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ppl_Dsc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="___Ppl_Prf" Type="bit" />
+          <Property Name="___Ppl_Aud" Type="bit" />
+          <Property Name="Ppl_QtdCh_" Type="int" Nullable="false" />
+          <Property Name="Ppl_Ope" Type="bit" />
+          <Property Name="Ppl_Con" Type="bit" />
+          <Property Name="Ppl_Sdt" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Atz_Crd_Atz_Tpd">
+          <End Role="Atz_Tpd" Type="AppModel.Store.Atz_Tpd" Multiplicity="1" />
+          <End Role="Atz_Ctt" Type="AppModel.Store.Atz_Ctt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tpd">
+              <PropertyRef Name="IdTpd" />
+            </Principal>
+            <Dependent Role="Atz_Ctt">
+              <PropertyRef Name="Ctt_IdTpd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Atz_Pdm_Atz_Grp">
+          <End Role="Atz_Grp" Type="AppModel.Store.Atz_Grp" Multiplicity="1" />
+          <End Role="Atz_Pdm" Type="AppModel.Store.Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Grp">
+              <PropertyRef Name="IdGrp" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdGrp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cad_PrdCtt_Atz_Ctt">
+          <End Role="Atz_Ctt" Type="AppModel.Store.Atz_Ctt" Multiplicity="1" />
+          <End Role="Cad_PrdCtt" Type="AppModel.Store.Cad_PrdCtt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Ctt">
+              <PropertyRef Name="IdCtt" />
+            </Principal>
+            <Dependent Role="Cad_PrdCtt">
+              <PropertyRef Name="Prd_IdCtt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cad_PrdCtt_Atz_Prd">
+          <End Role="Cad_Prd" Type="AppModel.Store.Cad_Prd" Multiplicity="1" />
+          <End Role="Cad_PrdCtt" Type="AppModel.Store.Cad_PrdCtt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Prd">
+              <PropertyRef Name="IdPrd" />
+            </Principal>
+            <Dependent Role="Cad_PrdCtt">
+              <PropertyRef Name="Prt_IdPrd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fat_Fch_Atz_Ctt">
+          <End Role="Atz_Ctt" Type="AppModel.Store.Atz_Ctt" Multiplicity="0..1" />
+          <End Role="Fat_Fch" Type="AppModel.Store.Fat_Fch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Ctt">
+              <PropertyRef Name="IdCtt" />
+            </Principal>
+            <Dependent Role="Fat_Fch">
+              <PropertyRef Name="Fch_IdCtt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fat_Fch_Cad_Ope">
+          <End Role="Cad_Ope" Type="AppModel.Store.Cad_Ope" Multiplicity="1" />
+          <End Role="Fat_Fch" Type="AppModel.Store.Fat_Fch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Ope">
+              <PropertyRef Name="IdOpe" />
+            </Principal>
+            <Dependent Role="Fat_Fch">
+              <PropertyRef Name="Fch_IdOpe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sgn_GrpMsg_Ans_Msg">
+          <End Role="Ans_Msg" Type="AppModel.Store.Ans_Msg" Multiplicity="1" />
+          <End Role="Sgn_GrpMsg" Type="AppModel.Store.Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ans_Msg">
+              <PropertyRef Name="IdMsg" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_IdMsg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sgn_GrpMsg_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="AppModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="Sgn_GrpMsg" Type="AppModel.Store.Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sgn_GrpMsg_Cad_Ope">
+          <End Role="Cad_Ope" Type="AppModel.Store.Cad_Ope" Multiplicity="1" />
+          <End Role="Sgn_GrpMsg" Type="AppModel.Store.Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Ope">
+              <PropertyRef Name="IdOpe" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_IdOpe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RefAtz_Tab621">
+          <End Role="Atz_Tab" Type="AppModel.Store.Atz_Tab" Multiplicity="1" />
+          <End Role="Atz_Pdm" Type="AppModel.Store.Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tab">
+              <PropertyRef Name="IdTab" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdTab" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RefAtz_Tpp21">
+          <End Role="Atz_Tpp" Type="AppModel.Store.Atz_Tpp" Multiplicity="1" />
+          <End Role="Atz_Pdm" Type="AppModel.Store.Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tpp">
+              <PropertyRef Name="IdTpp" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdTpp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Atz_Pdm" EntityType="AppModel.Atz_Pdm" />
+          <EntitySet Name="Atz_Grp" EntityType="AppModel.Atz_Grp" />
+          <EntitySet Name="Atz_Tab" EntityType="AppModel.Atz_Tab" />
+          <EntitySet Name="Atz_Tpp" EntityType="AppModel.Atz_Tpp" />
+          <AssociationSet Name="FK_Atz_Pdm_Atz_Grp" Association="AppModel.FK_Atz_Pdm_Atz_Grp">
+            <End Role="Atz_Grp" EntitySet="Atz_Grp" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+          <AssociationSet Name="RefAtz_Tab621" Association="AppModel.RefAtz_Tab621">
+            <End Role="Atz_Tab" EntitySet="Atz_Tab" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+          <AssociationSet Name="RefAtz_Tpp21" Association="AppModel.RefAtz_Tpp21">
+            <End Role="Atz_Tpp" EntitySet="Atz_Tpp" />
+            <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
+          </AssociationSet>
+          <EntitySet Name="Cad_Ope" EntityType="AppModel.Cad_Ope" />
+          <EntitySet Name="Sgn_GrpMsg" EntityType="AppModel.Sgn_GrpMsg" />
+          <AssociationSet Name="FK_Sgn_GrpMsg_Cad_Ope" Association="AppModel.FK_Sgn_GrpMsg_Cad_Ope">
+            <End Role="Cad_Ope" EntitySet="Cad_Ope" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <EntitySet Name="Ans_Msg" EntityType="AppModel.Ans_Msg" />
+          <EntitySet Name="aspnet_Roles" EntityType="AppModel.aspnet_Roles" />
+          <AssociationSet Name="FK_Sgn_GrpMsg_Ans_Msg" Association="AppModel.FK_Sgn_GrpMsg_Ans_Msg">
+            <End Role="Ans_Msg" EntitySet="Ans_Msg" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sgn_GrpMsg_aspnet_Roles" Association="AppModel.FK_Sgn_GrpMsg_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="Sgn_GrpMsg" EntitySet="Sgn_GrpMsg" />
+          </AssociationSet>
+          <EntitySet Name="Fat_Fch" EntityType="AppModel.Fat_Fch" />
+          <AssociationSet Name="FK_Fat_Fch_Cad_Ope" Association="AppModel.FK_Fat_Fch_Cad_Ope">
+            <End Role="Cad_Ope" EntitySet="Cad_Ope" />
+            <End Role="Fat_Fch" EntitySet="Fat_Fch" />
+          </AssociationSet>
+          <EntitySet Name="Atz_Tpd" EntityType="AppModel.Atz_Tpd" />
+          <EntitySet Name="Sgn_Ppl" EntityType="AppModel.Sgn_Ppl" />
+          <EntitySet Name="Atz_Ctt" EntityType="AppModel.Atz_Ctt" />
+          <EntitySet Name="Cad_Prd" EntityType="AppModel.Cad_Prd" />
+          <EntitySet Name="Cad_PrdCtt" EntityType="AppModel.Cad_PrdCtt" />
+          <AssociationSet Name="FK_Atz_Crd_Atz_Tpd" Association="AppModel.FK_Atz_Crd_Atz_Tpd">
+            <End Role="Atz_Tpd" EntitySet="Atz_Tpd" />
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cad_PrdCtt_Atz_Ctt" Association="AppModel.FK_Cad_PrdCtt_Atz_Ctt">
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+            <End Role="Cad_PrdCtt" EntitySet="Cad_PrdCtt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fat_Fch_Atz_Ctt" Association="AppModel.FK_Fat_Fch_Atz_Ctt">
+            <End Role="Atz_Ctt" EntitySet="Atz_Ctt" />
+            <End Role="Fat_Fch" EntitySet="Fat_Fch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cad_PrdCtt_Atz_Prd" Association="AppModel.FK_Cad_PrdCtt_Atz_Prd">
+            <End Role="Cad_Prd" EntitySet="Cad_Prd" />
+            <End Role="Cad_PrdCtt" EntitySet="Cad_PrdCtt" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Atz_Pdm">
+          <Key>
+            <PropertyRef Name="IdPdm" />
+          </Key>
+          <Property Type="Int32" Name="IdPdm" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="Pdm_IdTab" Nullable="false" />
+          <Property Type="Byte" Name="Pdm_IdTpp" Nullable="false" />
+          <Property Type="Byte" Name="Pdm_IdGrp" Nullable="false" />
+          <Property Type="String" Name="Pdm_Cod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pdm_Dsc" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Pdm_AltCpx" Nullable="false" />
+          <Property Type="String" Name="Pdm_DscRsm" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pdm_Sxo" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Byte" Name="Pdm_IddMin" />
+          <Property Type="Byte" Name="Pdm_IddMax" />
+          <Property Type="Byte" Name="Pdm_QtdMax" />
+          <Property Type="Byte" Name="Pdm_QtdDia" />
+          <Property Type="Byte" Name="Pdm_QtdMes" />
+          <Property Type="Int16" Name="Pdm_QtdAno" />
+          <Property Type="Int16" Name="Pdm_Rtn" />
+          <Property Type="Boolean" Name="Pdm_Esp" Nullable="false" />
+          <Property Type="Boolean" Name="Pdm_Prf" />
+          <Property Type="String" Name="C_nomegfi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Pdm_Atv" />
+          <Property Type="Decimal" Name="Pdm_QtdCh_" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="Pdm_BlqUrg" />
+          <Property Type="Decimal" Name="Pdm_QtdFlm" Precision="18" Scale="4" />
+          <Property Type="String" Name="Pdm_CodAmb" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pdm_DscAmb" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Atz_Grp" Relationship="AppModel.FK_Atz_Pdm_Atz_Grp" FromRole="Atz_Pdm" ToRole="Atz_Grp" />
+          <NavigationProperty Name="Atz_Tab" Relationship="AppModel.RefAtz_Tab621" FromRole="Atz_Pdm" ToRole="Atz_Tab" />
+          <NavigationProperty Name="Atz_Tpp" Relationship="AppModel.RefAtz_Tpp21" FromRole="Atz_Pdm" ToRole="Atz_Tpp" />
+        </EntityType>
+        <EntityType Name="Atz_Grp">
+          <Key>
+            <PropertyRef Name="IdGrp" />
+          </Key>
+          <Property Type="Byte" Name="IdGrp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Grp_Dsc" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Atz_Pdm" Relationship="AppModel.FK_Atz_Pdm_Atz_Grp" FromRole="Atz_Grp" ToRole="Atz_Pdm" />
+          <Property Type="Int16" Name="Grp_QtdCh_" />
+        </EntityType>
+        <EntityType Name="Atz_Tab">
+          <Key>
+            <PropertyRef Name="IdTab" />
+          </Key>
+          <Property Type="Byte" Name="IdTab" Nullable="false" />
+          <Property Type="String" Name="Tab_Dsc" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Atz_Pdm" Relationship="AppModel.RefAtz_Tab621" FromRole="Atz_Tab" ToRole="Atz_Pdm" />
+        </EntityType>
+        <EntityType Name="Atz_Tpp">
+          <Key>
+            <PropertyRef Name="IdTpp" />
+          </Key>
+          <Property Type="Byte" Name="IdTpp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Tpp_Dsc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Atz_Pdm" Relationship="AppModel.RefAtz_Tpp21" FromRole="Atz_Tpp" ToRole="Atz_Pdm" />
+        </EntityType>
+        <Association Name="FK_Atz_Pdm_Atz_Grp">
+          <End Type="AppModel.Atz_Grp" Role="Atz_Grp" Multiplicity="1" />
+          <End Type="AppModel.Atz_Pdm" Role="Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Grp">
+              <PropertyRef Name="IdGrp" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdGrp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RefAtz_Tab621">
+          <End Type="AppModel.Atz_Tab" Role="Atz_Tab" Multiplicity="1" />
+          <End Type="AppModel.Atz_Pdm" Role="Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tab">
+              <PropertyRef Name="IdTab" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdTab" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RefAtz_Tpp21">
+          <End Type="AppModel.Atz_Tpp" Role="Atz_Tpp" Multiplicity="1" />
+          <End Type="AppModel.Atz_Pdm" Role="Atz_Pdm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tpp">
+              <PropertyRef Name="IdTpp" />
+            </Principal>
+            <Dependent Role="Atz_Pdm">
+              <PropertyRef Name="Pdm_IdTpp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cad_Ope">
+          <Key>
+            <PropertyRef Name="IdOpe" />
+          </Key>
+          <Property Type="Int16" Name="IdOpe" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ope_Nme" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ope_RegAns" Nullable="false" />
+          <Property Type="String" Name="Ope_Cnp" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Ope_DatIni" Nullable="false" />
+          <Property Type="DateTime" Name="Ope_DatFim" />
+          <NavigationProperty Name="Sgn_GrpMsg" Relationship="AppModel.FK_Sgn_GrpMsg_Cad_Ope" FromRole="Cad_Ope" ToRole="Sgn_GrpMsg" />
+          <NavigationProperty Name="Fat_Fch" Relationship="AppModel.FK_Fat_Fch_Cad_Ope" FromRole="Cad_Ope" ToRole="Fat_Fch" />
+        </EntityType>
+        <EntityType Name="Sgn_GrpMsg">
+          <Key>
+            <PropertyRef Name="Grm_IdOpe" />
+            <PropertyRef Name="Grm_RoleId" />
+            <PropertyRef Name="Grm_IdMsg" />
+          </Key>
+          <Property Type="Int16" Name="Grm_IdOpe" Nullable="false" />
+          <Property Type="Guid" Name="Grm_RoleId" Nullable="false" />
+          <Property Type="Int16" Name="Grm_IdMsg" Nullable="false" />
+          <NavigationProperty Name="Cad_Ope" Relationship="AppModel.FK_Sgn_GrpMsg_Cad_Ope" FromRole="Sgn_GrpMsg" ToRole="Cad_Ope" />
+          <NavigationProperty Name="Ans_Msg" Relationship="AppModel.FK_Sgn_GrpMsg_Ans_Msg" FromRole="Sgn_GrpMsg" ToRole="Ans_Msg" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="AppModel.FK_Sgn_GrpMsg_aspnet_Roles" FromRole="Sgn_GrpMsg" ToRole="aspnet_Roles" />
+        </EntityType>
+        <Association Name="FK_Sgn_GrpMsg_Cad_Ope">
+          <End Type="AppModel.Cad_Ope" Role="Cad_Ope" Multiplicity="1" />
+          <End Type="AppModel.Sgn_GrpMsg" Role="Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Ope">
+              <PropertyRef Name="IdOpe" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_IdOpe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ans_Msg">
+          <Key>
+            <PropertyRef Name="IdMsg" />
+          </Key>
+          <Property Type="Int16" Name="IdMsg" Nullable="false" />
+          <Property Type="String" Name="Msg_Dsc" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Msg_DscAtz" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Msg_Grp" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Msg_Loc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sgn_GrpMsg" Relationship="AppModel.FK_Sgn_GrpMsg_Ans_Msg" FromRole="Ans_Msg" ToRole="Sgn_GrpMsg" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Sgn_GrpMsg" Relationship="AppModel.FK_Sgn_GrpMsg_aspnet_Roles" FromRole="aspnet_Roles" ToRole="Sgn_GrpMsg" />
+          <Property Type="Boolean" Name="IsOpe" />
+        </EntityType>
+        <Association Name="FK_Sgn_GrpMsg_Ans_Msg">
+          <End Type="AppModel.Ans_Msg" Role="Ans_Msg" Multiplicity="1" />
+          <End Type="AppModel.Sgn_GrpMsg" Role="Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ans_Msg">
+              <PropertyRef Name="IdMsg" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_IdMsg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sgn_GrpMsg_aspnet_Roles">
+          <End Type="AppModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="1" />
+          <End Type="AppModel.Sgn_GrpMsg" Role="Sgn_GrpMsg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Sgn_GrpMsg">
+              <PropertyRef Name="Grm_RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Fat_Fch">
+          <Key>
+            <PropertyRef Name="IdFch" />
+          </Key>
+          <Property Type="Int16" Name="IdFch" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="Fch_IdOpe" Nullable="false" />
+          <Property Type="Int64" Name="Fch_IdCtt" />
+          <Property Type="String" Name="Fch_Cpc" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Fch_Ano" Nullable="false" />
+          <Property Type="Byte" Name="Fch_Mes" Nullable="false" />
+          <Property Type="DateTime" Name="Fch_DatIni" Nullable="false" />
+          <Property Type="DateTime" Name="Fch_DatFim" Nullable="false" />
+          <NavigationProperty Name="Cad_Ope" Relationship="AppModel.FK_Fat_Fch_Cad_Ope" FromRole="Fat_Fch" ToRole="Cad_Ope" />
+          <Property Type="DateTime" Name="Fch_Ent" />
+          <Property Type="Boolean" Name="Fch_Lot" Nullable="false" />
+          <NavigationProperty Name="Atz_Ctt" Relationship="AppModel.FK_Fat_Fch_Atz_Ctt" FromRole="Fat_Fch" ToRole="Atz_Ctt" />
+        </EntityType>
+        <Association Name="FK_Fat_Fch_Cad_Ope">
+          <End Type="AppModel.Cad_Ope" Role="Cad_Ope" Multiplicity="1" />
+          <End Type="AppModel.Fat_Fch" Role="Fat_Fch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Ope">
+              <PropertyRef Name="IdOpe" />
+            </Principal>
+            <Dependent Role="Fat_Fch">
+              <PropertyRef Name="Fch_IdOpe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Atz_Tpd">
+          <Key>
+            <PropertyRef Name="IdTpd" />
+          </Key>
+          <Property Type="Byte" Name="IdTpd" Nullable="false" />
+          <Property Type="String" Name="Tpd_Dsc" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Atz_Ctt" Relationship="AppModel.FK_Atz_Crd_Atz_Tpd" FromRole="Atz_Tpd" ToRole="Atz_Ctt" />
+        </EntityType>
+        <EntityType Name="Sgn_Ppl">
+          <Key>
+            <PropertyRef Name="IdPpl" />
+          </Key>
+          <Property Type="Int16" Name="IdPpl" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ppl_Dsc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ppl_QtdCh_" Nullable="false" />
+          <Property Type="Boolean" Name="Ppl_Ope" />
+          <Property Type="Boolean" Name="Ppl_Con" />
+          <Property Type="Boolean" Name="Ppl_Sdt" />
+        </EntityType>
+        <EntityType Name="Atz_Ctt">
+          <Key>
+            <PropertyRef Name="IdCtt" />
+          </Key>
+          <Property Type="Int64" Name="IdCtt" Nullable="false" />
+          <Property Type="Byte" Name="Ctt_IdTpd" Nullable="false" />
+          <Property Type="String" Name="Ctt_IdCns" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_Nme" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_NmeRsm" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_Doc" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_NumCns" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_EstCns" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ctt_CodCne" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ctt_Sit" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ctt_Tel" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_Tel2" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_Fax" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_Eml" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_NmeCto" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ctt_TipDoc" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="Ctt_DatFim" />
+          <NavigationProperty Name="Atz_Tpd" Relationship="AppModel.FK_Atz_Crd_Atz_Tpd" FromRole="Atz_Ctt" ToRole="Atz_Tpd" />
+          <NavigationProperty Name="Cad_PrdCtt" Relationship="AppModel.FK_Cad_PrdCtt_Atz_Ctt" FromRole="Atz_Ctt" ToRole="Cad_PrdCtt" />
+          <NavigationProperty Name="Fat_Fch" Relationship="AppModel.FK_Fat_Fch_Atz_Ctt" FromRole="Atz_Ctt" ToRole="Fat_Fch" />
+        </EntityType>
+        <EntityType Name="Cad_Prd">
+          <Key>
+            <PropertyRef Name="IdPrd" />
+          </Key>
+          <Property Type="Int32" Name="IdPrd" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="Prd_IdRde" Nullable="false" />
+          <Property Type="Int32" Name="Prd_IdItg" />
+          <Property Type="String" Name="Prd_TipItg" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Prd_Nme" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Prd_CodAns" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Prd_SisGst" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cad_PrdCtt" Relationship="AppModel.FK_Cad_PrdCtt_Atz_Prd" FromRole="Cad_Prd" ToRole="Cad_PrdCtt" />
+        </EntityType>
+        <EntityType Name="Cad_PrdCtt">
+          <Key>
+            <PropertyRef Name="IdPrt" />
+          </Key>
+          <Property Type="Int32" Name="IdPrt" Nullable="false" />
+          <Property Type="Int32" Name="Prt_IdPrd" Nullable="false" />
+          <Property Type="Int64" Name="Prd_IdCtt" Nullable="false" />
+          <NavigationProperty Name="Atz_Ctt" Relationship="AppModel.FK_Cad_PrdCtt_Atz_Ctt" FromRole="Cad_PrdCtt" ToRole="Atz_Ctt" />
+          <NavigationProperty Name="Cad_Prd" Relationship="AppModel.FK_Cad_PrdCtt_Atz_Prd" FromRole="Cad_PrdCtt" ToRole="Cad_Prd" />
+        </EntityType>
+        <Association Name="FK_Atz_Crd_Atz_Tpd">
+          <End Type="AppModel.Atz_Tpd" Role="Atz_Tpd" Multiplicity="1" />
+          <End Type="AppModel.Atz_Ctt" Role="Atz_Ctt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Tpd">
+              <PropertyRef Name="IdTpd" />
+            </Principal>
+            <Dependent Role="Atz_Ctt">
+              <PropertyRef Name="Ctt_IdTpd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cad_PrdCtt_Atz_Ctt">
+          <End Type="AppModel.Atz_Ctt" Role="Atz_Ctt" Multiplicity="1" />
+          <End Type="AppModel.Cad_PrdCtt" Role="Cad_PrdCtt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Ctt">
+              <PropertyRef Name="IdCtt" />
+            </Principal>
+            <Dependent Role="Cad_PrdCtt">
+              <PropertyRef Name="Prd_IdCtt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fat_Fch_Atz_Ctt">
+          <End Type="AppModel.Atz_Ctt" Role="Atz_Ctt" Multiplicity="0..1" />
+          <End Type="AppModel.Fat_Fch" Role="Fat_Fch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atz_Ctt">
+              <PropertyRef Name="IdCtt" />
+            </Principal>
+            <Dependent Role="Fat_Fch">
+              <PropertyRef Name="Fch_IdCtt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cad_PrdCtt_Atz_Prd">
+          <End Type="AppModel.Cad_Prd" Role="Cad_Prd" Multiplicity="1" />
+          <End Type="AppModel.Cad_PrdCtt" Role="Cad_PrdCtt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Prd">
+              <PropertyRef Name="IdPrd" />
+            </Principal>
+            <Dependent Role="Cad_PrdCtt">
+              <PropertyRef Name="Prt_IdPrd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppModelStoreContainer" CdmEntityContainer="AppEntities">
+          <EntitySetMapping Name="Atz_Pdm">
+            <EntityTypeMapping TypeName="AppModel.Atz_Pdm">
+              <MappingFragment StoreEntitySet="Atz_Pdm">
+                <ScalarProperty Name="Pdm_DscAmb" ColumnName="Pdm_DscAmb" />
+                <ScalarProperty Name="Pdm_CodAmb" ColumnName="Pdm_CodAmb" />
+                <ScalarProperty Name="Pdm_QtdFlm" ColumnName="Pdm_QtdFlm" />
+                <ScalarProperty Name="Pdm_BlqUrg" ColumnName="Pdm_BlqUrg" />
+                <ScalarProperty Name="Pdm_QtdCh_" ColumnName="Pdm_QtdCh_" />
+                <ScalarProperty Name="Pdm_Atv" ColumnName="Pdm_Atv" />
+                <ScalarProperty Name="C_nomegfi" ColumnName="_nomegfi" />
+                <ScalarProperty Name="Pdm_Prf" ColumnName="Pdm_Prf" />
+                <ScalarProperty Name="Pdm_Esp" ColumnName="Pdm_Esp" />
+                <ScalarProperty Name="Pdm_Rtn" ColumnName="Pdm_Rtn" />
+                <ScalarProperty Name="Pdm_QtdAno" ColumnName="Pdm_QtdAno" />
+                <ScalarProperty Name="Pdm_QtdMes" ColumnName="Pdm_QtdMes" />
+                <ScalarProperty Name="Pdm_QtdDia" ColumnName="Pdm_QtdDia" />
+                <ScalarProperty Name="Pdm_QtdMax" ColumnName="Pdm_QtdMax" />
+                <ScalarProperty Name="Pdm_IddMax" ColumnName="Pdm_IddMax" />
+                <ScalarProperty Name="Pdm_IddMin" ColumnName="Pdm_IddMin" />
+                <ScalarProperty Name="Pdm_Sxo" ColumnName="Pdm_Sxo" />
+                <ScalarProperty Name="Pdm_DscRsm" ColumnName="Pdm_DscRsm" />
+                <ScalarProperty Name="Pdm_AltCpx" ColumnName="Pdm_AltCpx" />
+                <ScalarProperty Name="Pdm_Dsc" ColumnName="Pdm_Dsc" />
+                <ScalarProperty Name="Pdm_Cod" ColumnName="Pdm_Cod" />
+                <ScalarProperty Name="Pdm_IdGrp" ColumnName="Pdm_IdGrp" />
+                <ScalarProperty Name="Pdm_IdTpp" ColumnName="Pdm_IdTpp" />
+                <ScalarProperty Name="Pdm_IdTab" ColumnName="Pdm_IdTab" />
+                <ScalarProperty Name="IdPdm" ColumnName="IdPdm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Atz_Grp">
+            <EntityTypeMapping TypeName="AppModel.Atz_Grp">
+              <MappingFragment StoreEntitySet="Atz_Grp">
+                <ScalarProperty Name="Grp_QtdCh_" ColumnName="Grp_QtdCh_" />
+                <ScalarProperty Name="Grp_Dsc" ColumnName="Grp_Dsc" />
+                <ScalarProperty Name="IdGrp" ColumnName="IdGrp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Atz_Tab">
+            <EntityTypeMapping TypeName="AppModel.Atz_Tab">
+              <MappingFragment StoreEntitySet="Atz_Tab">
+                <ScalarProperty Name="Tab_Dsc" ColumnName="Tab_Dsc" />
+                <ScalarProperty Name="IdTab" ColumnName="IdTab" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Atz_Tpp">
+            <EntityTypeMapping TypeName="AppModel.Atz_Tpp">
+              <MappingFragment StoreEntitySet="Atz_Tpp">
+                <ScalarProperty Name="Tpp_Dsc" ColumnName="Tpp_Dsc" />
+                <ScalarProperty Name="IdTpp" ColumnName="IdTpp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_Ope">
+            <EntityTypeMapping TypeName="AppModel.Cad_Ope">
+              <MappingFragment StoreEntitySet="Cad_Ope">
+                <ScalarProperty Name="Ope_DatFim" ColumnName="Ope_DatFim" />
+                <ScalarProperty Name="Ope_DatIni" ColumnName="Ope_DatIni" />
+                <ScalarProperty Name="Ope_Cnp" ColumnName="Ope_Cnp" />
+                <ScalarProperty Name="Ope_RegAns" ColumnName="Ope_RegAns" />
+                <ScalarProperty Name="Ope_Nme" ColumnName="Ope_Nme" />
+                <ScalarProperty Name="IdOpe" ColumnName="IdOpe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sgn_GrpMsg">
+            <EntityTypeMapping TypeName="AppModel.Sgn_GrpMsg">
+              <MappingFragment StoreEntitySet="Sgn_GrpMsg">
+                <ScalarProperty Name="Grm_IdMsg" ColumnName="Grm_IdMsg" />
+                <ScalarProperty Name="Grm_RoleId" ColumnName="Grm_RoleId" />
+                <ScalarProperty Name="Grm_IdOpe" ColumnName="Grm_IdOpe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ans_Msg">
+            <EntityTypeMapping TypeName="AppModel.Ans_Msg">
+              <MappingFragment StoreEntitySet="Ans_Msg">
+                <ScalarProperty Name="Msg_Loc" ColumnName="Msg_Loc" />
+                <ScalarProperty Name="Msg_Grp" ColumnName="Msg_Grp" />
+                <ScalarProperty Name="Msg_DscAtz" ColumnName="Msg_DscAtz" />
+                <ScalarProperty Name="Msg_Dsc" ColumnName="Msg_Dsc" />
+                <ScalarProperty Name="IdMsg" ColumnName="IdMsg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="AppModel.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="IsOpe" ColumnName="IsOpe" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fat_Fch">
+            <EntityTypeMapping TypeName="AppModel.Fat_Fch">
+              <MappingFragment StoreEntitySet="Fat_Fch">
+                <ScalarProperty Name="Fch_Lot" ColumnName="Fch_Lot" />
+                <ScalarProperty Name="Fch_Ent" ColumnName="Fch_Ent" />
+                <ScalarProperty Name="Fch_DatFim" ColumnName="Fch_DatFim" />
+                <ScalarProperty Name="Fch_DatIni" ColumnName="Fch_DatIni" />
+                <ScalarProperty Name="Fch_Mes" ColumnName="Fch_Mes" />
+                <ScalarProperty Name="Fch_Ano" ColumnName="Fch_Ano" />
+                <ScalarProperty Name="Fch_Cpc" ColumnName="Fch_Cpc" />
+                <ScalarProperty Name="Fch_IdCtt" ColumnName="Fch_IdCtt" />
+                <ScalarProperty Name="Fch_IdOpe" ColumnName="Fch_IdOpe" />
+                <ScalarProperty Name="IdFch" ColumnName="IdFch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Atz_Tpd">
+            <EntityTypeMapping TypeName="AppModel.Atz_Tpd">
+              <MappingFragment StoreEntitySet="Atz_Tpd">
+                <ScalarProperty Name="Tpd_Dsc" ColumnName="Tpd_Dsc" />
+                <ScalarProperty Name="IdTpd" ColumnName="IdTpd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sgn_Ppl">
+            <EntityTypeMapping TypeName="AppModel.Sgn_Ppl">
+              <MappingFragment StoreEntitySet="Sgn_Ppl">
+                <ScalarProperty Name="Ppl_Sdt" ColumnName="Ppl_Sdt" />
+                <ScalarProperty Name="Ppl_Con" ColumnName="Ppl_Con" />
+                <ScalarProperty Name="Ppl_Ope" ColumnName="Ppl_Ope" />
+                <ScalarProperty Name="Ppl_QtdCh_" ColumnName="Ppl_QtdCh_" />
+                <ScalarProperty Name="Ppl_Dsc" ColumnName="Ppl_Dsc" />
+                <ScalarProperty Name="IdPpl" ColumnName="IdPpl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Atz_Ctt">
+            <EntityTypeMapping TypeName="AppModel.Atz_Ctt">
+              <MappingFragment StoreEntitySet="Atz_Ctt">
+                <ScalarProperty Name="Ctt_DatFim" ColumnName="Ctt_DatFim" />
+                <ScalarProperty Name="Ctt_TipDoc" ColumnName="Ctt_TipDoc" />
+                <ScalarProperty Name="Ctt_NmeCto" ColumnName="Ctt_NmeCto" />
+                <ScalarProperty Name="Ctt_Eml" ColumnName="Ctt_Eml" />
+                <ScalarProperty Name="Ctt_Fax" ColumnName="Ctt_Fax" />
+                <ScalarProperty Name="Ctt_Tel2" ColumnName="Ctt_Tel2" />
+                <ScalarProperty Name="Ctt_Tel" ColumnName="Ctt_Tel" />
+                <ScalarProperty Name="Ctt_Sit" ColumnName="Ctt_Sit" />
+                <ScalarProperty Name="Ctt_CodCne" ColumnName="Ctt_CodCne" />
+                <ScalarProperty Name="Ctt_EstCns" ColumnName="Ctt_EstCns" />
+                <ScalarProperty Name="Ctt_NumCns" ColumnName="Ctt_NumCns" />
+                <ScalarProperty Name="Ctt_Doc" ColumnName="Ctt_Doc" />
+                <ScalarProperty Name="Ctt_NmeRsm" ColumnName="Ctt_NmeRsm" />
+                <ScalarProperty Name="Ctt_Nme" ColumnName="Ctt_Nme" />
+                <ScalarProperty Name="Ctt_IdCns" ColumnName="Ctt_IdCns" />
+                <ScalarProperty Name="Ctt_IdTpd" ColumnName="Ctt_IdTpd" />
+                <ScalarProperty Name="IdCtt" ColumnName="IdCtt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_Prd">
+            <EntityTypeMapping TypeName="AppModel.Cad_Prd">
+              <MappingFragment StoreEntitySet="Cad_Prd">
+                <ScalarProperty Name="Prd_SisGst" ColumnName="Prd_SisGst" />
+                <ScalarProperty Name="Prd_CodAns" ColumnName="Prd_CodAns" />
+                <ScalarProperty Name="Prd_Nme" ColumnName="Prd_Nme" />
+                <ScalarProperty Name="Prd_TipItg" ColumnName="Prd_TipItg" />
+                <ScalarProperty Name="Prd_IdItg" ColumnName="Prd_IdItg" />
+                <ScalarProperty Name="Prd_IdRde" ColumnName="Prd_IdRde" />
+                <ScalarProperty Name="IdPrd" ColumnName="IdPrd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_PrdCtt">
+            <EntityTypeMapping TypeName="AppModel.Cad_PrdCtt">
+              <MappingFragment StoreEntitySet="Cad_PrdCtt">
+                <ScalarProperty Name="Prd_IdCtt" ColumnName="Prd_IdCtt" />
+                <ScalarProperty Name="Prt_IdPrd" ColumnName="Prt_IdPrd" />
+                <ScalarProperty Name="IdPrt" ColumnName="IdPrt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+
+      <Diagram Name="AppDataModel" ZoomLevel="82">
+        <EntityTypeShape EntityType="AppModel.Atz_Pdm" Width="1.5" PointX="3.375" PointY="0.75" Height="5.8263151041666656" />
+        <EntityTypeShape EntityType="AppModel.Atz_Grp" Width="1.5" PointX="1.125" PointY="3.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="AppModel.Atz_Tab" Width="1.5" PointX="1.125" PointY="6.125" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="AppModel.Atz_Tpp" Width="1.5" PointX="1.125" PointY="8.5" Height="1.5956835937499996" />
+        <AssociationConnector Association="AppModel.FK_Atz_Pdm_Atz_Grp" >
+          <ConnectorPoint PointX="2.625" PointY="4.6439925130208337" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="4.6439925130208328" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="4.6439925130208337" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="4.6439925130208328" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="4.6439925130208337" />
+          <ConnectorPoint PointX="3.375" PointY="4.6439925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.RefAtz_Tab621" >
+          <ConnectorPoint PointX="2.625" PointY="6.6391097005208328" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="6.6391097005208319" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="6.6391097005208328" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="6.6391097005208319" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="6.6391097005208328" />
+          <ConnectorPoint PointX="3.375" PointY="6.6391097005208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.RefAtz_Tpp21" >
+          <ConnectorPoint PointX="2.625" PointY="9.297841796875" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="9.297841796875" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="9.297841796875" />
+          <ConnectorPoint PointX="3.4791671666666666" PointY="9.297841796875" />
+          <ConnectorPoint PointX="3.6458338333333336" PointY="9.297841796875" />
+          <ConnectorPoint PointX="4.125" PointY="9.297841796875" />
+          <ConnectorPoint PointX="4.125" PointY="7.1532194010416656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AppModel.Cad_Ope" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="AppModel.Sgn_GrpMsg" Width="1.5" PointX="3" PointY="11" Height="1.7879850260416674" />
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Cad_Ope" >
+          <ConnectorPoint PointX="2.25" PointY="2.0285953776041667" />
+          <ConnectorPoint PointX="3.125" PointY="2.0285953776041667" />
+          <ConnectorPoint PointX="3.125" PointY="7.4032194010416656" />
+          <ConnectorPoint PointX="3.5625005" PointY="7.4032194010416656" />
+          <ConnectorPoint PointX="3.5625005" PointY="11" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AppModel.Ans_Msg" Width="1.5" PointX="0.75" PointY="11" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="AppModel.aspnet_Roles" Width="1.5" PointX="5.375" PointY="3.875" Height="2.1725878906249996" />
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Ans_Msg" >
+          <ConnectorPoint PointX="2.25" PointY="12.0862939453125" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="12.0862939453125" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="12.0862939453125" />
+          <ConnectorPoint PointX="3" PointY="12.0862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_aspnet_Roles" >
+          <ConnectorPoint PointX="6.125" PointY="6.047587890625" />
+          <ConnectorPoint PointX="6.125" PointY="12.0862939453125" />
+          <ConnectorPoint PointX="4.5" PointY="12.0862939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AppModel.Fat_Fch" Width="1.5" PointX="3" PointY="14" Height="2.7494921875000031" />
+        <AssociationConnector Association="AppModel.FK_Fat_Fch_Cad_Ope" >
+          <ConnectorPoint PointX="1.5" PointY="3.3071907552083331" />
+          <ConnectorPoint PointX="1.5" PointY="3.5" />
+          <ConnectorPoint PointX="2.875" PointY="3.5" />
+          <ConnectorPoint PointX="2.875" PointY="10.75" />
+          <ConnectorPoint PointX="2.75" PointY="10.75" />
+          <ConnectorPoint PointX="2.75" PointY="15.663198242187498" />
+          <ConnectorPoint PointX="3" PointY="15.663198242187498" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AppModel.Atz_Tpd" Width="1.5" PointX="7.375" PointY="0.75" Height="1.4033821614583353" />
+        <EntityTypeShape EntityType="AppModel.Sgn_Ppl" Width="1.5" PointX="7.375" PointY="3" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="AppModel.Atz_Ctt" Width="1.5" PointX="9.625" PointY="7.125" Height="4.8648079427083317" />
+        <EntityTypeShape EntityType="AppModel.Cad_Prd" Width="1.5" PointX="9.625" PointY="3.375" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="AppModel.Cad_PrdCtt" Width="1.5" PointX="11.875" PointY="8.625" Height="1.9802864583333388" />
+        <AssociationConnector Association="AppModel.FK_Atz_Crd_Atz_Tpd" >
+          <ConnectorPoint PointX="8.875" PointY="2.3445287475961538" />
+          <ConnectorPoint PointX="9.25" PointY="2.7195287475961543" />
+          <ConnectorPoint PointX="9.25" PointY="9.5574039713541659" />
+          <ConnectorPoint PointX="9.625" PointY="9.5574039713541659" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.FK_Cad_PrdCtt_Atz_Ctt" >
+          <ConnectorPoint PointX="11.125" PointY="9.61514322916667" />
+          <ConnectorPoint PointX="11.875" PointY="9.61514322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.FK_Fat_Fch_Atz_Ctt" >
+          <ConnectorPoint PointX="10.375" PointY="11.989807942708332" />
+          <ConnectorPoint PointX="10.375" PointY="15.6631982421875" />
+          <ConnectorPoint PointX="4.5" PointY="15.6631982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AppModel.FK_Cad_PrdCtt_Atz_Prd" >
+          <ConnectorPoint PointX="11.125" PointY="4.6535953776041694" />
+          <ConnectorPoint PointX="12.625" PointY="4.6535953776041694" />
+          <ConnectorPoint PointX="12.625" PointY="8.625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

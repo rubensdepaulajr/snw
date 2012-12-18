@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MedicalModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MedicalModelStoreContainer">
+          <EntitySet Name="Ans_Tpl" EntityType="MedicalModel.Store.Ans_Tpl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_Brr" EntityType="MedicalModel.Store.Cad_Brr" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_Esp" EntityType="MedicalModel.Store.Cad_Esp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cad_Mun" EntityType="MedicalModel.Store.Cad_Mun" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Atz_Brr_Atz_Mun" Association="MedicalModel.Store.FK_Atz_Brr_Atz_Mun">
+            <End Role="Cad_Mun" EntitySet="Cad_Mun" />
+            <End Role="Cad_Brr" EntitySet="Cad_Brr" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ans_Tpl">
+          <Key>
+            <PropertyRef Name="IdTpl" />
+          </Key>
+          <Property Name="IdTpl" Type="smallint" Nullable="false" />
+          <Property Name="Tpl_Dsc" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Cad_Brr">
+          <Key>
+            <PropertyRef Name="IdBrr" />
+          </Key>
+          <Property Name="IdBrr" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Brr_IdMun" Type="smallint" Nullable="false" />
+          <Property Name="Brr_Nme" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Cad_Esp">
+          <Key>
+            <PropertyRef Name="IdEsp" />
+          </Key>
+          <Property Name="IdEsp" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Esp_Dsc" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Esp_Cbo" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Cad_Mun">
+          <Key>
+            <PropertyRef Name="IdMun" />
+          </Key>
+          <Property Name="IdMun" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Mun_Cod" Type="varchar" Nullable="false" MaxLength="7" />
+          <Property Name="Mun_Nme" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Mun_Est" Type="char" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <Association Name="FK_Atz_Brr_Atz_Mun">
+          <End Role="Cad_Mun" Type="MedicalModel.Store.Cad_Mun" Multiplicity="1" />
+          <End Role="Cad_Brr" Type="MedicalModel.Store.Cad_Brr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Mun">
+              <PropertyRef Name="IdMun" />
+            </Principal>
+            <Dependent Role="Cad_Brr">
+              <PropertyRef Name="Brr_IdMun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedicalModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MedicallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cad_Esp" EntityType="MedicalModel.Cad_Esp" />
+          <EntitySet Name="Cad_Brr" EntityType="MedicalModel.Cad_Brr" />
+          <EntitySet Name="Cad_Mun" EntityType="MedicalModel.Cad_Mun" />
+          <AssociationSet Name="FK_Atz_Brr_Atz_Mun" Association="MedicalModel.FK_Atz_Brr_Atz_Mun">
+            <End Role="Cad_Mun" EntitySet="Cad_Mun" />
+            <End Role="Cad_Brr" EntitySet="Cad_Brr" />
+          </AssociationSet>
+          <EntitySet Name="Ans_Tpl" EntityType="MedicalModel.Ans_Tpl" />
+        </EntityContainer>
+        <EntityType Name="Cad_Esp">
+          <Key>
+            <PropertyRef Name="IdEsp" />
+          </Key>
+          <Property Type="Int16" Name="IdEsp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Esp_Dsc" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Esp_Cbo" MaxLength="5" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cad_Brr">
+          <Key>
+            <PropertyRef Name="IdBrr" />
+          </Key>
+          <Property Type="Int32" Name="IdBrr" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="Brr_IdMun" Nullable="false" />
+          <Property Type="String" Name="Brr_Nme" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cad_Mun" Relationship="MedicalModel.FK_Atz_Brr_Atz_Mun" FromRole="Cad_Brr" ToRole="Cad_Mun" />
+        </EntityType>
+        <EntityType Name="Cad_Mun">
+          <Key>
+            <PropertyRef Name="IdMun" />
+          </Key>
+          <Property Type="Int16" Name="IdMun" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Mun_Cod" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mun_Nme" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mun_Est" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Cad_Brr" Relationship="MedicalModel.FK_Atz_Brr_Atz_Mun" FromRole="Cad_Mun" ToRole="Cad_Brr" />
+        </EntityType>
+        <Association Name="FK_Atz_Brr_Atz_Mun">
+          <End Type="MedicalModel.Cad_Mun" Role="Cad_Mun" Multiplicity="1" />
+          <End Type="MedicalModel.Cad_Brr" Role="Cad_Brr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Mun">
+              <PropertyRef Name="IdMun" />
+            </Principal>
+            <Dependent Role="Cad_Brr">
+              <PropertyRef Name="Brr_IdMun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ans_Tpl">
+          <Key>
+            <PropertyRef Name="IdTpl" />
+          </Key>
+          <Property Type="Int16" Name="IdTpl" Nullable="false" />
+          <Property Type="String" Name="Tpl_Dsc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedicalModelStoreContainer" CdmEntityContainer="MedicallEntities">
+          <EntitySetMapping Name="Cad_Esp">
+            <EntityTypeMapping TypeName="MedicalModel.Cad_Esp">
+              <MappingFragment StoreEntitySet="Cad_Esp">
+                <ScalarProperty Name="Esp_Cbo" ColumnName="Esp_Cbo" />
+                <ScalarProperty Name="Esp_Dsc" ColumnName="Esp_Dsc" />
+                <ScalarProperty Name="IdEsp" ColumnName="IdEsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_Brr">
+            <EntityTypeMapping TypeName="MedicalModel.Cad_Brr">
+              <MappingFragment StoreEntitySet="Cad_Brr">
+                <ScalarProperty Name="Brr_Nme" ColumnName="Brr_Nme" />
+                <ScalarProperty Name="Brr_IdMun" ColumnName="Brr_IdMun" />
+                <ScalarProperty Name="IdBrr" ColumnName="IdBrr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_Mun">
+            <EntityTypeMapping TypeName="MedicalModel.Cad_Mun">
+              <MappingFragment StoreEntitySet="Cad_Mun">
+                <ScalarProperty Name="Mun_Est" ColumnName="Mun_Est" />
+                <ScalarProperty Name="Mun_Nme" ColumnName="Mun_Nme" />
+                <ScalarProperty Name="Mun_Cod" ColumnName="Mun_Cod" />
+                <ScalarProperty Name="IdMun" ColumnName="IdMun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ans_Tpl">
+            <EntityTypeMapping TypeName="MedicalModel.Ans_Tpl">
+              <MappingFragment StoreEntitySet="Ans_Tpl">
+                <ScalarProperty Name="Tpl_Dsc" ColumnName="Tpl_Dsc" />
+                <ScalarProperty Name="IdTpl" ColumnName="IdTpl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MedicallDataModel" ZoomLevel="100">
+        <EntityTypeShape EntityType="MedicalModel.Cad_Esp" Width="1.5" PointX="5.25" PointY="3.125" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MedicalModel.Cad_Brr" Width="1.5" PointX="3" PointY="3" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MedicalModel.Cad_Mun" Width="1.5" PointX="0.75" PointY="2.875" Height="1.9802864583333317" />
+        <AssociationConnector Association="MedicalModel.FK_Atz_Brr_Atz_Mun" >
+          <ConnectorPoint PointX="2.25" PointY="3.8939925130208337" />
+          <ConnectorPoint PointX="3" PointY="3.8939925130208337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MedicalModel.Ans_Tpl" Width="1.5" PointX="4.375" PointY="0.75" Height="1.4033821614583317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
