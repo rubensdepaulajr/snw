@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CRUD.master.cs" Inherits="br.com.totaltiss.Gestor.Web.App.CRUDMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolKit" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">    
+    <link href="Scripts/jQuery/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="../estilo.css" rel="stylesheet" type="text/css" />
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link id="Link2" runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+    <title>Total TISS</title>
+    <link href="~/App_Themes/Standard/Global.css" rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>    
+    <form id="Form1" runat="server">
+    
+        <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="Scripts/jQuery/jquery-1.4.1-vsdoc.js" />
+                <asp:ScriptReference Path="Scripts/jQuery/ui/jquery.ui.core.min.js" />  
+                <asp:ScriptReference Path="Scripts/jQuery/ui/jquery.ui.widget.min.js" />
+                <asp:ScriptReference Path="Scripts/jQuery/MaskedInput/jquery.maskedinput-1.3.min.js" />
+                <asp:ScriptReference Path="Scripts/jQuery/PriceFormat/jquery.price_format.1.5.js" />
+                <asp:ScriptReference Path="Scripts/jQuery/FilterInput/jquery.filter_input.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:Panel ID="pnlVld" runat="server" Style="display: none; padding: 3px;" Width="400px"
+                    BackColor="White">
+                    <table class="htmltable" style="text-align: left">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="titulo">
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="left" class="row-tit-left">
+                                                </td>
+                                                <td class="row-tit">
+                                                    <h2>
+                                                        ATENÇÃO</h2>
+                                                </td>
+                                                <td align="left" class="row-tit-right">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:ValidationSummary ID="valSummary" runat="server" DisplayMode="BulletList" ShowSummary="true"
+                                        ValidationGroup="vdgCadastro" CssClass="validate" />
+                                    <div style="text-align: right">
+                                        <asp:Button ID="btnOk" runat="server" Text="Ok" CssClass="button" /></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </asp:Panel>
+                <asp:Label ID="invisibleTarget1" runat="server" Style="display: none" />
+                <ajaxToolKit:ModalPopupExtender ID="popVld" runat="server" PopupControlID="pnlVld"
+                    TargetControlID="invisibleTarget1" CancelControlID="btnOk" BackgroundCssClass="modalBackground">
+                </ajaxToolKit:ModalPopupExtender>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdatePanel ID="upnMsg" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:Panel ID="pnlMsg" runat="server" Style="display: none; padding: 3px;" Width="400px"
+                    BackColor="White">
+                    <table class="htmltable" style="height: 75px">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="titulo">
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="left" class="row-tit-left">
+                                                </td>
+                                                <td class="row-tit">
+                                                    <h2>
+                                                        AVISO</h2>
+                                                </td>
+                                                <td align="left" class="row-tit-right">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50px; height: 75px;" rowspan="2">
+                                    <asp:Image ID="imgAviso" runat="server" SkinID="imgAviso" />
+                                </td>
+                                <td style="width: 350px; height: 50px; text-align: center;">
+                                    <asp:Label ID="lblMsg" runat="server" CssClass="txtAviso" Width="271px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 350px; text-align: right; height: 25px;">
+                                    <asp:Button ID="Button1" runat="server" Text="Ok" CssClass="button" /></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </asp:Panel>
+                <asp:Label ID="invisibleTarget2" runat="server" Style="display: none" />
+                <ajaxToolKit:ModalPopupExtender ID="popMsg" runat="server" PopupControlID="pnlMsg"
+                    TargetControlID="invisibleTarget2" CancelControlID="Button1" BackgroundCssClass="modalBackground">
+                </ajaxToolKit:ModalPopupExtender>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>
+                        My ASP.NET Application
+                    </h1>
+                </div>
+                <div class="loginDisplay">                
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Olá <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+                <div class="clear hideSkiplink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                        EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                        DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2">
+                    </asp:Menu>
+                 </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+        
+        </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </form>
+</body>
+</html>
