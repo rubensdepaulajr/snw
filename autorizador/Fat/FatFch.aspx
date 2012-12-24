@@ -68,8 +68,7 @@
                     <td style="height: 14px" align="left" colspan="2">
                         <span class="cinza-claro">
                             <asp:DropDownList ID="ddlTpd" runat="server" DataSourceID="edsTpd" 
-                                DataTextField="Tpd_Dsc" DataValueField="IdTpd" AppendDataBoundItems="true">
-                                <asp:ListItem Value="">TODOS</asp:ListItem>
+                                DataTextField="Tpd_Dsc" DataValueField="IdTpd">
                             </asp:DropDownList>
                         </span>
                     </td>
@@ -94,7 +93,7 @@
                         <br />
                     </td></tr>
                 <tr>
-                    <td style="padding-right: 0px; padding-left: 40px; padding-bottom: 0px; padding-top: 0px" valign="middle" colspan="3" height="35">
+                    <td style="padding-right: 0px; padding-left: 40px; padding-bottom: 0px; padding-top: 0px; height: 35px;" valign="middle" colspan="3">
                         <strong>RESULTADO DA PESQUISA</strong>
                     </td>
                 </tr>
@@ -149,6 +148,17 @@
                                     </tr>
                                     <tr>
                                         <td style="height: 14px; width: 150px;" align="right">
+                                            Data Entrega:
+                                        </td>
+                                        <td style="width: 5px; height: 14px"></td>
+                                        <td style="height: 14px" align="left" colspan="2">
+                                            <span class="cinza-claro">
+                                                <asp:TextBox ID="txtDatEnt" runat="server" CssClass="datepicker"></asp:TextBox>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height: 14px; width: 150px;" align="right">
                                             Período:
                                         </td>
                                         <td style="width: 5px; height: 14px"></td>
@@ -162,6 +172,13 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3" height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="10">
+                                            <asp:ImageButton ID="ibtGravar" runat="server" ImageUrl="~/Images/bt_gravar.gif" onclick="ibtGravar_Click" />
+                                            <img alt="" src="../Images/Spacer.gif" style="width: 1px; height: 1px" />
+                                            <asp:ImageButton ID="ibtCancelar" runat="server" ImageUrl="~/Images/bt_cancelar.gif" />
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

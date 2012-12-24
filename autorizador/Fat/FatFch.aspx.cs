@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using br.com.totaltiss.Data;
+using System.Data;
+using System.Data.SqlClient;
 
 public partial class Fat_FatFch : System.Web.UI.Page
 {
@@ -138,6 +140,32 @@ public partial class Fat_FatFch : System.Web.UI.Page
                           select f.Fch_Cpc).Max();
             lblFchCpc.Text = setNextCpc(fchCpc);
         }
+
+    }
+    protected void ibtGravar_Click(object sender, ImageClickEventArgs e)
+    {
+        string[] outParam = { "@Out_Err" };
+        string[] outResult;
+
+        DBASQL dba = new DBASQL();
+        SqlParameter[] param = {
+                                    dba.MakeInParam("@IdOpe",SqlDbType.SmallInt,2,10),
+		                            dba.MakeInParam("@IdTpd",SqlDbType.TinyInt,1,ddlTpd2.SelectedValue),
+		                            dba.MakeInParam("@FchCpc",SqlDbType.VarChar,6,lblFchCpc.Text),
+		                            dba.MakeInParam("@FchAno",SqlDbType.SmallInt,2,txtFchCpc.Text.Substring(1,4)),
+		                            dba.MakeInParam("@FchMes",SqlDbType.TinyInt,1,txtFchCpc.Text.Substring(5,2)),
+		                            dba.MakeInParam("@FchEnt",SqlDbType.Date,4,txtDatEnt.Text),
+		                            dba.MakeInParam("@FchDatIni",SqlDbType.SmallDateTime,4,txtDatIni.Text),
+		                            dba.MakeInParam("@FchDatFim",SqlDbType.SmallDateTime,4,txtDatFim.Text),
+		                            dba.MakeInParam("@FchLot",SqlDbType.Bit,1,1)
+                                   };
+
+        outResult = dba.RunProc("stSgn_BioBnf", param, outParam);
+        if (outResult[0] == "True")
+            ret = false;
+        else
+            ret = true;
+        dba.Dispose();
 
     }
 }
