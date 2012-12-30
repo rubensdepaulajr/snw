@@ -1,0 +1,101 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="RaizMasterPage" Codebehind="Raiz.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td style="width: 929px">
+                    <!-- TOPO LOGOMARCA -->
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="left" width="126" style="height: 57px">
+                                <img alt="" height="57" src="Images/top_logo.gif" width="126" /></td>
+                            <td style="padding-right: 0px; padding-left: 15px; padding-bottom: 0px; padding-top: 10px; height: 57px;">
+                                <asp:Label ID="lblCttNme" runat="server" CssClass="caixa-alta" Font-Bold="True"></asp:Label>
+                                -
+                                <asp:Label ID="lblCttEnd" runat="server"></asp:Label></td>
+                            <td align="right" width="100" style="height: 57px">
+                                <img alt="" height="57" src="Images/top_tiss.gif" width="100" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 44px; width: 929px;">
+                    <!-- TOPO SAUDAÇÃO -->
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="left" height="30" width="10">
+                                <img alt="" height="30" src="Images/top_left_box_default.gif" /></td>
+                            <td height="30" style="background: url(Images/bg_top_middle.gif) repeat-x">
+                                Olá 
+                                <asp:Label ID="lblUsrNme" runat="server" CssClass="caixa-alta" Font-Bold="True"></asp:Label>! Bem-vindo ao TISS SMS. <strong><font
+                                    color="#800000">Todas as informações e solicitações referem-se ao dia de hoje (<asp:Label
+                                        ID="lblDat" runat="server"></asp:Label>)</font></strong>.</td>
+                            <td align="right" height="30" width="36">
+                                <a href="#">
+                                    <img alt="" border="0" height="30" src="Images/top_right_ajuda_box_default.gif" /></a></td>
+                        </tr>
+                    </table>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 929px">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td colspan="2" style="padding-right: 0px; padding-left: 5px; padding-bottom: 5px;
+                                padding-top: 5px" valign="top">
+        <asp:contentplaceholder id="MainContent" runat="server">
+            
+        </asp:contentplaceholder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 929px">
+                    <!-- RODAPÉ -->
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="left" height="30" style="width: 10px">
+                                <img alt="" height="32" src="Images/bottom_left_box_default.gif" width="10" /></td>
+                            <td height="30" style="background: url(Images/bg_bottom_middle.gif) repeat-x">
+                                © 2009 TotalTISS. Todos os direitos reservados. <a href="../termo_uso.html"><span style="color: #0000ff">
+                                    Termos de Uso</span></a> | <a href="../politica_privacidade.html"><span style="color: #0000ff">Política de Privacidade</span></a></td>
+                            <td align="right" height="30" width="36">
+                                <img alt="" border="0" height="32" src="Images/bottom_right_box_default.gif" usemap="#a4ps"
+                                    width="36" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        &nbsp;<br />
+        <br />
+        <br />
+        &nbsp;</div>
+    </form>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-7238071-3");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+</body>
+</html>

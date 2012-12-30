@@ -1,0 +1,172 @@
+﻿/*theme - Backgrounds 
+
+.MyTabs .ajax__tab_header      { background:url(images/tabs/tab-line.gif) repeat-x bottom; }
+.MyTabs .ajax__tab_outer      { background:url(images/tabs/tab-right.gif) no-repeat right; }
+.MyTabs .ajax__tab_inner                           { background:url(images/tabs/tab-left.gif) no-repeat; }
+
+.MyTabs .ajax__tab_tab         { background:url(images/tabs/tab.gif) repeat-x; }
+.MyTabs .ajax__tab_hover .ajax__tab_outer   { background:url(images/tabs/tab-hover-right.gif) no-repeat right; }
+.MyTabs .ajax__tab_hover .ajax__tab_inner   { background:url(images/tabs/tab-hover-left.gif) no-repeat; }
+.MyTabs .ajax__tab_hover .ajax__tab_tab               { background:url(images/tabs/tab-hover.gif) repeat-x; }
+.MyTabs .ajax__tab_active .ajax__tab_outer   { background:url(images/tabs/tab-active-right.gif) no-repeat right; }
+.MyTabs .ajax__tab_active .ajax__tab_inner   { background:url(images/tabs/tab-active-left.gif) no-repeat; }
+.MyTabs .ajax__tab_active .ajax__tab_tab   { background:url(images/tabs/tab-active.gif) repeat-x; }
+ */
+
+/* Other Styles */
+
+.AjaxWTabs .ajax__tab_header 
+{
+	font-family: tahoma;
+	font-size: 12px;
+    /*color: #aa976b;    
+    font-weight: bold;*/
+    font-weight: bold;
+    background-color: #ebebeb;
+    margin-left: 0px;
+}
+
+.AjaxWTabs .ajax__tab
+{
+	background-color: #000000;
+}
+
+.AjaxWTabs .ajax__tab_outer
+{
+    background-color: #000000;
+    color: #ce5c09;
+}
+.AjaxWTabs .ajax__tab_inner
+{
+    padding: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #f4f4f4;
+    
+    
+}
+.AjaxWTabs .ajax__tab_hover .ajax__tab_outer
+{
+    /*background-color: Orange;*/
+    color: #833701;
+}
+
+
+.AjaxWTabs .ajax__tab_hover .ajax__tab_inner
+{
+    /*background-color: Orange;*/
+    color: #833701;
+}
+
+.AjaxWTabs .ajax__tab_active 
+{
+    color: #833701;
+}
+
+.AjaxWTabs .ajax__tab_active .ajax__tab_outer
+{
+    /*background-color: #000000;]*/
+    color: #7e6666;
+}
+
+.AjaxWTabs .ajax__tab_active .ajax__tab_inner
+{
+    background-color: #ebebeb;
+    color: #000000;
+}
+
+.AjaxWTabs .ajax__tab_body 
+{
+	background-color: #ebebeb;
+	color: #000000;
+	padding: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*
+.Grid { border: solid 1px #FFFFFF; }
+
+.Grid td
+{
+border: solid 1px #FFFFFF;
+margin: 1px 1px 1px 1px;
+padding: 1px 1px 1px 1px;
+text-align: center;
+}
+.GridHeader
+{
+font-weight: bold;
+background-color: #8b8dbb;
+}
+.GridItem
+{
+background-color: #e6e6e6;
+}
+
+.GridAltItem
+{
+background-color: white;
+}
+*/
+
+.grid-view
+{
+   padding: 0;
+   margin: 0;
+   border: 1px solid #ffffff;
+   text-align: center;
+}
+
+.grid-view tr.header
+{
+ /*color: white;
+   background-color: #FF5600;
+   height: 25px;
+   vertical-align: middle;
+   text-align: center;
+   font-weight: bold;
+*/
+}
+
+.grid-view tr.normal
+{
+   background-color: #ebebeb;
+   height: 26px;
+   vertical-align: middle;   
+   border-top:0px solid #fff;   
+}
+
+.grid-view tr.alternate
+{
+   background-color: #f4f4f4;
+   height: 26px;
+   vertical-align: middle;   
+   border-top:0px solid #fff; 
+}
+.grid-view-left
+{
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff;
+  text-align: left;
+}
+
+.grid-view-left tr.normal
+{
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff;
+  text-align: left;
+}
+
+.grid-view-left tr.alternate
+{
+  background-color: #f4f4f4;
+  vertical-align: middle;
+  border-top:0px solid #fff;
+}

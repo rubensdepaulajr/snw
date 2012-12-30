@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="ConvertTo.cs" />
     <Compile Include="DataAccess.cs" />
+    <Content Include="HtmlRemoval.cs" />
     <Compile Include="PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="SenderSms.cs" />
     <Compile Include="SqlSiteMapProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

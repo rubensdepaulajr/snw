@@ -1,0 +1,171 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="AtzMasterPage" Codebehind="Atz.master.cs" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+	<link href="Scripts/css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
+	<link href="App_Themes/Standard/Global.css" rel="stylesheet" type="text/css" />
+	<link id="Link1" runat="server" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link id="Link2" runat="server" rel="icon" href="favicon.ico" type="image/ico" />
+	<title>Total TISS</title>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td style="width: 929px">
+					<!-- TOPO LOGOMARCA -->
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td align="left" width="126" style="height: 57px">
+								<img alt="" height="57" src="../Images/top_logo.gif" width="126" /></td>
+							<td style="padding-right: 0px; padding-left: 15px; padding-bottom: 0px; padding-top: 10px; height: 57px;">
+								<asp:Label ID="lblCttNme" runat="server" CssClass="caixa-alta" Font-Bold="True"></asp:Label>
+								-
+								<asp:Label ID="lblCttEnd" runat="server"></asp:Label></td>
+							<td align="right" width="100" style="height: 57px">
+								<img alt="" height="57" src="../Images/top_tiss.gif" width="100" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="height: 44px; width: 929px;">
+					<!-- TOPO SAUDAÇÃO -->
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td align="left" height="30" width="10">
+								<img alt="" height="30" src="../Images/top_left_box_default.gif" /></td>
+							<td height="30" style="background: url(../Images/bg_top_middle.gif) repeat-x">
+								Olá 
+								<asp:Label ID="lblUsrNme" runat="server" CssClass="caixa-alta" Font-Bold="True"></asp:Label>! Bem-vindo ao TISS SMS. <strong><font
+									color="#800000">Todas as informações e solicitações referem-se ao dia de hoje (<asp:Label
+										ID="lblDat" runat="server"></asp:Label>)</font></strong>.</td>
+							<td align="right" height="30" width="36">
+								<a href="#">
+									<img alt="" border="0" height="30" src="../Images/top_right_ajuda_box_default.gif" /></a></td>
+						</tr>
+					</table>
+					<asp:ScriptManager ID="ScriptManager1" runat="server">
+						<Scripts>
+							<asp:ScriptReference Path="~/Scripts/jquery-1.7.1.min.js" />
+							<asp:ScriptReference Path="~/Scripts/jquery-ui-1.8.18.custom.min.js" />
+							<asp:ScriptReference Path="~/Scripts/mascaras.js" />
+							<asp:ScriptReference Path="~/Scripts/jquery.maskedinput-1.3.js" />
+						</Scripts>
+					</asp:ScriptManager>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 929px">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td style="padding-right: 0px; padding-left: 0px; padding-bottom: 5px; padding-top: 5px; width: 190px;"
+								valign="top">
+								<!-- MENU -->
+								<table align="left" border="0" cellpadding="0" cellspacing="0" width="190">
+									<tr>
+										<td align="left" valign="top" style="width: 9px; height: 16px">
+											<img alt="" height="16" src="../Images/menu_top_left.gif" width="9" /></td>
+										<td bgcolor="#f4f4f4" width="172" style="height: 16px">
+										</td>
+										<td align="right" valign="top" style="width: 9px; height: 16px">
+											<img alt="" height="16" src="../Images/menu_top_right.gif" width="9" /></td>
+									</tr>
+									<tr>
+										<td bgcolor="#f4f4f4" colspan="3" valign="top">
+											<ul id="menu">
+												<li class="on"><a href="#"><span style="color: #0000ff; text-decoration: underline">
+													</span></a><a href="#"><span style="color: #0000ff; text-decoration: underline">
+													</span></a>&nbsp;<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" NodeIndent="5" ShowLines="True">
+													</asp:TreeView>
+												</li>
+												<li>
+													<img alt="" height="1" src="../Images/divisor_menu.gif" style="color: #0000ff; text-decoration: underline"
+														width="172" /></li>
+											   <li class="on"><span style="color: #0000ff; text-decoration: underline"><a href="../Atz/altsnh.aspx">
+												   Alterar Senha</a></span></li>
+											   <li class="on"><span style="color: #0000ff; text-decoration: underline"></span>
+												   <asp:LinkButton ID="lbtSair" runat="server" OnClick="lbtSair_Click">Sair</asp:LinkButton></li>
+											</ul>
+										</td>
+									</tr>
+									<tr style="color: #0000ff; text-decoration: underline">
+										<td align="left" height="16" valign="bottom" style="width: 9px">
+											<img alt="" height="16" src="../Images/menu_bottom_left.gif" width="9" /></td>
+										<td bgcolor="#f4f4f4" height="16" width="172">
+										</td>
+										<td align="right" height="16" valign="bottom" style="width: 9px">
+											<img alt="" height="16" src="../Images/menu_bottom_right.gif" width="9" /></td>
+									</tr>
+								</table>
+								<br style="clear: both" />
+								<ul id="destaque">
+								   <li>
+										<img alt="" src="../Images/divisor_destaque.gif" style="color: rgb(0, 0, 255); text-decoration: underline;" width="172" height="1"></li>
+									<li style="color: red; font-size: medium;">
+										**** ATENÇÃO ****
+									</li>
+									<li style="color: red; font-size: small;">
+										<b>Comunidado Importante</b></li>
+									<li style="color: red; font-size: small;">
+										<a href="../Files/CCF22062011_00000.pdf">Clique aqui para exibir</a></li>
+									<li style="color: red; font-size: medium;">
+									</li>
+									<li>
+										<img alt="" src="../Images/divisor_destaque.gif" style="color: rgb(0, 0, 255); text-decoration: underline;" width="172" height="1"></li>
+									<li>Telefone autorização: 3320-3833
+										<img alt="" src="../Images/divisor_destaque.gif" width="172" height="1">
+									</li>
+								</ul>
+							</td>
+							<td style="padding-right: 0px; padding-left: 5px; padding-bottom: 5px; padding-top: 5px"
+								valign="top">
+								<!-- CONTEÚDO -->
+		<asp:contentplaceholder id="MainContent" runat="server">
+			
+		</asp:contentplaceholder>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 929px">
+					<!-- RODAPÉ -->
+					<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td align="left" height="30" style="width: 10px">
+								<img alt="" height="32" src="../Images/bottom_left_box_default.gif" width="10" /></td>
+							<td height="30" style="background: url(../Images/bg_bottom_middle.gif) repeat-x">
+								© 2009 TotalTISS. Todos os direitos reservados. <a href="../termo_uso.html"><span style="color: #0000ff">
+									Termos de Uso</span></a> | <a href="../politica_privacidade.html"><span style="color: #0000ff">Política de Privacidade</span></a></td>
+							<td align="right" height="30" width="36">
+								<img alt="" border="0" height="32" src="../Images/bottom_right_box_default.gif" usemap="#a4ps"
+									width="36" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+		<br />
+		<br />
+		<br />
+		&nbsp;</div>
+	</form>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-7238071-3");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+</body>
+</html>

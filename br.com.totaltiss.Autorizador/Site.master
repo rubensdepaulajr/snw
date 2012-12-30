@@ -1,0 +1,90 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="Site" Codebehind="Site.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>SMS - Saúde :: Saúde na web</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="wrapper">
+
+        <form id="form1" runat="server">
+        
+            <div id="header">
+                <span class="title">SM - Saúde :: Saúde na web</span><br />
+                
+                <span class="breadcrumb">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                    </asp:SiteMapPath>
+                </span>
+                </div>
+        
+            <div id="content">                
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <br />
+                              
+                <asp:contentplaceholder id="MainContent" runat="server">
+                  <!-- Page-specific content will go here... -->
+                </asp:contentplaceholder>
+               
+            </div>
+            
+            <div id="navigation" style="left: 1em; top: 5em">
+                <asp:ContentPlaceHolder ID="LoginContent" runat="server">
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <LoggedInTemplate>
+                            Olá,
+                            <asp:LoginName ID="LoginName1" runat="server" />.
+                            <br />
+                            <br />
+                            <asp:HyperLink ID="lnkUpdateSettings" runat="server" NavigateUrl="~/Membership/AdditionalUserInfo.aspx" Visible="False">Alterar cadastro</asp:HyperLink>
+                        </LoggedInTemplate>
+                        <AnonymousTemplate>
+                            Bem vindo.
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                    <br />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Logout.aspx" LoginText="Acessar" LogoutText="Sair" />
+                    
+                    <br />
+                 <ul>
+                    <li></li>
+                </ul>                    
+                </asp:ContentPlaceHolder>
+                &nbsp;<asp:Label ID="lblIdUce" runat="server" Font-Bold="True" Font-Size="Larger"></asp:Label>
+                <asp:TreeView ID="tvw" runat="server" DataSourceID="SiteMapDataSource1" NodeIndent="5" ShowLines="True">
+                </asp:TreeView>
+                <br />
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                &nbsp;<asp:HiddenField ID="hdfIdUsr" runat="server" />
+                <br />
+                <asp:HiddenField ID="hdfIdCttSeqNme" runat="server" />
+                <br />
+                <asp:HiddenField ID="HiddenField2" runat="server" />
+                <br />
+                &nbsp;
+                
+                
+                
+                </div> 
+        </form>
+      
+    </div>
+    
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-7238071-3");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+
+</html>

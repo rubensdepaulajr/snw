@@ -1,0 +1,43 @@
+﻿.tablecrud
+{
+	font-size: 11px;
+	border: thin double #465c71;
+	color: #666666;
+	padding-top: 2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	width: 100%;
+}
+.row
+{
+	/*background-color: #CCCCCC;*/
+}
+.alternaterow
+{
+	background-color: #f4f4f4;
+}
+.caption
+{
+	width: 150px;
+	text-align: right;
+	margin-right: 5px;
+	color: #666666;
+}
+.RodapeBotoes
+{
+	text-align: center;
+}
+.item
+{
+	float: left;
+	width: 330px;
+	text-align: left;
+	margin-right: 3px;
+}
+.clear
+{
+	clear: both;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}

@@ -42,7 +42,6 @@
         <br />
         <asp:TextBox ID="TextBox4" runat="server" onkeypress="mascara(this,sms)" 
             MaxLength="15" ></asp:TextBox>
-        <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="Button" />
         <br />
         <br />
     </div>

@@ -305,45 +305,4 @@ public partial class Administration_cript : System.Web.UI.Page
                 "<b>JavaScript:</b> " + Request.Browser.JavaScript.ToString() + "<br />" +
                 "<b>VBScript:</b> " + Request.Browser.VBScript.ToString() + "<br />");
     }
-    protected void Button9_Click(object sender, EventArgs e)
-    {
-        string strConnection = ConfigurationManager.ConnectionStrings["AppConnectionString"].ConnectionString;
-        string strInsert = "EXEC stAtz_CttEnd @Cte_IdCtt, @Cte_SeqEnd, @Cte_IdLgr, " +
-		"@Cte_Cpl,	@Cte_NumEnd, @Cte_Tel";
-        SqlConnection con = new SqlConnection(strConnection);
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.CommandText = strInsert;
-        SqlParameter idCtt = new SqlParameter("@Cte_IdCtt", SqlDbType.BigInt, 8);
-        idCtt.Value = 1007;
-        cmd.Parameters.Add(idCtt);
-
-        SqlParameter seqEnd = new SqlParameter("@Cte_SeqEnd", SqlDbType.TinyInt, 4);
-        seqEnd.Value = 55;
-        cmd.Parameters.Add(seqEnd);
-
-        SqlParameter idLgr = new SqlParameter("@Cte_IdLgr", SqlDbType.Int, 4);
-        idLgr.Value = 1;
-        cmd.Parameters.Add(idLgr);
-
-        SqlParameter cpl = new SqlParameter("@Cte_Cpl", SqlDbType.VarChar, 15);
-        cpl.Value = "fkdjfl";
-        cmd.Parameters.Add(cpl);
-
-        SqlParameter numEnd = new SqlParameter("@Cte_NumEnd", SqlDbType.Int, 4);
-        numEnd.Value = 1;
-        cmd.Parameters.Add(numEnd);
-
-        SqlParameter tel = new SqlParameter("@Cte_Tel", SqlDbType.VarChar, 20);
-        tel.Value = "fkdjfl";
-        cmd.Parameters.Add(tel);
-
-
-        con.Open();
-        int result = cmd.ExecuteNonQuery();
-        con.Close();
-
-        Response.Write("AH MULUEQUE!!!!");
-    }
 }
