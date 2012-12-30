@@ -480,6 +480,8 @@ public partial class Atz_exeexa : System.Web.UI.Page
         // Armazena o código na negociação que resultou na autorização para execução do procedimento
         int? idNgc;
 
+        WebProfile Profile = WebProfile.GetProfile("username");
+
         DBASQL dba = new DBASQL();
 
         foreach (DataRow row in dtb.Rows)
@@ -509,7 +511,8 @@ public partial class Atz_exeexa : System.Web.UI.Page
                                 dba.MakeInParam("@Gpd_DatRel",SqlDbType.SmallDateTime,4,Convert.ToDateTime(txtDat.Text +" "+txtHor.Text +":"+ txtMin.Text)),
                                 dba.MakeInParam("@Gpd_IdNgc",SqlDbType.Int,4,idNgc),
                                 dba.MakeInParam("@IdSol",SqlDbType.Int,4,idSol[iGia]),
-                                dba.MakeInParam("@Gpm_IdMsg",SqlDbType.VarChar,200,row["IdMsg"])                                
+                                dba.MakeInParam("@Gpm_IdMsg",SqlDbType.VarChar,200,row["IdMsg"]),
+                                dba.MakeInParam("@IdUsr",SqlDbType.Int,4,Profile.Seguranca.IdUsr)
                             };
             dba.RunProc("stAtz_GiaPdmSdt", paramPdm);
         }
