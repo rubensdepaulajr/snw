@@ -12,22 +12,22 @@
 public partial class Fat_FatFch {
     
     /// <summary>
-    /// ImgErro control.
+    /// mvw control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Image ImgErro;
+    protected global::System.Web.UI.WebControls.MultiView mvw;
     
     /// <summary>
-    /// lblErro control.
+    /// vw1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblErro;
+    protected global::System.Web.UI.WebControls.View vw1;
     
     /// <summary>
     /// txtFchCpc control.
@@ -39,15 +39,6 @@ public partial class Fat_FatFch {
     protected global::System.Web.UI.WebControls.TextBox txtFchCpc;
     
     /// <summary>
-    /// ddlTpd control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList ddlTpd;
-    
-    /// <summary>
     /// ibtBuscar control.
     /// </summary>
     /// <remarks>
@@ -57,67 +48,22 @@ public partial class Fat_FatFch {
     protected global::System.Web.UI.WebControls.ImageButton ibtBuscar;
     
     /// <summary>
-    /// ibtNew control.
+    /// imgMsg control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ImageButton ibtNew;
+    protected global::System.Web.UI.WebControls.Image imgMsg;
     
     /// <summary>
-    /// ibtUpd control.
+    /// lblMsg control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ImageButton ibtUpd;
-    
-    /// <summary>
-    /// pnlIns control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Panel pnlIns;
-    
-    /// <summary>
-    /// lblFchCpc control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblFchCpc;
-    
-    /// <summary>
-    /// ddlTpd2 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList ddlTpd2;
-    
-    /// <summary>
-    /// txtDatIni control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtDatIni;
-    
-    /// <summary>
-    /// txtDatFim control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtDatFim;
+    protected global::System.Web.UI.WebControls.Label lblMsg;
     
     /// <summary>
     /// grd control.
@@ -138,6 +84,24 @@ public partial class Fat_FatFch {
     protected global::System.Web.UI.WebControls.SqlDataSource dts;
     
     /// <summary>
+    /// ibtNew control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ImageButton ibtNew;
+    
+    /// <summary>
+    /// ibtDel control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ImageButton ibtDel;
+    
+    /// <summary>
     /// edsTpd control.
     /// </summary>
     /// <remarks>
@@ -145,4 +109,76 @@ public partial class Fat_FatFch {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.EntityDataSource edsTpd;
+    
+    /// <summary>
+    /// vw2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.View vw2;
+    
+    /// <summary>
+    /// ddlTpd control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList ddlTpd;
+    
+    /// <summary>
+    /// lblFchCpc control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblFchCpc;
+    
+    /// <summary>
+    /// txtDatEnt control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtDatEnt;
+    
+    /// <summary>
+    /// txtDatIni control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtDatIni;
+    
+    /// <summary>
+    /// txtDatFim control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtDatFim;
+    
+    /// <summary>
+    /// ibtGravar control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ImageButton ibtGravar;
+    
+    /// <summary>
+    /// ibtCancelar control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ImageButton ibtCancelar;
 }

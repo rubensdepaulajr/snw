@@ -18,7 +18,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Autorizador", "Autorizador\
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1261"
+		VWDPort = "1651"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.totaltiss.Autorizador", "br.com.totaltiss.Autorizador\br.com.totaltiss.Autorizador.csproj", "{2F8600DF-4B79-476F-9E45-15E53A30E90C}"

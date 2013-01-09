@@ -286,6 +286,7 @@
     <Content Include="Images\bt_concluir.gif" />
     <Content Include="Images\bt_desativar.jpg" />
     <Content Include="Images\bt_entrar.gif" />
+    <Content Include="Images\bt_excluir.jpg" />
     <Content Include="Images\bt_executar.gif" />
     <Content Include="Images\bt_executar.jpg" />
     <Content Include="Images\bt_executar_consulta.gif" />

@@ -101,7 +101,7 @@
                             <asp:DropDownList ID="ddlTip" runat="server" CssClass="campo" 
                                     AppendDataBoundItems="True" Width="150px">
                                 <asp:ListItem Value="-1">Selecione</asp:ListItem>
-                                <asp:ListItem Value="1">Consulta Eletiva</asp:ListItem>
+                                <asp:ListItem Value="1">Consulta</asp:ListItem>
                                 <asp:ListItem Value="2">SP/SADT</asp:ListItem>
                                 <asp:ListItem Value="0">Solicita&#231;&#227;o SP/SADT</asp:ListItem>
                                 <asp:ListItem Value="3">Solicitação de Internação</asp:ListItem>

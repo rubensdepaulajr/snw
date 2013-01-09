@@ -5,12 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using br.com.totaltiss.Data;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 public partial class Fat_FatFch : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!Page.IsPostBack)
+        {
+            txtFchCpc.Text = getMaxCpc();
+            populateGrid();
+        }
     }
     /*define a intercalação de cores nos grids*/
     protected void gvHover_RowCreated(object sender, GridViewRowEventArgs e)
@@ -93,11 +101,19 @@ public partial class Fat_FatFch : System.Web.UI.Page
     }
     private void populateGrid()
     {
+        dts.SelectParameters["IdOpe"].DefaultValue = "1";
+        dts.SelectParameters["FchCpc"].DefaultValue = txtFchCpc.Text;
         grd.DataBind();
     }
-    protected void ibtBuscar_Click(object sender, ImageClickEventArgs e)
+    public string getMaxCpc()
     {
-        populateGrid();
+        using (AppEntities ctx = new AppEntities())
+        {
+            var fchCpc = (from f in ctx.Fat_Fch
+                          select f.Fch_Cpc).Max(); ;
+
+            return fchCpc;
+        }
     }
     /// <summary>
     /// Calcula a próxima competência
@@ -132,12 +148,91 @@ public partial class Fat_FatFch : System.Web.UI.Page
     }
     protected void ibtNew_Click(object sender, ImageClickEventArgs e)
     {
-        using (AppEntities ctx = new AppEntities())
+        if ((txtFchCpc.Text.Trim() == "") )
+            globall.showMessage(imgMsg,lblMsg,"A competência deve ser informada!");
+        else
         {
-            var fchCpc = (from f in ctx.Fat_Fch
-                          select f.Fch_Cpc).Max();
-            lblFchCpc.Text = setNextCpc(fchCpc);
+            globall.showMessage(imgMsg, lblMsg, string.Empty);
+            mvw.ActiveViewIndex = 1;
         }
 
     }
+    protected void ibtGravar_Click(object sender, ImageClickEventArgs e)
+    {
+        if ((lblFchCpc.Text.Trim() == "") || (txtDatEnt.Text.Trim() == "") ||
+           (txtDatIni.Text.Trim() == "") || (txtDatFim.Text.Trim() == ""))
+           globall.showMessage(imgMsg,lblMsg,"Todos os campos devem ser preenchidos!");
+        else
+        {
+            string[] outParam = { "@OutErr" };
+            string[] outResult;
+
+            DBASQL dba = new DBASQL();
+            SqlParameter[] param = {
+                                        dba.MakeInParam("@IdOpe",SqlDbType.SmallInt,2,1),
+		                                dba.MakeInParam("@IdTpd",SqlDbType.TinyInt,1,ddlTpd.SelectedValue),
+		                                dba.MakeInParam("@FchCpc",SqlDbType.VarChar,6,lblFchCpc.Text),
+		                                dba.MakeInParam("@FchAno",SqlDbType.SmallInt,2,lblFchCpc.Text.Substring(0,4)),
+		                                dba.MakeInParam("@FchMes",SqlDbType.TinyInt,1,lblFchCpc.Text.Substring(4,2)),
+		                                dba.MakeInParam("@FchEnt",SqlDbType.Date,4,txtDatEnt.Text),
+		                                dba.MakeInParam("@FchDatIni",SqlDbType.SmallDateTime,4,txtDatIni.Text),
+		                                dba.MakeInParam("@FchDatFim",SqlDbType.SmallDateTime,4,txtDatFim.Text+" 23:59"),
+		                                dba.MakeInParam("@FchLot",SqlDbType.Bit,1,1),
+                                        dba.MakeOutParam("@OutErr",SqlDbType.Bit,1)
+                                       };
+
+            outResult = dba.RunProc("stFat_Fch", param, outParam);
+            if (outResult[0] == "True")
+                globall.showMessage(imgMsg, lblMsg, "Erro inseperado na tentativa de gravar o fechamento!");
+            dba.Dispose();
+            populateGrid();
+            mvw.ActiveViewIndex = 0;
+        }
+    }
+
+    protected void ibtDel_Click(object sender, ImageClickEventArgs e)
+    {
+        if (grd.SelectedIndex == -1)
+            globall.showMessage(imgMsg, lblMsg, "Nenhum item selecionado!");
+        else
+        {
+            globall.showMessage(imgMsg, lblMsg, string.Empty);
+            dts.DeleteParameters["IdTpd"].DefaultValue = grd.SelectedDataKey.Values["Ctt_IdTpd"].ToString();
+            dts.DeleteParameters["FchCpc"].DefaultValue = grd.SelectedDataKey.Values["Fch_Cpc"].ToString();
+            dts.Delete();
+            populateGrid();
+        }
+    }
+
+    protected void ibtBuscar_Click(object sender, ImageClickEventArgs e)
+    {
+        if (txtFchCpc.Text.Trim() != "")
+        {
+            populateGrid();
+        }
+    }
+
+    protected void ddlTpd_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["AppConnectionString"].ConnectionString))
+        {
+            SqlCommand command = new SqlCommand("SELECT MAX(Fch_Cpc) FROM dbo.Fat_Fch, dbo.Atz_Ctt WHERE Fch_IdOpe = 1 AND IdCtt = Fch_IdCtt AND Ctt_IdTpd = "+ ddlTpd.SelectedValue, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                if (string.IsNullOrWhiteSpace(reader[0].ToString()))
+                    lblFchCpc.Text = txtFchCpc.Text;
+                else
+                    lblFchCpc.Text = setNextCpc(reader[0].ToString());
+            }
+            reader.Close();
+        }
+    }
+
+    protected void ibtCancelar_Click(object sender, ImageClickEventArgs e)
+    {
+        mvw.ActiveViewIndex = 0;
+    }
+
 }

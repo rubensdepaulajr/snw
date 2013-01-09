@@ -21,7 +21,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="width: 9px" align="left"><img height="37" alt="" src="../Images/tit_left.gif" width="9" /></td>
-                                                                        <td bgColor="#f4f4f4"><h2>Solicitação de Consulta Eletiva</h2></td>
+                                                                        <td bgColor="#f4f4f4"><h2>Solicitação de Consulta</h2></td>
                                                                         <td align="left" width="9"><img height="37" alt="" src="../Images/tit_right.gif" width="9" /></td>
                                                                     </tr>
                                                                 </tbody>
