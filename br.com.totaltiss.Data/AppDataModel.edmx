@@ -104,6 +104,7 @@
           <Property Name="Pdm_QtdFlm" Type="numeric" Scale="4" />
           <Property Name="Pdm_CodAmb" Type="varchar" MaxLength="20" />
           <Property Name="Pdm_DscAmb" Type="varchar" MaxLength="80" />
+          <Property Name="Pdm_Itn" Type="bit" />
         </EntityType>
         <EntityType Name="Atz_Tab">
           <Key>
@@ -174,6 +175,7 @@
           <Property Name="Ppl_Ope" Type="bit" />
           <Property Name="Ppl_Con" Type="bit" />
           <Property Name="Ppl_Sdt" Type="bit" />
+          <Property Name="Ppl_PrgLib" Type="bit" />
         </EntityType>
         <Association Name="FK_Atz_Pdm_Atz_Grp">
           <End Role="Atz_Grp" Type="AppModel.Store.Atz_Grp" Multiplicity="1" />
@@ -336,6 +338,7 @@
           <NavigationProperty Name="Atz_Grp" Relationship="AppModel.FK_Atz_Pdm_Atz_Grp" FromRole="Atz_Pdm" ToRole="Atz_Grp" />
           <NavigationProperty Name="Atz_Tab" Relationship="AppModel.RefAtz_Tab621" FromRole="Atz_Pdm" ToRole="Atz_Tab" />
           <NavigationProperty Name="Atz_Tpp" Relationship="AppModel.RefAtz_Tpp21" FromRole="Atz_Pdm" ToRole="Atz_Tpp" />
+          <Property Type="Boolean" Name="Pdm_Itn" />
         </EntityType>
         <EntityType Name="Atz_Grp">
           <Key>
@@ -408,6 +411,7 @@
           <Property Type="Boolean" Name="Ppl_Ope" />
           <Property Type="Boolean" Name="Ppl_Con" />
           <Property Type="Boolean" Name="Ppl_Sdt" />
+          <Property Type="Boolean" Name="Ppl_PrgLib" />
         </EntityType>
         <EntityType Name="Cad_Ope">
           <Key>
@@ -417,8 +421,8 @@
           <Property Type="String" Name="Ope_Nme" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Ope_RegAns" Nullable="false" />
           <Property Type="String" Name="Ope_Cnp" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="Ope_DatIni" Nullable="false" />
-          <Property Type="DateTime" Name="Ope_DatFim" />
+          <Property Type="DateTime" Name="Ope_DatIni" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Ope_DatFim" Precision="0" />
           <NavigationProperty Name="Sgn_GrpMsg" Relationship="AppModel.FK_Sgn_GrpMsg_Cad_Ope" FromRole="Cad_Ope" ToRole="Sgn_GrpMsg" />
           <NavigationProperty Name="Fat_Fch" Relationship="AppModel.FK_Fat_Fch_Cad_Ope" FromRole="Cad_Ope" ToRole="Fat_Fch" />
         </EntityType>
@@ -504,10 +508,10 @@
           <Property Type="String" Name="Fch_Cpc" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Type="Int16" Name="Fch_Ano" Nullable="false" />
           <Property Type="Byte" Name="Fch_Mes" Nullable="false" />
-          <Property Type="DateTime" Name="Fch_DatIni" Nullable="false" />
-          <Property Type="DateTime" Name="Fch_DatFim" Nullable="false" />
+          <Property Type="DateTime" Name="Fch_DatIni" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Fch_DatFim" Nullable="false" Precision="0" />
           <NavigationProperty Name="Cad_Ope" Relationship="AppModel.FK_Fat_Fch_Cad_Ope" FromRole="Fat_Fch" ToRole="Cad_Ope" />
-          <Property Type="DateTime" Name="Fch_Ent" />
+          <Property Type="DateTime" Name="Fch_Ent" Precision="0" />
           <Property Type="Boolean" Name="Fch_Lot" Nullable="false" />
         </EntityType>
         <Association Name="FK_Fat_Fch_Cad_Ope">
@@ -538,6 +542,7 @@
           <EntitySetMapping Name="Atz_Pdm">
             <EntityTypeMapping TypeName="AppModel.Atz_Pdm">
               <MappingFragment StoreEntitySet="Atz_Pdm">
+                <ScalarProperty Name="Pdm_Itn" ColumnName="Pdm_Itn" />
                 <ScalarProperty Name="Pdm_DscAmb" ColumnName="Pdm_DscAmb" />
                 <ScalarProperty Name="Pdm_CodAmb" ColumnName="Pdm_CodAmb" />
                 <ScalarProperty Name="Pdm_QtdFlm" ColumnName="Pdm_QtdFlm" />
@@ -594,6 +599,7 @@
           <EntitySetMapping Name="Sgn_Ppl">
             <EntityTypeMapping TypeName="AppModel.Sgn_Ppl">
               <MappingFragment StoreEntitySet="Sgn_Ppl">
+                <ScalarProperty Name="Ppl_PrgLib" ColumnName="Ppl_PrgLib" />
                 <ScalarProperty Name="Ppl_Sdt" ColumnName="Ppl_Sdt" />
                 <ScalarProperty Name="Ppl_Con" ColumnName="Ppl_Con" />
                 <ScalarProperty Name="Ppl_Ope" ColumnName="Ppl_Ope" />

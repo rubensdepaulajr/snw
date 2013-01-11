@@ -215,7 +215,7 @@ public partial class Atz_ngcprf : PageBase
 
                 if (pdm == null)
                 {
-                    globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com o informado!");
+                    globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com código informado!");
                     return;
                 }
                 else if (pdm.Pdm_Atv == false)

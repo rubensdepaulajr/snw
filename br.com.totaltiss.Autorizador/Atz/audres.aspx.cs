@@ -37,7 +37,8 @@ public partial class Atz_audres : PageBase
             {
                 var sgnPpl = ctx.Sgn_Ppl.First(p => p.IdPpl == idPpl);
                 hdfPplCon.Value = (sgnPpl.Ppl_Con.Value) ? "s" : "n";
-                hdfPplSdt.Value = (sgnPpl.Ppl_Sdt.Value) ? "s" : "n"; 
+                hdfPplSdt.Value = (sgnPpl.Ppl_Sdt.Value) ? "s" : "n";
+                hdfPplPrgLib.Value = (sgnPpl.Ppl_PrgLib.Value) ? "s" : "n";
             }
             
             // Preenchendo detalhes da solicitação/guia
@@ -227,17 +228,23 @@ public partial class Atz_audres : PageBase
     }
     /// <summary>
     /// Verifica se a data da prorrogação é válida. O prazo máximo é de 120 dias após à solicitação
-    /// e até 30 dias após a data corrente
+    /// e até 30 dias após a data corrente. Execeção para o papel que esta configurado para não
+    /// checar estes prazos.
     /// </summary>
     /// <returns>True - Data válida, False - Data inválida</returns>
     private bool validaProrrogacao()
     {
-        DateTime datSol = Convert.ToDateTime(grdMaster.SelectedRow.Cells[4].Text.TrimEnd());
-        DateTime datPrg = Convert.ToDateTime(txtPdmVldPrg.Text);
-        TimeSpan datDifSol = datPrg.Subtract(datSol);
-        TimeSpan datDifNow = datPrg.Subtract(DateTime.Now);
-        
-        return ((datDifSol.Days <= 120) && (datDifNow.Days <= 30));
+        if (hdfPplPrgLib.Value == "s")
+            return true;
+        else
+        {
+            DateTime datSol = Convert.ToDateTime(grdMaster.SelectedRow.Cells[4].Text.TrimEnd());
+            DateTime datPrg = Convert.ToDateTime(txtPdmVldPrg.Text);
+            TimeSpan datDifSol = datPrg.Subtract(datSol);
+            TimeSpan datDifNow = datPrg.Subtract(DateTime.Now);
+
+            return ((datDifSol.Days <= 120) && (datDifNow.Days <= 30));
+        }
     }
     protected void btnAtz_Click(object sender, ImageClickEventArgs e)
     {

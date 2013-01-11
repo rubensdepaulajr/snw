@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -253,6 +254,7 @@ namespace br.com.totaltiss.Data
         private ObjectSet<Atz_Tpd> _Atz_Tpd;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -344,11 +346,11 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -379,6 +381,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -505,6 +508,7 @@ namespace br.com.totaltiss.Data
         partial void OnMsg_LocChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -531,6 +535,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -561,6 +566,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -711,6 +717,7 @@ namespace br.com.totaltiss.Data
         partial void OnIsOpeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -737,6 +744,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -761,6 +769,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -839,6 +848,7 @@ namespace br.com.totaltiss.Data
         partial void OnGrp_QtdCh_Changed();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -865,6 +875,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -903,6 +914,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1507,8 +1519,33 @@ namespace br.com.totaltiss.Data
         private global::System.String _Pdm_DscAmb;
         partial void OnPdm_DscAmbChanging(global::System.String value);
         partial void OnPdm_DscAmbChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> Pdm_Itn
+        {
+            get
+            {
+                return _Pdm_Itn;
+            }
+            set
+            {
+                OnPdm_ItnChanging(value);
+                ReportPropertyChanging("Pdm_Itn");
+                _Pdm_Itn = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Pdm_Itn");
+                OnPdm_ItnChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _Pdm_Itn;
+        partial void OnPdm_ItnChanging(Nullable<global::System.Boolean> value);
+        partial void OnPdm_ItnChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1627,6 +1664,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1653,6 +1691,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1707,6 +1746,7 @@ namespace br.com.totaltiss.Data
         partial void OnTab_DscChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1733,6 +1773,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1759,6 +1800,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1813,6 +1855,7 @@ namespace br.com.totaltiss.Data
         partial void OnTpd_DscChanged();
 
         #endregion
+
     
     }
     
@@ -1840,6 +1883,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1894,6 +1938,7 @@ namespace br.com.totaltiss.Data
         partial void OnTpp_DscChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1920,6 +1965,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1952,6 +1998,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2102,6 +2149,7 @@ namespace br.com.totaltiss.Data
         partial void OnOpe_DatFimChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2150,6 +2198,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2188,6 +2237,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2434,6 +2484,7 @@ namespace br.com.totaltiss.Data
         partial void OnFch_LotChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2476,6 +2527,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2504,6 +2556,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2588,6 +2641,7 @@ namespace br.com.totaltiss.Data
         partial void OnGrm_IdMsgChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2706,6 +2760,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2734,6 +2789,7 @@ namespace br.com.totaltiss.Data
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2882,11 +2938,37 @@ namespace br.com.totaltiss.Data
         private Nullable<global::System.Boolean> _Ppl_Sdt;
         partial void OnPpl_SdtChanging(Nullable<global::System.Boolean> value);
         partial void OnPpl_SdtChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> Ppl_PrgLib
+        {
+            get
+            {
+                return _Ppl_PrgLib;
+            }
+            set
+            {
+                OnPpl_PrgLibChanging(value);
+                ReportPropertyChanging("Ppl_PrgLib");
+                _Ppl_PrgLib = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Ppl_PrgLib");
+                OnPpl_PrgLibChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _Ppl_PrgLib;
+        partial void OnPpl_PrgLibChanging(Nullable<global::System.Boolean> value);
+        partial void OnPpl_PrgLibChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

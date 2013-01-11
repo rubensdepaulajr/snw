@@ -81,6 +81,10 @@
                 <asp:CheckBox ID="chkPplSdt" runat="server" /></td>    
             </tr>
             <tr>
+                <td>Prorrogar Validade sem Limite?</td><td class="vermelhonormal">
+                <asp:CheckBox ID="chkPplPrgLib" runat="server" /></td>    
+            </tr>
+            <tr>
                 <td align="center" colspan="2" style="height: 21px">
                     <asp:Button id="btnSave" onclick="btnSave_Click" runat="server" Text="Gravar" CssClass="input7"></asp:Button>&nbsp;
                     <asp:Button id="btnCancel" onclick="btnCancel_Click" runat="server" Text="Cancelar" CssClass="input7"></asp:Button>
@@ -128,6 +132,14 @@
                     <asp:CheckBox ID="chkSdt" runat="server" Checked='<%# Bind("Ppl_Sdt") %>' Enabled="false" />
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:TemplateField HeaderText="Prorrogar Validade?" SortExpression="Ppl_PrgLib">
+                <EditItemTemplate>
+                    <asp:CheckBox ID="CheckBox4" runat="server" Checked='<%# Bind("Ppl_PrgLib") %>' />
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:CheckBox ID="chkPrgLib" runat="server" Checked='<%# Bind("Ppl_PrgLib") %>' Enabled="false" />
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:CommandField SelectText="Selecionar" ShowSelectButton="True" >
             <HeaderStyle Width="50px" />
             </asp:CommandField>
@@ -151,6 +163,8 @@
                 PropertyName="Checked" Type="Boolean" />
             <asp:ControlParameter ControlID="chkPplSdt" Name="Ppl_Sdt" 
                 PropertyName="Checked" Type="Boolean" />
+            <asp:ControlParameter ControlID="chkPplPrgLib" Name="Ppl_PrgLib"
+                PropertyName="Checked" Type="Boolean" />
         </UpdateParameters>
         <InsertParameters>
             <asp:ControlParameter ControlID="txtIdPpl" Name="IdPpl" PropertyName="Text" Type="Int16" />
@@ -162,6 +176,8 @@
             <asp:ControlParameter ControlID="chkPplCon" Name="Ppl_Con" 
                 PropertyName="Checked" Type="Boolean" />
             <asp:ControlParameter ControlID="chkPplSdt" Name="Ppl_Sdt" 
+                PropertyName="Checked" Type="Boolean" />
+            <asp:ControlParameter ControlID="chkPplPrgLib" Name="Ppl_PrgLib" 
                 PropertyName="Checked" Type="Boolean" />
         </InsertParameters>
         <DeleteParameters>

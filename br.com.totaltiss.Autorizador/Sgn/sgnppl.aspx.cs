@@ -81,10 +81,12 @@ public partial class Sgn_sgnppl : System.Web.UI.Page
         txtPplQtdCh_.Text = this.grd.SelectedRow.Cells[2].Text.Trim();
         CheckBox cb = (CheckBox)(grd.SelectedRow.FindControl("chkOpe"));
         chkPplOpe.Checked = cb.Checked;
-        CheckBox cb2 = (CheckBox)(grd.SelectedRow.FindControl("chkCon"));
-        chkPplCon.Checked = cb2.Checked;
-        CheckBox cb3 = (CheckBox)(grd.SelectedRow.FindControl("chkSdt"));
-        chkPplSdt.Checked = cb3.Checked;
+        cb = (CheckBox)(grd.SelectedRow.FindControl("chkCon"));
+        chkPplCon.Checked = cb.Checked;
+        cb = (CheckBox)(grd.SelectedRow.FindControl("chkSdt"));
+        chkPplSdt.Checked = cb.Checked;
+        cb = (CheckBox)(grd.SelectedRow.FindControl("chkPrgLib"));
+        chkPplPrgLib.Checked = cb.Checked;
         clearForm(2);
         pnlInfoPrf.Visible = true;
         grd.Visible = false;

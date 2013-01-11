@@ -605,6 +605,7 @@ Title="Auditoria" Theme="Standard" Codebehind="audres.aspx.cs" %>
         <asp:HiddenField id="hdfQtdMaxCh_" runat="server"></asp:HiddenField>
         <asp:HiddenField id="hdfPplCon" runat="server"></asp:HiddenField>
         <asp:HiddenField id="hdfPplSdt" runat="server"></asp:HiddenField>
+        <asp:HiddenField id="hdfPplPrgLib" runat="server"></asp:HiddenField>
     <br />
     <%--O TargetId do modalpopuextente não pode estar invisível, se estiver o popup é exibido no page load--%>
     <asp:Button ID="btn1" runat="server" CssClass="linkbutton" />
