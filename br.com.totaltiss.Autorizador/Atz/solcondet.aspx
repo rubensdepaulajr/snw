@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/Atz.master" AutoEventWireup="true" Theme="Standard" Inherits="solcondet" Title="Consulta Eletiva" Codebehind="solcondet.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/Atz.master" AutoEventWireup="true" Theme="Standard" Inherits="solcondet" Title="Consulta" Codebehind="solcondet.aspx.cs" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -9,7 +9,7 @@
                 <tbody>
                     <tr>
                         <td style="width: 943px; height: 443px">
-                            <table cellspacing="0" cellpadding="0" width="100%" align=center border=0>
+                            <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                                 <tbody>
                                     <tr>
                                         <td style="padding-right: 0px; padding-left: 5px; padding-bottom: 5px; padding-top: 5px; height: 432px" valign="top">
@@ -17,7 +17,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td style="width: 752px">
-                                                            <table cellspacing="0" cellpadding="0" width="100%" align=left border=0>
+                                                            <table cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="width: 9px" align="left"><img height="37" alt="" src="../Images/tit_left.gif" width="9" /></td>

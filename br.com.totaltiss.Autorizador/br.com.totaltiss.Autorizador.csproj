@@ -1253,6 +1253,7 @@
     <EmbeddedResource Include="App_Rpt\SolSdt.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\Api\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -102,13 +102,13 @@ public partial class Atz_ngcctt {
     protected global::System.Web.UI.WebControls.Label lblDatFim;
     
     /// <summary>
-    /// lvwPdmRes control.
+    /// txtPdmDsc control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ListView lvwPdmRes;
+    protected global::System.Web.UI.WebControls.TextBox txtPdmDsc;
     
     /// <summary>
     /// mvw control.
@@ -246,13 +246,76 @@ public partial class Atz_ngcctt {
     protected global::System.Web.UI.WebControls.TextBox txtDatFim;
     
     /// <summary>
-    /// lvwPdm control.
+    /// lbxPdm control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ListView lvwPdm;
+    protected global::System.Web.UI.WebControls.ListBox lbxPdm;
+    
+    /// <summary>
+    /// txtPdmCod control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtPdmCod;
+    
+    /// <summary>
+    /// Image4 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Image Image4;
+    
+    /// <summary>
+    /// btnAddPdm control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton btnAddPdm;
+    
+    /// <summary>
+    /// Image5 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Image Image5;
+    
+    /// <summary>
+    /// btnDelPdm control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton btnDelPdm;
+    
+    /// <summary>
+    /// Image6 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Image Image6;
+    
+    /// <summary>
+    /// lbtShowPop control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lbtShowPop;
     
     /// <summary>
     /// rblTip control.

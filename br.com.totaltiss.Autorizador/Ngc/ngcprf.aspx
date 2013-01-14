@@ -18,6 +18,28 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
             });
         });
 	 </script>
+
+     <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                //If you want to move selected item from fromListBox to toListBox
+                $("#add").click(function () {
+                    $("#fromListBox  option:selected").appendTo("#toListBox");
+                });
+                //If you want to move all item from fromListBox to toListBox
+                $("#addAll").click(function () {
+                    $("#fromListBox option").appendTo("#toListBox");
+                });
+                //If you want to remove selected item from toListBox to fromListBox
+                $("#remove").click(function () {
+                    $("input[class *= 'lbx' option:selected").remove();
+                });
+                //If you want to remove all items from toListBox to fromListBox
+                $("#removeAll").click(function () {
+                    $("#toListBox option").appendTo("#fromListBox");
+                });
+
+            });
+  </script>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 <ContentTemplate>	 
         <table style="width: 100%;">
@@ -94,49 +116,7 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                             <tr>
                                                 <td style="height: 16px" align="right" width="22%">Profissional:</TD>
                                                 <td style="padding-right: 0px; padding-left: 10px; padding-bottom: 0px; padding-top: 0px; height: 16px" align="left">
-                                                    <asp:ListView ID="lvwPrfRes" runat="server" 
-                                                        ItemPlaceholderID="itemPlaceholderRes" >
-                                                        <LayoutTemplate>
-                                                            <table border="0" cellpadding="1">
-                                                                <tr style="background-color:#E5E5FE">
-                                                                    <th align="left">
-                                                                        <asp:LinkButton ID="lbtPrfMtr0" runat="server">Matrícula</asp:LinkButton>
-                                                                    </th>
-                                                                    <th align="left">
-                                                                        <asp:LinkButton ID="lbtPrfNme0" runat="server">Nome do Profissional</asp:LinkButton>
-                                                                    </th>
-                                                                    <th>
-                                                                    </th>
-                                                                </tr>
-                                                                <tr ID="itemPlaceholderRes" runat="server">
-                                                                </tr>
-                                                            </table>
-                                                        </LayoutTemplate>
-                                                        <ItemTemplate>
-                                                            <tr>
-                                                                <td>
-                                                                    <asp:Label ID="lblId0" runat="server"><%#Eval("Prf_Mtr") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:Label ID="lblType0" runat="server"><%#Eval("Prf_Nme") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
-                                                        </ItemTemplate>
-                                                        <AlternatingItemTemplate>
-                                                            <tr style="background-color:#EFEFEF">
-                                                                <td>
-                                                                    <asp:Label ID="lblId1" runat="server"><%#Eval("Prf_Mtr") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:Label ID="lblType1" runat="server"><%#Eval("Prf_Nme") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
-                                                        </AlternatingItemTemplate>
-                                                    </asp:ListView>
+                                                    <asp:TextBox ID="txtPrfNme" runat="server" TextMode="MultiLine" BackColor="#F4F4F4" BorderStyle="None" Width="450px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                          </tbody>                                         
@@ -219,49 +199,7 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                             <tr>
                                                 <td style="WIDTH: 22%; HEIGHT: 16px" align="right">Procedimento:</TD>
                                                 <td style="padding-right: 0px; padding-left: 10px; padding-bottom: 0px; PADDING-TOP: 0px; HEIGHT: 16px" align="left">
-                                                    <asp:ListView ID="lvwPdmRes" runat="server" 
-                                                        ItemPlaceholderID="itemPlaceholderRes">
-                                                        <LayoutTemplate>
-                                                            <table border="0" cellpadding="1">
-                                                                <tr style="background-color:#E5E5FE">
-                                                                    <th align="left">
-                                                                        <asp:LinkButton ID="lbtPdmCod" runat="server">Código</asp:LinkButton>
-                                                                    </th>
-                                                                    <th align="left">
-                                                                        <asp:LinkButton ID="lbtPdmDsc" runat="server">Descrição do Procedimento</asp:LinkButton>
-                                                                    </th>
-                                                                    <th>
-                                                                    </th>
-                                                                </tr>
-                                                                <tr ID="itemPlaceholderRes" runat="server">
-                                                                </tr>
-                                                            </table>
-                                                        </LayoutTemplate>
-                                                        <ItemTemplate>
-                                                            <tr>
-                                                                <td>
-                                                                    <asp:Label ID="lblId" runat="server"><%#Eval("Pdm_Cod") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:Label ID="lblType" runat="server"><%#Eval("Pdm_Dsc") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
-                                                        </ItemTemplate>
-                                                        <AlternatingItemTemplate>
-                                                            <tr style="background-color:#EFEFEF">
-                                                                <td>
-                                                                    <asp:Label ID="lblId" runat="server"><%#Eval("Pdm_Cod") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                    <asp:Label ID="lblType" runat="server"><%#Eval("Pdm_Dsc") %></asp:Label>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
-                                                        </AlternatingItemTemplate>
-                                                    </asp:ListView>
+                                                    <asp:TextBox ID="txtPdmDsc" runat="server" BackColor="#F4F4F4" BorderStyle="None" TextMode="MultiLine" Width="450px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -347,90 +285,28 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" style="height: 10px">
-                                </td>
+                                <td colspan="3" height="10">
+                                    &nbsp;</td>
                             </tr>
                             <tr>
-                                <td align="right" width="150">
+                                <td align="right" style="height: 22px" width="150">
                                     Profissional:</td>
                                 <td width="5">
+                                    
                                 </td>
                                 <td align="left">
-                                    <asp:ListView ID="lvwPrf" runat="server" InsertItemPosition="LastItem" 
-                                        onitemcommand="lvwPrf_ItemCommand" 
-                                        DataKeyNames="Prf_Mtr" 
-                                        onselectedindexchanging="lvwPrf_SelectedIndexChanging">
-                                        <LayoutTemplate>
-                                            <table border="0" cellpadding="1">
-                                                <tr style="background-color:#E5E5FE">
-                                                    <th align="left">
-                                                        <asp:LinkButton ID="lbtPrfMtr" runat="server">Matrícula</asp:LinkButton>
-                                                    </th>
-                                                    <th align="left">
-                                                        <asp:LinkButton ID="lbtPrfNme" runat="server">Nome do Profissional</asp:LinkButton>
-                                                    </th>
-                                                    <th>
-                                                    </th>
-                                                </tr>
-                                                <tr ID="itemPlaceholder" runat="server">
-                                                </tr>
-                                            </table>
-                                        </LayoutTemplate>
-                                        <ItemTemplate>
-                                            <tr>
-                                                <td>
-                                                    <asp:Label ID="lblPrfMtr" runat="server"><%#Eval("Prf_Mtr") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="lblPrfNme" runat="server"><%#Eval("Prf_Nme") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:LinkButton ID="lbtDelPrf" runat="server" CommandName="Select">Remover</asp:LinkButton>
-                                                </td>
-                                            </tr>
-                                        </ItemTemplate>
-                                        <AlternatingItemTemplate>
-                                            <tr style="background-color:#EFEFEF">
-                                                <td>
-                                                    <asp:Label ID="lblPrfMtr" runat="server"><%#Eval("Prf_Mtr") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="lblPrfNme" runat="server"><%#Eval("Prf_Nme") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:LinkButton ID="lbtDelPrf" runat="server" CommandName="Select">Remover</asp:LinkButton>
-                                                </td>
-                                            </tr>
-                                        </AlternatingItemTemplate>
-                                        <InsertItemTemplate>
-                                            <tr ID="Tr" runat="server">
-                                                <td>
-                                                    <asp:TextBox ID="txtPrfMtr" runat="server" Width="60px"></asp:TextBox>
-                                                </td>
-                                                <td>
-                                                    <asp:ImageButton ID="ibtAddPrf" runat="server" CommandName="Add" 
-                                                        ImageUrl="~/Images/bt_adicionar.gif" />
-                                                    <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopupPrf" >Buscar Profissional</asp:LinkButton>
-                                                </td>
-                                                <td>
-                                                    
-                                                </td>
-                                            </tr>
-                                        </InsertItemTemplate>
-                                        <SelectedItemTemplate>
-                                            <tr ID="Tr" runat="server">
-                                                <td>
-                                                    <asp:Label ID="lblPrfMtr" runat="server"><%#Eval("Prf_Mtr") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                   <asp:LinkButton ID="lbtDel" runat="server" CommandName="Delete">Remover</asp:LinkButton> 
-                                                </td>
-                                                <td>
-                                                    
-                                                </td>
-                                            </tr>                                        
-                                        </SelectedItemTemplate>
-                                    </asp:ListView>                                    
+                                    <div>
+                                        <asp:ListBox ID="lbxPrf" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
+                                    </div>
+                                    <div>
+                                        <asp:TextBox ID="txtPrfMtr" runat="server"></asp:TextBox>
+                                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="btnAddPrf" runat="server" OnClick="btnAddPrf_Click">Adicionar</asp:LinkButton>
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="btnDelPrf" runat="server" OnClick="btnDelPrf_Click">Remover</asp:LinkButton>
+                                        <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopupPrf" OnClick="lbtShowPop_Click" >Buscar Profissional</asp:LinkButton>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -535,78 +411,18 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                 <td style="height: 22px" width="5">
                                 </td>
                                 <td align="left">
-                                    <asp:ListView ID="lvwPdm" runat="server" DataKeyNames="Pdm_Cod" 
-                                        InsertItemPosition="LastItem" onitemcommand="lvwPdm_ItemCommand" 
-                                        onselectedindexchanging="lvwPdm_SelectedIndexChanging">
-                                        <LayoutTemplate>
-                                            <table border="0" cellpadding="1">
-                                                <tr style="background-color:#E5E5FE">
-                                                    <th align="left">
-                                                        <asp:LinkButton ID="lbtPdmCod" runat="server">Código</asp:LinkButton>
-                                                    </th>
-                                                    <th align="left">
-                                                        <asp:LinkButton ID="lbtPdmDsc" runat="server">Descrição do Procedimento</asp:LinkButton>
-                                                    </th>
-                                                    <th>
-                                                    </th>
-                                                </tr>
-                                                <tr ID="itemPlaceholder" runat="server">
-                                                </tr>
-                                            </table>
-                                        </LayoutTemplate>
-                                        <ItemTemplate>
-                                            <tr>
-                                                <td>
-                                                    <asp:Label ID="lblPdmCod" runat="server"><%#Eval("Pdm_Cod") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="lblPdmDsc" runat="server"><%#Eval("Pdm_Dsc") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:LinkButton ID="lbtDelPdm" runat="server" CommandName="Select">Remover</asp:LinkButton>
-                                                </td>
-                                            </tr>
-                                        </ItemTemplate>
-                                        <AlternatingItemTemplate>
-                                            <tr style="background-color:#EFEFEF">
-                                                <td>
-                                                    <asp:Label ID="lblPdmCod" runat="server"><%#Eval("Pdm_Cod")%></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="lblPdmDsc" runat="server"><%#Eval("Pdm_Dsc")%></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:LinkButton ID="lbtDelPdm" runat="server" CommandName="Select">Remover</asp:LinkButton>
-                                                </td>
-                                            </tr>
-                                        </AlternatingItemTemplate>
-                                        <InsertItemTemplate>
-                                            <tr ID="Tr0" runat="server">
-                                                <td>
-                                                    <asp:TextBox ID="txtPdmCod" runat="server" Width="60px"></asp:TextBox>
-                                                </td>
-                                                <td>
-                                                    <asp:ImageButton ID="ibtAddPdm" runat="server" CommandName="Add" 
-                                                        ImageUrl="~/Images/bt_adicionar.gif" />
-                                                    <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopupPdm">Buscar Procedimento</asp:LinkButton>
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                        </InsertItemTemplate>
-                                        <SelectedItemTemplate>
-                                            <tr ID="Tr" runat="server">
-                                                <td>
-                                                    <asp:Label ID="lblPdmCod" runat="server"><%#Eval("Pdm_Cod") %></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:LinkButton ID="lbtDel" runat="server" CommandName="Delete">Remover</asp:LinkButton>
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                        </SelectedItemTemplate>
-                                    </asp:ListView>
+                                    <div>
+                                        <asp:ListBox ID="lbxPdm" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
+                                    </div>
+                                    <div>
+                                        <asp:TextBox ID="txtPdmCod" runat="server"></asp:TextBox>
+                                        <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="btnAddPdm" runat="server" OnClick="btnAddPdm_Click">Adicionar</asp:LinkButton>
+                                        <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="btnDelPdm" runat="server" OnClick="btnDelPdm_Click">Remover</asp:LinkButton>
+                                        <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/Spacer.gif" />
+                                        <asp:LinkButton ID="btnPesPdm" runat="server" CommandName="ShowPopupPdm" OnClick="btnPesPdm_Click">Buscar Procedimento</asp:LinkButton>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -626,7 +442,7 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                             </tr>
                             <tr>
                                 <td colspan="3" height="10">
-                                </td>
+                                    &nbsp;</td>
                             </tr>
                             <tr>
                                 <td colspan="3" height="10">

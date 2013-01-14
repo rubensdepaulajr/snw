@@ -35,26 +35,6 @@ public partial class Atz_ngcprf : PageBase
             ddlGrp.DataSource = reader3;
             ddlGrp.DataBind();
             dba3.Dispose();
-
-            // DataTable que conterá os profissionais selecionados
-            DataTable dtb = new DataTable();
-            // Adiciona os nomes e tipos das colunas
-            dtb.Columns.Add("Prf_Mtr").Unique = true;
-            dtb.Columns.Add("Prf_Nme");
-            ViewState["dtbPrf"] = dtb;
-            lvwPrf.DataSource = dtb;
-            lvwPrf.DataBind();
-            dtb.Dispose();
-
-            // DataTable que conterá os procedimentos selecionados
-            DataTable dtb2 = new DataTable();
-            // Adiciona os nomes e tipos das colunas
-            dtb2.Columns.Add("Pdm_Cod").Unique = true;
-            dtb2.Columns.Add("Pdm_Dsc");
-            ViewState["dtbPdm"] = dtb2;
-            lvwPdm.DataSource = dtb2;
-            lvwPdm.DataBind();
-            dtb2.Dispose();
         }
     }
     private void selectedRde()
@@ -82,37 +62,31 @@ public partial class Atz_ngcprf : PageBase
     private void selectedPrf()
     {
         string selectedItems = string.Empty;
-        hdfPrfMtr.Value = string.Empty;
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPrf"];                       
-        foreach (DataRow dr in dtb.Rows)
+        hdfPrfMtr.Value = string.Empty;                      
+        foreach (ListItem li in lbxPrf.Items)
         {
-            selectedItems += "'"+ dr["Prf_Mtr"].ToString() + "',";
+            selectedItems += "'"+ li.Value + "',";
         }
         // Verifica se algum profissional foi selecionado para remover a vírgula no final da string
         if (!string.IsNullOrEmpty(selectedItems))
             selectedItems = selectedItems.Remove(selectedItems.Length - 1, 1);
-        lvwPrfRes.DataSource = dtb;
-        lvwPrfRes.DataBind();
-        dtb.Dispose();
+        foreach (ListItem li in lbxPrf.Items)
+            txtPrfNme.Text += li.Text + Environment.NewLine;
+
         hdfPrfMtr.Value = selectedItems;
     }
     private void selectedPdm()
     {
         string selectedItems = string.Empty;
         hdfPdmCod.Value = string.Empty;
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-        foreach (DataRow dr in dtb.Rows)
+        foreach (ListItem li in lbxPdm.Items)
         {
-            selectedItems += "'" + dr["Pdm_Cod"].ToString() + "',";
+            selectedItems += "'" + li.Value + "',";
         }
         // Verifica se algum profissional foi selecionado para remover a vírgula no final da string
         if (!string.IsNullOrEmpty(selectedItems))
             selectedItems = selectedItems.Remove(selectedItems.Length - 1, 1);
-        lvwPdmRes.DataSource = dtb;
-        lvwPdmRes.DataBind();
-        dtb.Dispose();
+
         hdfPdmCod.Value = selectedItems;
     }
     private void gotoPageView(int pageIndex)
@@ -147,8 +121,8 @@ public partial class Atz_ngcprf : PageBase
         if (!string.IsNullOrEmpty(txtSeqEnd.Text))
             seqEnd = txtSeqEnd.Text;
 
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPrf"];
+        //DataTable dtb = new DataTable();
+        //dtb = (DataTable)ViewState["dtbPrf"];
 
         if (prfMtr.Trim().Length > 0)
         {
@@ -171,24 +145,28 @@ public partial class Atz_ngcprf : PageBase
             {
                 globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-                // Cria uma nova linha no DataTable
-                DataRow drw = dtb.NewRow();
-                // Adiciona os dados à nova linha criada
-                drw[0] = prfMtr;
-                drw[1] = prfNme;
-                try
-                {
-                    // Adiciona a linha no DataTable
-                    dtb.Rows.Add(drw);
-                }
-                catch
-                {
-                    globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
-                }
-                ViewState["dtbPrf"] = dtb;
-                lvwPrf.DataSource = dtb;
-                lvwPrf.DataBind();
-                globall.showMessage(imgMsg, lblMsg, string.Empty);
+                //// Cria uma nova linha no DataTable
+                //DataRow drw = dtb.NewRow();
+                //// Adiciona os dados à nova linha criada
+                //drw[0] = prfMtr;
+                //drw[1] = prfNme;
+                //try
+                //{
+                //    // Adiciona a linha no DataTable
+                //    dtb.Rows.Add(drw);
+                //}
+                //catch
+                //{
+                //    globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
+                //}
+                //ViewState["dtbPrf"] = dtb;
+                //lvwPrf.DataSource = dtb;
+                //lvwPrf.DataBind();
+                //globall.showMessage(imgMsg, lblMsg, string.Empty);
+
+                ListItem li = new ListItem(prfMtr + " - " + prfNme, prfMtr);
+                if (!lbxPrf.Items.Contains(li))
+                    lbxPrf.Items.Add(li);
             }
             else
             {
@@ -198,14 +176,11 @@ public partial class Atz_ngcprf : PageBase
         else
             globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do profissional que deseja adicionar.");
 
-        dtb.Dispose();
+        //dtb.Dispose();
     }
     private void addPdm(string pdmCod)
     {
         string pdmDsc = string.Empty;
-
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
 
         if (pdmCod.Trim().Length > 0)
         {
@@ -228,52 +203,13 @@ public partial class Atz_ngcprf : PageBase
                     pdmDsc = pdm.Pdm_Dsc;
                 }
             }
-            //DBASQL db = new DBASQL();
-            //SqlParameter[] param = { 
-            //                           db.MakeInParam("@Pdm_Cod", SqlDbType.VarChar, 20, pdmCod),
-            //                           db.MakeInParam("@Pdm_Atv",SqlDbType.Bit,1,1), // Somente procedimento ativo
-            //                       };
-            //SqlDataReader dr = db.runProcDataReader("ssAtz_Pdm", param);
-
-            //if (dr.Read())
-            //{
-            //    pdmCod = dr["Pdm_Cod"].ToString();
-            //    pdmDsc = dr["Pdm_Dsc"].ToString();
-            //}
-            //db.Dispose();
-
-            //if (!string.IsNullOrEmpty(pdmDsc))
-            //{
-                globall.showMessage(imgMsg, lblMsg, string.Empty);
-
-                // Cria uma nova linha no DataTable
-                DataRow drw = dtb.NewRow();
-                // Adiciona os dados à nova linha criada
-                drw[0] = pdmCod;
-                drw[1] = pdmDsc;
-                try
-                {
-                    // Adiciona a linha no DataTable
-                    dtb.Rows.Add(drw);
-                }
-                catch
-                {
-                    globall.showMessage(imgMsg, lblMsg, "Este procedimento já foi selecionado!");
-                }
-                ViewState["dtbPdm"] = dtb;
-                lvwPdm.DataSource = dtb;
-                lvwPdm.DataBind();
-                globall.showMessage(imgMsg, lblMsg, string.Empty);
-            //}
-            //else
-            //{
-            //    globall.showMessage(imgMsg, lblMsg, "O código do procedimento informado não foi encontrado..");
-            //}
+            ListItem li = new ListItem(pdmCod + " - " + pdmDsc, pdmCod);
+            if (!lbxPdm.Items.Contains(li))
+                lbxPdm.Items.Add(li);
+            globall.showMessage(imgMsg, lblMsg, string.Empty);
         }
         else
             globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do procedimento que deseja adicionar.");
-
-        dtb.Dispose();
     }
     private void visualizarNgc()
     {
@@ -611,42 +547,7 @@ public partial class Atz_ngcprf : PageBase
     {
         gotoPageView(0);
     }
-    protected void ibtAddPrf_Click(object sender, EventArgs e)
-    {
-        TextBox txtMtr = (TextBox)lvwPrf.InsertItem.FindControl("txtPrfMtr");
-        addPrf(txtMtr.Text);
-        txtMtr.Text = string.Empty;
-    }
-    protected void ibtAddPdm_Click(object sender, EventArgs e)
-    {
-        TextBox txtCod = (TextBox)lvwPdm.InsertItem.FindControl("txtPdmCod");
-        addPdm(txtCod.Text);
-        txtCod.Text = string.Empty;
-    }
-    protected void lvwPrf_ItemCommand(object sender, ListViewCommandEventArgs e)
-    {
-        if ((string.IsNullOrEmpty(txtIdCtt.Text.Trim())) && (!string.IsNullOrEmpty(txtSeqEnd.Text.Trim())))
-            globall.showMessage(imgMsg, lblMsg, "O contratado também deve ser informado!");
-        else if (e.CommandName == "Add")
-        {
-            TextBox txtMtr = (TextBox)lvwPrf.InsertItem.FindControl("txtPrfMtr");
-            addPrf(txtMtr.Text);
-            txtMtr.Text = string.Empty;
-        }
-        else if (e.CommandName == "ShowPopupPrf")
-            showPopupPrf();
-    }
-    protected void lvwPdm_ItemCommand(object sender, ListViewCommandEventArgs e)
-    {
-        if (e.CommandName == "Add")
-        {
-            TextBox txtCod = (TextBox)lvwPdm.InsertItem.FindControl("txtPdmCod");
-            addPdm(txtCod.Text);
-            txtCod.Text = string.Empty;
-        }
-        else if (e.CommandName == "ShowPopupPdm")
-            showPopupPdm();
-    }
+
     #region ModalPopup
     private void showPopupPrf()
     {
@@ -702,28 +603,23 @@ public partial class Atz_ngcprf : PageBase
     }
     protected void grdPop_SelectedIndexChanged(object sender, EventArgs e)
     {
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPrf"];
-
+       
         globall.showMessage(imgMsg,lblMsg, string.Empty);
 
-        // Cria uma nova linha no DataTable
-        DataRow drw = dtb.NewRow();
-        drw[0] = grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Mtr"].ToString();
-        drw[1] = HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString());
-        try
-        {
-            // Adiciona a linha no DataTable
-            dtb.Rows.Add(drw);
-        }
-        catch
-        {
-            globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
-        }
-        ViewState["dtbPrf"] = dtb;
-        lvwPrf.DataSource = dtb;
-        lvwPrf.DataBind();
-        dtb.Dispose();
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString()),
+            HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString())+" - "+
+            grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Mtr"].ToString());
+        lbxPrf.Items.Add(li);
+        //try
+        //{
+        //    // Adiciona a linha no DataTable
+
+        //}
+        //catch
+        //{
+        //    globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
+        //}
+
         hidePopupPrf();
     }
     protected void grdPopPdm_SelectedIndexChanged(object sender, EventArgs e)
@@ -733,28 +629,13 @@ public partial class Atz_ngcprf : PageBase
             globall.showMessage(imgMsg, lblMsg, "Não é permitido incluir na negociação procedimento inativo!");
             return;
         }
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
 
         globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-        // Cria uma nova linha no DataTable
-        DataRow drw = dtb.NewRow();
-        drw[0] = grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString();
-        drw[1] = HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString());
-        try
-        {
-            // Adiciona a linha no DataTable
-            dtb.Rows.Add(drw);
-        }
-        catch
-        {
-            globall.showMessage(imgMsg, lblMsg, "Este procedimento já foi selecionado!");
-        }
-        ViewState["dtbPdm"] = dtb;
-        lvwPdm.DataSource = dtb;
-        lvwPdm.DataBind();
-        dtb.Dispose();
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()),
+            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()) + " - " +
+            grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString());
+        lbxPdm.Items.Add(li);
         hidePopupPdm();
     }
     protected void btn_fechar_Click(object sender, ImageClickEventArgs e)
@@ -794,56 +675,6 @@ public partial class Atz_ngcprf : PageBase
         mpePrf.Show();
     }
     #endregion
-    protected void lvwPrf_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
-    {
-        string prfMtr = lvwPrf.DataKeys[e.NewSelectedIndex].Value.ToString();       
-
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPrf"];                    
-        DataRow drw = dtb.NewRow();
-        // Procura no datatable pelo profissional a ser removido
-        foreach (DataRow dr in dtb.Rows)
-        {
-            if (dr["Prf_Mtr"].ToString() == prfMtr)
-            {
-                drw = dr;
-            }
-        }
-        //Remove do datatable a linha que contém o profissional
-        if (!drw.IsNull("Prf_Mtr"))
-            drw.Delete();
-
-        lvwPrf.DataSource = dtb;
-        lvwPrf.DataBind();
-        ViewState["dtbPrf"] = dtb;
-        dtb.Dispose();
-        globall.showMessage(imgMsg, lblMsg, string.Empty);
-    }
-    protected void lvwPdm_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
-    {
-        string pdmCod = lvwPdm.DataKeys[e.NewSelectedIndex].Value.ToString();
-
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-        DataRow drw = dtb.NewRow();
-        // Procura no datatable pelo profissional a ser removido
-        foreach (DataRow dr in dtb.Rows)
-        {
-            if (dr["Pdm_Cod"].ToString() == pdmCod)
-            {
-                drw = dr;
-            }
-        }
-        // Remove do datatable a linha que contém o procedimento
-        if (!drw.IsNull("Pdm_Cod"))
-            drw.Delete();
-
-        lvwPdm.DataSource = dtb;
-        lvwPdm.DataBind();
-        ViewState["dtbPdm"] = dtb;
-        dtb.Dispose();
-        globall.showMessage(imgMsg, lblMsg, string.Empty);
-    }
 
     protected void ibtSave2_Click(object sender, ImageClickEventArgs e)
     {
@@ -904,6 +735,38 @@ public partial class Atz_ngcprf : PageBase
         txtFtr2.Enabled = false;
         txtVlr2.Enabled = true;
         txtFtr2.Text = string.Empty;
+    }
+
+    protected void btnDelPrf_Click(object sender, EventArgs e)
+    {
+        lbxPrf.Items.Remove(lbxPrf.SelectedItem);
+    }
+
+    protected void btnAddPrf_Click(object sender, EventArgs e)
+    {
+        if ((string.IsNullOrEmpty(txtIdCtt.Text.Trim())) && (!string.IsNullOrEmpty(txtSeqEnd.Text.Trim())))
+            globall.showMessage(imgMsg, lblMsg, "O contratado também deve ser informado!");
+        else 
+        {
+            addPrf(txtPrfMtr.Text);
+            txtPrfMtr.Text = string.Empty;
+        }
+    }
+
+    protected void btnDelPdm_Click(object sender, EventArgs e)
+    {
+        lbxPdm.Items.Remove(lbxPdm.SelectedItem);
+    }
+
+    protected void btnAddPdm_Click(object sender, EventArgs e)
+    {
+        addPdm(txtPdmCod.Text);
+        txtPdmCod.Text = string.Empty;
+    }
+
+    protected void btnPesPdm_Click(object sender, EventArgs e)
+    {
+        showPopupPdm();
     }
 
 }

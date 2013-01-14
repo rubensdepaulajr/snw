@@ -49,12 +49,12 @@
                 <td height="10" colspan="4"></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td style="width: 5px">&nbsp;</td>
-                <td style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px">
+                <td style="height: 18px"></td>
+                <td style="width: 5px; height: 18px;"></td>
+                <td style="padding: 0px; height: 18px;">
                     <asp:Label runat="server" ID="lblBio" CssClass="erro"></asp:Label>
                 </td>
-                <td>&nbsp;</td>
+                <td style="height: 18px"></td>
             </tr>
             <tr>
                 <td height="10" colspan="4"></td>

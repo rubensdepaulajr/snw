@@ -35,16 +35,6 @@ public partial class Atz_ngcctt : PageBase
             ddlGrp.DataSource = reader3;
             ddlGrp.DataBind();
             dba3.Dispose();
-
-            // DataTable que conterá os procedimentos selecionados
-            DataTable dtb = new DataTable();
-            // Adiciona os nomes e tipos das colunas
-            dtb.Columns.Add("Pdm_Cod").Unique = true;
-            dtb.Columns.Add("Pdm_Dsc");
-            ViewState["dtbPdm"] = dtb;
-            lvwPdm.DataSource = dtb;
-            lvwPdm.DataBind();
-            dtb.Dispose();
         }
     }
     private void selectedRde()
@@ -93,18 +83,14 @@ public partial class Atz_ngcctt : PageBase
     {
         string selectedItems = string.Empty;
         hdfPdmCod.Value = string.Empty;
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-        foreach (DataRow dr in dtb.Rows)
+        foreach (ListItem li in lbxPdm.Items)
         {
-            selectedItems += "'"+ dr["Pdm_Cod"].ToString() + "',";
+            selectedItems += "'" + li.Value + "',";
         }
         // Verifica se algum procedimento foi selecionado para remover a vírgula no final da string
         if (!string.IsNullOrEmpty(selectedItems))
             selectedItems = selectedItems.Remove(selectedItems.Length - 1, 1);
-        lvwPdmRes.DataSource = dtb;
-        lvwPdmRes.DataBind();
-        dtb.Dispose();
+
         hdfPdmCod.Value = selectedItems;
     }
     private void gotoPageView(int pageIndex)
@@ -132,9 +118,6 @@ public partial class Atz_ngcctt : PageBase
     {
         string pdmDsc = string.Empty;
 
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-
         if (pdmCod.Trim().Length > 0)
         {
             using (AppEntities ctx = new AppEntities())
@@ -156,91 +139,16 @@ public partial class Atz_ngcctt : PageBase
                     pdmDsc = pdm.Pdm_Dsc;
                 }
             }
-
-
-            //DBASQL db = new DBASQL();
-            //SqlParameter[] param = { 
-            //                           db.MakeInParam("@Pdm_Cod", SqlDbType.VarChar, 20, pdmCod),
-            //                           db.MakeInParam("@Pdm_Atv", SqlDbType.Bit,1,1), // Somente procedimento ativo
-            //                       };
-            //SqlDataReader dr = db.runProcDataReader("ssAtz_Pdm", param);
-
-            //if (dr.Read())
-            //{
-            //    pdmCod = dr["Pdm_Cod"].ToString();
-            //    pdmDsc = dr["Pdm_Dsc"].ToString();
-            //}
-            //db.Dispose();
-
-            //if (!string.IsNullOrEmpty(pdmDsc))
-            //{
-                globall.showMessage(imgMsg, lblMsg, string.Empty);
-
-                // Cria uma nova linha no DataTable
-                DataRow drw = dtb.NewRow();
-                // Adiciona os dados à nova linha criada
-                drw[0] = pdmCod;
-                drw[1] = pdmDsc;
-                try
-                {
-                    // Adiciona a linha no DataTable
-                    dtb.Rows.Add(drw);
-                }
-                catch
-                {
-                    globall.showMessage(imgMsg, lblMsg, "Este procedimento já foi selecionado!");
-                }
-                ViewState["dtbPdm"] = dtb;
-                lvwPdm.DataSource = dtb;
-                lvwPdm.DataBind();
-                globall.showMessage(imgMsg, lblMsg, string.Empty);
-            //}
-            //else
-            //{
-            //    globall.showMessage(imgMsg, lblMsg, "O código do procedimento informado não foi encontrado..");
-            //}
+            ListItem li = new ListItem(pdmCod + " - " + pdmDsc, pdmCod);
+            if (!lbxPdm.Items.Contains(li))
+                lbxPdm.Items.Add(li);
+            globall.showMessage(imgMsg, lblMsg, string.Empty);
         }
         else
             globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do procedimento que deseja adicionar.");
 
-        dtb.Dispose();
     }
-    protected void lvwPdm_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
-    {
-        string pdmCod = lvwPdm.DataKeys[e.NewSelectedIndex].Value.ToString();
 
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-        DataRow drw = dtb.NewRow();
-        // Procura no datatable pelo profissional a ser removido
-        foreach (DataRow dr in dtb.Rows)
-        {
-            if (dr["Pdm_Cod"].ToString() == pdmCod)
-            {
-                drw = dr;
-            }
-        }
-        //Remove do datatable a linha que contém o procedimento
-        if (!drw.IsNull("Pdm_Cod"))
-            drw.Delete();
-
-        lvwPdm.DataSource = dtb;
-        lvwPdm.DataBind();
-        ViewState["dtbPdm"] = dtb;
-        dtb.Dispose();
-        globall.showMessage(imgMsg, lblMsg, string.Empty);
-    }
-    protected void lvwPdm_ItemCommand(object sender, ListViewCommandEventArgs e)
-    {
-        if (e.CommandName == "Add")
-        {
-            TextBox txtCod = (TextBox)lvwPdm.InsertItem.FindControl("txtPdmCod");
-            addPdm(txtCod.Text);
-            txtCod.Text = string.Empty;
-        }
-        else if (e.CommandName == "ShowPopup")
-            showPopupPdm();
-    }
     private void visualizarNgc()
     {
         selectedRde();
@@ -644,28 +552,12 @@ public partial class Atz_ngcctt : PageBase
             return;
         }
 
-        DataTable dtb = new DataTable();
-        dtb = (DataTable)ViewState["dtbPdm"];
-
         globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-        // Cria uma nova linha no DataTable
-        DataRow drw = dtb.NewRow();
-        drw[0] = grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString();
-        drw[1] = HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString());
-        try
-        {
-            // Adiciona a linha no DataTable
-            dtb.Rows.Add(drw);
-        }
-        catch
-        {
-            globall.showMessage(imgMsg, lblMsg, "Este procedimento já foi selecionado!");
-        }
-        ViewState["dtbPdm"] = dtb;
-        lvwPdm.DataSource = dtb;
-        lvwPdm.DataBind();
-        dtb.Dispose();
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()),
+            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()) + " - " +
+            grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString());
+        lbxPdm.Items.Add(li);
         hidePopupPdm();
     }
     protected void ibtFecharPdm_Click(object sender, ImageClickEventArgs e)

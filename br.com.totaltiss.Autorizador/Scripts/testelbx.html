@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Title of the document</title>
+    <!--Add JQuery reference -->
+    <script src="jquery-1.8.2.min.js" type="text/javascript"></script>
+     
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+        //If you want to move selected item from fromListBox to toListBox
+            $("#add").click(function() {
+                $("#fromListBox  option:selected").appendTo("#toListBox");
+            });
+            //If you want to move all item from fromListBox to toListBox
+            $("#addAll").click(function() {
+                $("#fromListBox option").appendTo("#toListBox");
+            });
+            //If you want to remove selected item from toListBox to fromListBox
+            $("#remove").click(function() {
+                $("#toListBox option:selected").appendTo("#fromListBox");
+            });
+            //If you want to remove all items from toListBox to fromListBox
+            $("#removeAll").click(function() {
+                $("#toListBox option").appendTo("#fromListBox");
+            });
+ 
+        });
+  </script>
+ 
+</head>
+
+<body>
+  <table>
+  <tbody><tr>
+  <td><asp:listbox id="fromListBox" runat="server" selectionmode="Multiple" rows="6">
+            <asp:listitem>Delhi</asp:listitem>
+            <asp:listitem>Chennai</asp:listitem>
+            <asp:listitem>Pune</asp:listitem>
+             <asp:listitem>Kolkata</asp:listitem>
+             <asp:listitem>Mumbai</asp:listitem>
+             <asp:listitem>Bangalore</asp:listitem>
+        </asp:listbox></td>
+  <td> <input id="add" type="button" value="Add"><br>
+        <input id="addAll" type="button" value="Add All"><br>
+        <input id="remove" type="button" value="Remove"><br>
+        <input id="removeAll" type="button" value="Remove All"><br></td>
+  <td><asp:listbox id="toListBox" runat="server" selectionmode="Multiple" rows="6"></asp:listbox>  </td>
+  </tr>
+  </tbody></table>
+</body>
+
+</html>
+
+
+ 
+     
+
