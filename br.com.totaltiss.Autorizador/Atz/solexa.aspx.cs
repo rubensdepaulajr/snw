@@ -216,6 +216,12 @@ public partial class Atz_solexa : System.Web.UI.Page
 
     protected void grd_SelectedIndexChanged(object sender, EventArgs e)
     {
+        if (procedimentoJaSolicitado(grd.DataKeys[grd.SelectedIndex].Values["Pdm_Cod"].ToString()))
+        {
+            limpaPopup();
+            return;
+        }
+
         DataTable dtb = new DataTable();
         dtb = (DataTable)ViewState["dtbPdm"];
           
@@ -268,6 +274,38 @@ public partial class Atz_solexa : System.Web.UI.Page
         grd.SelectedIndex = -1;
     }
     #endregion
+    /// <summary>
+    /// Verificar se o procedimento já foi solicitado pelo profional no mesmo dia
+    /// </summary>
+    /// <param name="pdmCod">Código do procedimento</param>
+    /// <returns>sim ou não</returns>
+    private bool procedimentoJaSolicitado(string pdmCod)
+    {
+        DBASQL dba = new DBASQL();
+        SqlParameter[] param = { 
+                                    dba.MakeInParam("@Pdm_Cod", SqlDbType.VarChar, 20, txtPsqPdm.Text),
+                                    dba.MakeInParam("@Pdm_Atv", SqlDbType.Bit,1, 1)
+                                };
+        SqlDataReader reader;
+
+        dba.RunSql("SELECT Sit_Dsc "+
+            "FROM dbo.Atz_Sol, dbo.Atz_SolPdm, dbo.Atz_Pdm, dbo.Atz_Sit "+
+            "WHERE IdSol = Spd_IdSol AND "+
+	        "    IdPdm = Spd_IdPdm AND "+
+	        "    IdSit = Spd_IdSit AND "+
+	        "    Pdm_Cod = '"+ pdmCod +"' AND "+
+	        "    Sol_IdBnf = "+ hdfIdBnf.Value +" AND "+
+            "    Sol_IdPrfSol = "+ lblIdPrf.Text +" AND " +
+	        "    CONVERT(DATE,Spd_Dat) = CONVERT(DATE,GETDATE()) ",out reader);
+
+        if (reader.Read())
+        {
+            globall.showMessage(ImgErr, lblErr, "Este procedimento já foi solicitado hoje e esta com a seguinte situação: "+ reader[0].ToString() +"!");
+            return true;
+        }
+        else
+            return false;
+    }
 
     /// <summary>
     /// Adiciona procedimento ao grid e ao datatable do viewstate, de acordo com o código digitado no textbox
@@ -293,6 +331,11 @@ public partial class Atz_solexa : System.Web.UI.Page
                 ImgErr.Visible = false;
                 lblErr.Text = string.Empty;
 
+                if (procedimentoJaSolicitado(txtPsqPdm.Text))
+                {
+                    return;
+                }                
+                
                 // Cria uma nova linha no DataTable
                 DataRow drw = dtb.NewRow();
                 // Adiciona os dados à nova linha criada
