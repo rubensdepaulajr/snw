@@ -1519,30 +1519,6 @@ namespace br.com.totaltiss.Data
         private global::System.String _Pdm_DscAmb;
         partial void OnPdm_DscAmbChanging(global::System.String value);
         partial void OnPdm_DscAmbChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> Pdm_Itn
-        {
-            get
-            {
-                return _Pdm_Itn;
-            }
-            set
-            {
-                OnPdm_ItnChanging(value);
-                ReportPropertyChanging("Pdm_Itn");
-                _Pdm_Itn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Pdm_Itn");
-                OnPdm_ItnChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _Pdm_Itn;
-        partial void OnPdm_ItnChanging(Nullable<global::System.Boolean> value);
-        partial void OnPdm_ItnChanged();
 
         #endregion
 

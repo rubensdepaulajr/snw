@@ -183,15 +183,6 @@ public partial class Atz_ngcprf {
     protected global::System.Web.UI.WebControls.TextBox txtSeqEnd;
     
     /// <summary>
-    /// lbxPrf control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ListBox lbxPrf;
-    
-    /// <summary>
     /// txtPrfMtr control.
     /// </summary>
     /// <remarks>
@@ -253,6 +244,15 @@ public partial class Atz_ngcprf {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.LinkButton lbtShowPop;
+    
+    /// <summary>
+    /// lbxPrf control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ListBox lbxPrf;
     
     /// <summary>
     /// cblRde control.
@@ -327,15 +327,6 @@ public partial class Atz_ngcprf {
     protected global::System.Web.UI.WebControls.TextBox txtDatFim;
     
     /// <summary>
-    /// lbxPdm control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ListBox lbxPdm;
-    
-    /// <summary>
     /// txtPdmCod control.
     /// </summary>
     /// <remarks>
@@ -397,6 +388,15 @@ public partial class Atz_ngcprf {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.LinkButton btnPesPdm;
+    
+    /// <summary>
+    /// lbxPdm control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ListBox lbxPdm;
     
     /// <summary>
     /// rblTip control.

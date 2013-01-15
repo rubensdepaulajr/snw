@@ -310,9 +310,7 @@
                                                             Procedimento:</td><td style="height: 22px" width="5">
                                                         </td>
                                                         <td align="left">
-                                                            <div>
-                                                                <asp:ListBox ID="lbxPdm" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
-                                                            </div>
+                                                            
                                                             <div>
                                                                 <asp:TextBox ID="txtPdmCod" runat="server"></asp:TextBox>
                                                                 <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Spacer.gif" />
@@ -320,7 +318,10 @@
                                                                 <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/Spacer.gif" />
                                                                 <asp:LinkButton ID="btnDelPdm" runat="server" OnClick="btnDelPdm_Click">Remover</asp:LinkButton>
                                                                 <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/Spacer.gif" />
-                                                                <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopup">Buscar Procedimento</asp:LinkButton>
+                                                                <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopup" OnClick="lbtShowPop_Click">Buscar Procedimento</asp:LinkButton>
+                                                            </div>
+                                                            <div>
+                                                                <asp:ListBox ID="lbxPdm" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
                                                             </div>
                                                         </td>
                                                     </tr>

@@ -149,6 +149,62 @@ public partial class Atz_ngcctt : PageBase
 
     }
 
+    //private void addPdm(string pdmCod)
+    //{
+    //    string pdmDsc = string.Empty;
+
+    //    if (pdmCod.Trim().Length > 0)
+    //    {
+    //        //using (AppEntities ctx = new AppEntities())
+    //        //{
+    //        //    var pdm = ctx.Atz_Pdm.FirstOrDefault(p => p.Pdm_Cod == pdmCod);
+
+    //        //    if (pdm == null)
+    //        //    {
+    //        //        globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com código informado!");
+    //        //        return;
+    //        //    }
+    //        //    else if (pdm.Pdm_Atv == false)
+    //        //    {
+    //        //        globall.showMessage(imgMsg, lblMsg, "Não é permitido inserir procedimento inativo na negociação!");
+    //        //        return;
+    //        //    }
+    //        //    else
+    //        //    {
+    //        //        pdmDsc = pdm.Pdm_Dsc;
+    //        //    }
+    //        //}
+    //        DBASQL db = new DBASQL();
+    //        SqlParameter[] param = { 
+    //                                   db.MakeInParam("@Pdm_Cod", SqlDbType.VarChar, 20, pdmCod),
+    //                                   db.MakeInParam("@Pdm_Atv",SqlDbType.Bit,1,1), // Somente procedimento ativo
+    //                               };
+    //        SqlDataReader dr = db.runProcDataReader("ssAtz_Pdm", param);
+
+    //        if (dr.Read())
+    //        {
+    //            pdmCod = dr["Pdm_Cod"].ToString();
+    //            pdmDsc = dr["Pdm_Dsc"].ToString();
+    //        }
+    //        db.Dispose();
+
+    //        if (!string.IsNullOrEmpty(pdmDsc))
+    //        {
+    //            globall.showMessage(imgMsg, lblMsg, string.Empty);
+    //            ListItem li = new ListItem(pdmCod + " - " + pdmDsc, pdmCod);
+    //            if (!lbxPdm.Items.Contains(li))
+    //                lbxPdm.Items.Add(li);
+    //            globall.showMessage(imgMsg, lblMsg, string.Empty);
+    //        }
+    //        else
+    //        {
+    //            globall.showMessage(imgMsg, lblMsg, "O procedimento não foi encontrado ou esta inativo.");
+    //        }
+    //    }
+    //    else
+    //        globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do procedimento que deseja adicionar.");
+    //}
+
     private void visualizarNgc()
     {
         selectedRde();
@@ -554,8 +610,8 @@ public partial class Atz_ngcctt : PageBase
 
         globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()),
-            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()) + " - " +
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString()) + " - " +
+            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()),
             grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString());
         lbxPdm.Items.Add(li);
         hidePopupPdm();
@@ -598,5 +654,21 @@ public partial class Atz_ngcctt : PageBase
         {
             finalizarNgc("U");
         }
+    }
+
+    protected void btnAddPdm_Click(object sender, EventArgs e)
+    {
+        addPdm(txtPdmCod.Text);
+        txtPdmCod.Text = string.Empty;
+    }
+
+    protected void lbtShowPop_Click(object sender, EventArgs e)
+    {
+        showPopupPdm();
+    }
+
+    protected void btnDelPdm_Click(object sender, EventArgs e)
+    {
+        lbxPdm.Items.Remove(lbxPdm.SelectedItem);
     }
 }

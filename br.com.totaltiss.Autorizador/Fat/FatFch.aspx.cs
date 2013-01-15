@@ -110,7 +110,7 @@ public partial class Fat_FatFch : System.Web.UI.Page
         using (AppEntities ctx = new AppEntities())
         {
             var fchCpc = (from f in ctx.Fat_Fch
-                          select f.Fch_Cpc).Max(); ;
+                          select f.Fch_Cpc).Max();
 
             return fchCpc;
         }

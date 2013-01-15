@@ -104,7 +104,6 @@
           <Property Name="Pdm_QtdFlm" Type="numeric" Scale="4" />
           <Property Name="Pdm_CodAmb" Type="varchar" MaxLength="20" />
           <Property Name="Pdm_DscAmb" Type="varchar" MaxLength="80" />
-          <Property Name="Pdm_Itn" Type="bit" />
         </EntityType>
         <EntityType Name="Atz_Tab">
           <Key>
@@ -338,7 +337,6 @@
           <NavigationProperty Name="Atz_Grp" Relationship="AppModel.FK_Atz_Pdm_Atz_Grp" FromRole="Atz_Pdm" ToRole="Atz_Grp" />
           <NavigationProperty Name="Atz_Tab" Relationship="AppModel.RefAtz_Tab621" FromRole="Atz_Pdm" ToRole="Atz_Tab" />
           <NavigationProperty Name="Atz_Tpp" Relationship="AppModel.RefAtz_Tpp21" FromRole="Atz_Pdm" ToRole="Atz_Tpp" />
-          <Property Type="Boolean" Name="Pdm_Itn" />
         </EntityType>
         <EntityType Name="Atz_Grp">
           <Key>
@@ -542,7 +540,6 @@
           <EntitySetMapping Name="Atz_Pdm">
             <EntityTypeMapping TypeName="AppModel.Atz_Pdm">
               <MappingFragment StoreEntitySet="Atz_Pdm">
-                <ScalarProperty Name="Pdm_Itn" ColumnName="Pdm_Itn" />
                 <ScalarProperty Name="Pdm_DscAmb" ColumnName="Pdm_DscAmb" />
                 <ScalarProperty Name="Pdm_CodAmb" ColumnName="Pdm_CodAmb" />
                 <ScalarProperty Name="Pdm_QtdFlm" ColumnName="Pdm_QtdFlm" />

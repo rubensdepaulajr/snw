@@ -246,15 +246,6 @@ public partial class Atz_ngcctt {
     protected global::System.Web.UI.WebControls.TextBox txtDatFim;
     
     /// <summary>
-    /// lbxPdm control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ListBox lbxPdm;
-    
-    /// <summary>
     /// txtPdmCod control.
     /// </summary>
     /// <remarks>
@@ -316,6 +307,15 @@ public partial class Atz_ngcctt {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.LinkButton lbtShowPop;
+    
+    /// <summary>
+    /// lbxPdm control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ListBox lbxPdm;
     
     /// <summary>
     /// rblTip control.

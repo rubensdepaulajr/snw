@@ -121,9 +121,6 @@ public partial class Atz_ngcprf : PageBase
         if (!string.IsNullOrEmpty(txtSeqEnd.Text))
             seqEnd = txtSeqEnd.Text;
 
-        //DataTable dtb = new DataTable();
-        //dtb = (DataTable)ViewState["dtbPrf"];
-
         if (prfMtr.Trim().Length > 0)
         {
             DBASQL db = new DBASQL();
@@ -145,25 +142,6 @@ public partial class Atz_ngcprf : PageBase
             {
                 globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-                //// Cria uma nova linha no DataTable
-                //DataRow drw = dtb.NewRow();
-                //// Adiciona os dados à nova linha criada
-                //drw[0] = prfMtr;
-                //drw[1] = prfNme;
-                //try
-                //{
-                //    // Adiciona a linha no DataTable
-                //    dtb.Rows.Add(drw);
-                //}
-                //catch
-                //{
-                //    globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
-                //}
-                //ViewState["dtbPrf"] = dtb;
-                //lvwPrf.DataSource = dtb;
-                //lvwPrf.DataBind();
-                //globall.showMessage(imgMsg, lblMsg, string.Empty);
-
                 ListItem li = new ListItem(prfMtr + " - " + prfNme, prfMtr);
                 if (!lbxPrf.Items.Contains(li))
                     lbxPrf.Items.Add(li);
@@ -175,9 +153,62 @@ public partial class Atz_ngcprf : PageBase
         }
         else
             globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do profissional que deseja adicionar.");
-
-        //dtb.Dispose();
     }
+    //private void addPdm(string pdmCod)
+    //{
+    //    string pdmDsc = string.Empty;
+
+    //    if (pdmCod.Trim().Length > 0)
+    //    {
+    //        //using (AppEntities ctx = new AppEntities())
+    //        //{
+    //        //    var pdm = ctx.Atz_Pdm.FirstOrDefault(p => p.Pdm_Cod == pdmCod);
+
+    //        //    if (pdm == null)
+    //        //    {
+    //        //        globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com código informado!");
+    //        //        return;
+    //        //    }
+    //        //    else if (pdm.Pdm_Atv == false)
+    //        //    {
+    //        //        globall.showMessage(imgMsg, lblMsg, "Não é permitido inserir procedimento inativo na negociação!");
+    //        //        return;
+    //        //    }
+    //        //    else
+    //        //    {
+    //        //        pdmDsc = pdm.Pdm_Dsc;
+    //        //    }
+    //        //}
+    //        DBASQL db = new DBASQL();
+    //        SqlParameter[] param = { 
+    //                                   db.MakeInParam("@Pdm_Cod", SqlDbType.VarChar, 20, pdmCod),
+    //                                   db.MakeInParam("@Pdm_Atv",SqlDbType.Bit,1,1), // Somente procedimento ativo
+    //                               };
+    //        SqlDataReader dr = db.runProcDataReader("ssAtz_Pdm", param);
+
+    //        if (dr.Read())
+    //        {
+    //            pdmCod = dr["Pdm_Cod"].ToString();
+    //            pdmDsc = dr["Pdm_Dsc"].ToString();
+    //        }
+    //        db.Dispose();
+
+    //        if (!string.IsNullOrEmpty(pdmDsc))
+    //        {
+    //            globall.showMessage(imgMsg, lblMsg, string.Empty);
+    //            ListItem li = new ListItem(pdmCod + " - " + pdmDsc, pdmCod);
+    //            if (!lbxPdm.Items.Contains(li))
+    //                lbxPdm.Items.Add(li);
+    //            globall.showMessage(imgMsg, lblMsg, string.Empty);
+    //        }
+    //        else
+    //        {
+    //            globall.showMessage(imgMsg, lblMsg, "O procedimento não foi encontrado ou esta inativo.");
+    //        }
+    //    }
+    //    else
+    //        globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do procedimento que deseja adicionar.");
+    //}
     private void addPdm(string pdmCod)
     {
         string pdmDsc = string.Empty;
@@ -190,7 +221,7 @@ public partial class Atz_ngcprf : PageBase
 
                 if (pdm == null)
                 {
-                    globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com código informado!");
+                    globall.showMessage(imgMsg, lblMsg, "Nenhum procedimento encontrado com o informado!");
                     return;
                 }
                 else if (pdm.Pdm_Atv == false)
@@ -210,6 +241,7 @@ public partial class Atz_ngcprf : PageBase
         }
         else
             globall.showMessage(imgMsg, lblMsg, "Por favor, informe o código do procedimento que deseja adicionar.");
+
     }
     private void visualizarNgc()
     {
@@ -606,19 +638,10 @@ public partial class Atz_ngcprf : PageBase
        
         globall.showMessage(imgMsg,lblMsg, string.Empty);
 
-        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString()),
-            HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString())+" - "+
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Mtr"].ToString()) +" - "+
+            HttpUtility.HtmlDecode(grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Nme"].ToString()),
             grdPopPrf.DataKeys[grdPopPrf.SelectedIndex].Values["Prf_Mtr"].ToString());
         lbxPrf.Items.Add(li);
-        //try
-        //{
-        //    // Adiciona a linha no DataTable
-
-        //}
-        //catch
-        //{
-        //    globall.showMessage(imgMsg, lblMsg, "Este profissional já foi selecionado!");
-        //}
 
         hidePopupPrf();
     }
@@ -632,8 +655,8 @@ public partial class Atz_ngcprf : PageBase
 
         globall.showMessage(imgMsg, lblMsg, string.Empty);
 
-        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()),
-            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()) + " - " +
+        ListItem li = new ListItem(HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString())+ " - "+
+            HttpUtility.HtmlDecode(grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Dsc"].ToString()) ,
             grdPopPdm.DataKeys[grdPopPdm.SelectedIndex].Values["Pdm_Cod"].ToString());
         lbxPdm.Items.Add(li);
         hidePopupPdm();
@@ -767,6 +790,11 @@ public partial class Atz_ngcprf : PageBase
     protected void btnPesPdm_Click(object sender, EventArgs e)
     {
         showPopupPdm();
+    }
+
+    protected void lbtShowPop_Click(object sender, EventArgs e)
+    {
+        showPopupPrf();
     }
 
 }

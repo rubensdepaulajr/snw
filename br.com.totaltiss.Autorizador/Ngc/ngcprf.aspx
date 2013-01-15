@@ -296,9 +296,6 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                 </td>
                                 <td align="left">
                                     <div>
-                                        <asp:ListBox ID="lbxPrf" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
-                                    </div>
-                                    <div>
                                         <asp:TextBox ID="txtPrfMtr" runat="server"></asp:TextBox>
                                         <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Spacer.gif" />
                                         <asp:LinkButton ID="btnAddPrf" runat="server" OnClick="btnAddPrf_Click">Adicionar</asp:LinkButton>
@@ -306,6 +303,9 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                         <asp:LinkButton ID="btnDelPrf" runat="server" OnClick="btnDelPrf_Click">Remover</asp:LinkButton>
                                         <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Spacer.gif" />
                                         <asp:LinkButton ID="lbtShowPop" runat="server" CommandName="ShowPopupPrf" OnClick="lbtShowPop_Click" >Buscar Profissional</asp:LinkButton>
+                                    </div>
+                                    <div>
+                                        <asp:ListBox ID="lbxPrf" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
                                     </div>
                                 </td>
                             </tr>
@@ -412,9 +412,6 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                 </td>
                                 <td align="left">
                                     <div>
-                                        <asp:ListBox ID="lbxPdm" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
-                                    </div>
-                                    <div>
                                         <asp:TextBox ID="txtPdmCod" runat="server"></asp:TextBox>
                                         <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Spacer.gif" />
                                         <asp:LinkButton ID="btnAddPdm" runat="server" OnClick="btnAddPdm_Click">Adicionar</asp:LinkButton>
@@ -422,6 +419,9 @@ Title="Negociação Profissional" Theme="Standard" Codebehind="ngcprf.aspx.cs" %>
                                         <asp:LinkButton ID="btnDelPdm" runat="server" OnClick="btnDelPdm_Click">Remover</asp:LinkButton>
                                         <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/Spacer.gif" />
                                         <asp:LinkButton ID="btnPesPdm" runat="server" CommandName="ShowPopupPdm" OnClick="btnPesPdm_Click">Buscar Procedimento</asp:LinkButton>
+                                    </div>
+                                    <div>
+                                        <asp:ListBox ID="lbxPdm" runat="server" ClientIDMode="Static" Width="400px" CssClass="campo"></asp:ListBox>
                                     </div>
                                 </td>
                             </tr>
