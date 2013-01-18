@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-//using br.com.totaltiss.Data.Context;
+using br.com.totaltiss.Data.Context;
 
 namespace br.com.totaltiss.Data
 {
-    /*
     public class TotalContextInitializer : DropCreateDatabaseIfModelChanges <TotalContext>
     {
-        protected override void Seed(dbTotal context)
+        protected override void Seed(TotalContext context)
         {
             //var eventos = new List<Evn_Tit>
             //{
@@ -86,5 +85,5 @@ namespace br.com.totaltiss.Data
         }
 
     }
-    */
+    
 }

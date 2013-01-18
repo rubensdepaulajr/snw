@@ -129,6 +129,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Adm\arqtxt.aspx" />
+    <Content Include="Adm\cript.aspx" />
     <Content Include="altsnh.aspx" />
     <Content Include="App_Rpt\Rpt.aspx" />
     <Content Include="App_Themes\Cad\Global.css" />
@@ -477,6 +479,9 @@
     <Content Include="politica_privacidade.html" />
     <Content Include="portal_tiss.html" />
     <Content Include="prestador_interno.html" />
+    <Content Include="Areas\Sgn\Views\Web.config" />
+    <Content Include="Areas\Cad\Views\Web.config" />
+    <Content Include="Adm\Web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -555,6 +560,20 @@
     <Content Include="WebProfileBuilder.user" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adm\arqtxt.aspx.cs">
+      <DependentUpon>arqtxt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adm\arqtxt.aspx.designer.cs">
+      <DependentUpon>arqtxt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\cript.aspx.cs">
+      <DependentUpon>cript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adm\cript.aspx.designer.cs">
+      <DependentUpon>cript.aspx</DependentUpon>
+    </Compile>
     <Compile Include="altsnh.aspx.cs">
       <DependentUpon>altsnh.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -573,6 +592,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Cad\CadAreaRegistration.cs" />
+    <Compile Include="Areas\Sgn\SgnAreaRegistration.cs" />
     <Compile Include="Atz.master.cs">
       <DependentUpon>Atz.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1253,6 +1274,13 @@
     <EmbeddedResource Include="App_Rpt\SolSdt.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Cad\Controllers\" />
+    <Folder Include="Areas\Cad\Models\" />
+    <Folder Include="Areas\Cad\Views\Shared\" />
+    <Folder Include="Areas\Sgn\Controllers\" />
+    <Folder Include="Areas\Sgn\Models\" />
+    <Folder Include="Areas\Sgn\Views\Shared\" />
+    <Folder Include="Arq\" />
     <Folder Include="Controllers\Api\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -1260,6 +1288,10 @@
     <ProjectReference Include="..\br.com.totaltiss.Data\br.com.totaltiss.Data.csproj">
       <Project>{3671be0e-449e-42c0-b7fb-dbda5e6af2e3}</Project>
       <Name>br.com.totaltiss.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\br.com.totaltiss.Domain\br.com.totaltiss.Domain.csproj">
+      <Project>{231c4b0a-2b6e-46a8-b149-6673b673bc5e}</Project>
+      <Name>br.com.totaltiss.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\br.com.totaltiss.Util\br.com.totaltiss.Util.csproj">
       <Project>{431d7d37-9366-4983-b125-bf346d2eac39}</Project>
