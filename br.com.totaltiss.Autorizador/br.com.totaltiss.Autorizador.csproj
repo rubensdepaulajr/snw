@@ -48,6 +48,10 @@
     <Reference Include="DBASQL">
       <HintPath>..\Autorizador\Bin\DBASQL.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\45\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -68,7 +72,9 @@
     <Reference Include="SanitizerProviders">
       <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\45\SanitizerProviders\SanitizerProviders.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
@@ -479,9 +485,8 @@
     <Content Include="politica_privacidade.html" />
     <Content Include="portal_tiss.html" />
     <Content Include="prestador_interno.html" />
-    <Content Include="Areas\Sgn\Views\Web.config" />
-    <Content Include="Areas\Cad\Views\Web.config" />
     <Content Include="Adm\Web.config" />
+    <Content Include="Fat\Web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -592,8 +597,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Cad\CadAreaRegistration.cs" />
-    <Compile Include="Areas\Sgn\SgnAreaRegistration.cs" />
     <Compile Include="Atz.master.cs">
       <DependentUpon>Atz.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -818,7 +821,9 @@
     <Compile Include="Bio\ver.aspx.designer.cs">
       <DependentUpon>ver.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BairroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -862,6 +867,10 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cad_Brr.cs" />
+    <Compile Include="Models\Cad_Mun.cs" />
+    <Compile Include="Models\TotalContext.cs" />
+    <Compile Include="Models\TotalInitializer.cs" />
     <Compile Include="Mpv\cidcon.aspx.cs">
       <DependentUpon>cidcon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1245,6 +1254,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Municipio\Index.cshtml" />
+    <Content Include="Views\Municipio\Details.cshtml" />
+    <Content Include="Views\Municipio\Create.cshtml" />
+    <Content Include="Views\Municipio\Edit.cshtml" />
+    <Content Include="Views\Municipio\Delete.cshtml" />
+    <Content Include="Views\Bairro\Index.cshtml" />
+    <Content Include="Views\Bairro\Details.cshtml" />
+    <Content Include="Views\Bairro\Create.cshtml" />
+    <Content Include="Views\Bairro\Edit.cshtml" />
+    <Content Include="Views\Bairro\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1274,24 +1293,13 @@
     <EmbeddedResource Include="App_Rpt\SolSdt.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Cad\Controllers\" />
-    <Folder Include="Areas\Cad\Models\" />
-    <Folder Include="Areas\Cad\Views\Shared\" />
-    <Folder Include="Areas\Sgn\Controllers\" />
-    <Folder Include="Areas\Sgn\Models\" />
-    <Folder Include="Areas\Sgn\Views\Shared\" />
     <Folder Include="Arq\" />
     <Folder Include="Controllers\Api\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\br.com.totaltiss.Data\br.com.totaltiss.Data.csproj">
       <Project>{3671be0e-449e-42c0-b7fb-dbda5e6af2e3}</Project>
       <Name>br.com.totaltiss.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\br.com.totaltiss.Domain\br.com.totaltiss.Domain.csproj">
-      <Project>{231c4b0a-2b6e-46a8-b149-6673b673bc5e}</Project>
-      <Name>br.com.totaltiss.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\br.com.totaltiss.Util\br.com.totaltiss.Util.csproj">
       <Project>{431d7d37-9366-4983-b125-bf346d2eac39}</Project>

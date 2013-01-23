@@ -1,0 +1,45 @@
+﻿@model br.com.totaltiss.Domain.Entities.Atz_Brr
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Atz_Brr</legend>
+
+        @Html.HiddenFor(model => model.IdBrr)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brr_IdMun)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Brr_IdMun)
+            @Html.ValidationMessageFor(model => model.Brr_IdMun)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brr_Nme)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Brr_Nme)
+            @Html.ValidationMessageFor(model => model.Brr_Nme)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

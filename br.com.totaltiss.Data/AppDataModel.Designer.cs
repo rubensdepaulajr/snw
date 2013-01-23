@@ -382,7 +382,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -401,7 +401,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdMsgChanging(value);
                     ReportPropertyChanging("IdMsg");
-                    _IdMsg = StructuralObject.SetValidValue(value);
+                    _IdMsg = StructuralObject.SetValidValue(value, "IdMsg");
                     ReportPropertyChanged("IdMsg");
                     OnIdMsgChanged();
                 }
@@ -426,7 +426,7 @@ namespace br.com.totaltiss.Data
             {
                 OnMsg_DscChanging(value);
                 ReportPropertyChanging("Msg_Dsc");
-                _Msg_Dsc = StructuralObject.SetValidValue(value, false);
+                _Msg_Dsc = StructuralObject.SetValidValue(value, false, "Msg_Dsc");
                 ReportPropertyChanged("Msg_Dsc");
                 OnMsg_DscChanged();
             }
@@ -450,7 +450,7 @@ namespace br.com.totaltiss.Data
             {
                 OnMsg_DscAtzChanging(value);
                 ReportPropertyChanging("Msg_DscAtz");
-                _Msg_DscAtz = StructuralObject.SetValidValue(value, false);
+                _Msg_DscAtz = StructuralObject.SetValidValue(value, false, "Msg_DscAtz");
                 ReportPropertyChanged("Msg_DscAtz");
                 OnMsg_DscAtzChanged();
             }
@@ -474,7 +474,7 @@ namespace br.com.totaltiss.Data
             {
                 OnMsg_GrpChanging(value);
                 ReportPropertyChanging("Msg_Grp");
-                _Msg_Grp = StructuralObject.SetValidValue(value, false);
+                _Msg_Grp = StructuralObject.SetValidValue(value, false, "Msg_Grp");
                 ReportPropertyChanged("Msg_Grp");
                 OnMsg_GrpChanged();
             }
@@ -498,7 +498,7 @@ namespace br.com.totaltiss.Data
             {
                 OnMsg_LocChanging(value);
                 ReportPropertyChanging("Msg_Loc");
-                _Msg_Loc = StructuralObject.SetValidValue(value, true);
+                _Msg_Loc = StructuralObject.SetValidValue(value, true, "Msg_Loc");
                 ReportPropertyChanged("Msg_Loc");
                 OnMsg_LocChanged();
             }
@@ -509,7 +509,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -567,7 +566,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -584,7 +583,7 @@ namespace br.com.totaltiss.Data
             {
                 OnApplicationIdChanging(value);
                 ReportPropertyChanging("ApplicationId");
-                _ApplicationId = StructuralObject.SetValidValue(value);
+                _ApplicationId = StructuralObject.SetValidValue(value, "ApplicationId");
                 ReportPropertyChanged("ApplicationId");
                 OnApplicationIdChanged();
             }
@@ -610,7 +609,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnRoleIdChanging(value);
                     ReportPropertyChanging("RoleId");
-                    _RoleId = StructuralObject.SetValidValue(value);
+                    _RoleId = StructuralObject.SetValidValue(value, "RoleId");
                     ReportPropertyChanged("RoleId");
                     OnRoleIdChanged();
                 }
@@ -635,7 +634,7 @@ namespace br.com.totaltiss.Data
             {
                 OnRoleNameChanging(value);
                 ReportPropertyChanging("RoleName");
-                _RoleName = StructuralObject.SetValidValue(value, false);
+                _RoleName = StructuralObject.SetValidValue(value, false, "RoleName");
                 ReportPropertyChanged("RoleName");
                 OnRoleNameChanged();
             }
@@ -659,7 +658,7 @@ namespace br.com.totaltiss.Data
             {
                 OnLoweredRoleNameChanging(value);
                 ReportPropertyChanging("LoweredRoleName");
-                _LoweredRoleName = StructuralObject.SetValidValue(value, false);
+                _LoweredRoleName = StructuralObject.SetValidValue(value, false, "LoweredRoleName");
                 ReportPropertyChanged("LoweredRoleName");
                 OnLoweredRoleNameChanged();
             }
@@ -683,7 +682,7 @@ namespace br.com.totaltiss.Data
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -707,7 +706,7 @@ namespace br.com.totaltiss.Data
             {
                 OnIsOpeChanging(value);
                 ReportPropertyChanging("IsOpe");
-                _IsOpe = StructuralObject.SetValidValue(value);
+                _IsOpe = StructuralObject.SetValidValue(value, "IsOpe");
                 ReportPropertyChanged("IsOpe");
                 OnIsOpeChanged();
             }
@@ -718,7 +717,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -770,7 +768,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -789,7 +787,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdGrpChanging(value);
                     ReportPropertyChanging("IdGrp");
-                    _IdGrp = StructuralObject.SetValidValue(value);
+                    _IdGrp = StructuralObject.SetValidValue(value, "IdGrp");
                     ReportPropertyChanged("IdGrp");
                     OnIdGrpChanged();
                 }
@@ -814,7 +812,7 @@ namespace br.com.totaltiss.Data
             {
                 OnGrp_DscChanging(value);
                 ReportPropertyChanging("Grp_Dsc");
-                _Grp_Dsc = StructuralObject.SetValidValue(value, true);
+                _Grp_Dsc = StructuralObject.SetValidValue(value, true, "Grp_Dsc");
                 ReportPropertyChanged("Grp_Dsc");
                 OnGrp_DscChanged();
             }
@@ -838,7 +836,7 @@ namespace br.com.totaltiss.Data
             {
                 OnGrp_QtdCh_Changing(value);
                 ReportPropertyChanging("Grp_QtdCh_");
-                _Grp_QtdCh_ = StructuralObject.SetValidValue(value);
+                _Grp_QtdCh_ = StructuralObject.SetValidValue(value, "Grp_QtdCh_");
                 ReportPropertyChanged("Grp_QtdCh_");
                 OnGrp_QtdCh_Changed();
             }
@@ -849,7 +847,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -915,7 +912,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -934,7 +931,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdPdmChanging(value);
                     ReportPropertyChanging("IdPdm");
-                    _IdPdm = StructuralObject.SetValidValue(value);
+                    _IdPdm = StructuralObject.SetValidValue(value, "IdPdm");
                     ReportPropertyChanged("IdPdm");
                     OnIdPdmChanged();
                 }
@@ -959,7 +956,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_IdTabChanging(value);
                 ReportPropertyChanging("Pdm_IdTab");
-                _Pdm_IdTab = StructuralObject.SetValidValue(value);
+                _Pdm_IdTab = StructuralObject.SetValidValue(value, "Pdm_IdTab");
                 ReportPropertyChanged("Pdm_IdTab");
                 OnPdm_IdTabChanged();
             }
@@ -983,7 +980,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_IdTppChanging(value);
                 ReportPropertyChanging("Pdm_IdTpp");
-                _Pdm_IdTpp = StructuralObject.SetValidValue(value);
+                _Pdm_IdTpp = StructuralObject.SetValidValue(value, "Pdm_IdTpp");
                 ReportPropertyChanged("Pdm_IdTpp");
                 OnPdm_IdTppChanged();
             }
@@ -1007,7 +1004,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_IdGrpChanging(value);
                 ReportPropertyChanging("Pdm_IdGrp");
-                _Pdm_IdGrp = StructuralObject.SetValidValue(value);
+                _Pdm_IdGrp = StructuralObject.SetValidValue(value, "Pdm_IdGrp");
                 ReportPropertyChanged("Pdm_IdGrp");
                 OnPdm_IdGrpChanged();
             }
@@ -1031,7 +1028,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_CodChanging(value);
                 ReportPropertyChanging("Pdm_Cod");
-                _Pdm_Cod = StructuralObject.SetValidValue(value, true);
+                _Pdm_Cod = StructuralObject.SetValidValue(value, true, "Pdm_Cod");
                 ReportPropertyChanged("Pdm_Cod");
                 OnPdm_CodChanged();
             }
@@ -1055,7 +1052,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_DscChanging(value);
                 ReportPropertyChanging("Pdm_Dsc");
-                _Pdm_Dsc = StructuralObject.SetValidValue(value, false);
+                _Pdm_Dsc = StructuralObject.SetValidValue(value, false, "Pdm_Dsc");
                 ReportPropertyChanged("Pdm_Dsc");
                 OnPdm_DscChanged();
             }
@@ -1079,7 +1076,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_AltCpxChanging(value);
                 ReportPropertyChanging("Pdm_AltCpx");
-                _Pdm_AltCpx = StructuralObject.SetValidValue(value);
+                _Pdm_AltCpx = StructuralObject.SetValidValue(value, "Pdm_AltCpx");
                 ReportPropertyChanged("Pdm_AltCpx");
                 OnPdm_AltCpxChanged();
             }
@@ -1103,7 +1100,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_DscRsmChanging(value);
                 ReportPropertyChanging("Pdm_DscRsm");
-                _Pdm_DscRsm = StructuralObject.SetValidValue(value, false);
+                _Pdm_DscRsm = StructuralObject.SetValidValue(value, false, "Pdm_DscRsm");
                 ReportPropertyChanged("Pdm_DscRsm");
                 OnPdm_DscRsmChanged();
             }
@@ -1127,7 +1124,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_SxoChanging(value);
                 ReportPropertyChanging("Pdm_Sxo");
-                _Pdm_Sxo = StructuralObject.SetValidValue(value, true);
+                _Pdm_Sxo = StructuralObject.SetValidValue(value, true, "Pdm_Sxo");
                 ReportPropertyChanged("Pdm_Sxo");
                 OnPdm_SxoChanged();
             }
@@ -1151,7 +1148,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_IddMinChanging(value);
                 ReportPropertyChanging("Pdm_IddMin");
-                _Pdm_IddMin = StructuralObject.SetValidValue(value);
+                _Pdm_IddMin = StructuralObject.SetValidValue(value, "Pdm_IddMin");
                 ReportPropertyChanged("Pdm_IddMin");
                 OnPdm_IddMinChanged();
             }
@@ -1175,7 +1172,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_IddMaxChanging(value);
                 ReportPropertyChanging("Pdm_IddMax");
-                _Pdm_IddMax = StructuralObject.SetValidValue(value);
+                _Pdm_IddMax = StructuralObject.SetValidValue(value, "Pdm_IddMax");
                 ReportPropertyChanged("Pdm_IddMax");
                 OnPdm_IddMaxChanged();
             }
@@ -1199,7 +1196,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdMaxChanging(value);
                 ReportPropertyChanging("Pdm_QtdMax");
-                _Pdm_QtdMax = StructuralObject.SetValidValue(value);
+                _Pdm_QtdMax = StructuralObject.SetValidValue(value, "Pdm_QtdMax");
                 ReportPropertyChanged("Pdm_QtdMax");
                 OnPdm_QtdMaxChanged();
             }
@@ -1223,7 +1220,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdDiaChanging(value);
                 ReportPropertyChanging("Pdm_QtdDia");
-                _Pdm_QtdDia = StructuralObject.SetValidValue(value);
+                _Pdm_QtdDia = StructuralObject.SetValidValue(value, "Pdm_QtdDia");
                 ReportPropertyChanged("Pdm_QtdDia");
                 OnPdm_QtdDiaChanged();
             }
@@ -1247,7 +1244,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdMesChanging(value);
                 ReportPropertyChanging("Pdm_QtdMes");
-                _Pdm_QtdMes = StructuralObject.SetValidValue(value);
+                _Pdm_QtdMes = StructuralObject.SetValidValue(value, "Pdm_QtdMes");
                 ReportPropertyChanged("Pdm_QtdMes");
                 OnPdm_QtdMesChanged();
             }
@@ -1271,7 +1268,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdAnoChanging(value);
                 ReportPropertyChanging("Pdm_QtdAno");
-                _Pdm_QtdAno = StructuralObject.SetValidValue(value);
+                _Pdm_QtdAno = StructuralObject.SetValidValue(value, "Pdm_QtdAno");
                 ReportPropertyChanged("Pdm_QtdAno");
                 OnPdm_QtdAnoChanged();
             }
@@ -1295,7 +1292,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_RtnChanging(value);
                 ReportPropertyChanging("Pdm_Rtn");
-                _Pdm_Rtn = StructuralObject.SetValidValue(value);
+                _Pdm_Rtn = StructuralObject.SetValidValue(value, "Pdm_Rtn");
                 ReportPropertyChanged("Pdm_Rtn");
                 OnPdm_RtnChanged();
             }
@@ -1319,7 +1316,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_EspChanging(value);
                 ReportPropertyChanging("Pdm_Esp");
-                _Pdm_Esp = StructuralObject.SetValidValue(value);
+                _Pdm_Esp = StructuralObject.SetValidValue(value, "Pdm_Esp");
                 ReportPropertyChanged("Pdm_Esp");
                 OnPdm_EspChanged();
             }
@@ -1343,7 +1340,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_PrfChanging(value);
                 ReportPropertyChanging("Pdm_Prf");
-                _Pdm_Prf = StructuralObject.SetValidValue(value);
+                _Pdm_Prf = StructuralObject.SetValidValue(value, "Pdm_Prf");
                 ReportPropertyChanged("Pdm_Prf");
                 OnPdm_PrfChanged();
             }
@@ -1367,7 +1364,7 @@ namespace br.com.totaltiss.Data
             {
                 OnC_nomegfiChanging(value);
                 ReportPropertyChanging("C_nomegfi");
-                _C_nomegfi = StructuralObject.SetValidValue(value, true);
+                _C_nomegfi = StructuralObject.SetValidValue(value, true, "C_nomegfi");
                 ReportPropertyChanged("C_nomegfi");
                 OnC_nomegfiChanged();
             }
@@ -1391,7 +1388,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_AtvChanging(value);
                 ReportPropertyChanging("Pdm_Atv");
-                _Pdm_Atv = StructuralObject.SetValidValue(value);
+                _Pdm_Atv = StructuralObject.SetValidValue(value, "Pdm_Atv");
                 ReportPropertyChanged("Pdm_Atv");
                 OnPdm_AtvChanged();
             }
@@ -1415,7 +1412,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdCh_Changing(value);
                 ReportPropertyChanging("Pdm_QtdCh_");
-                _Pdm_QtdCh_ = StructuralObject.SetValidValue(value);
+                _Pdm_QtdCh_ = StructuralObject.SetValidValue(value, "Pdm_QtdCh_");
                 ReportPropertyChanged("Pdm_QtdCh_");
                 OnPdm_QtdCh_Changed();
             }
@@ -1439,7 +1436,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_BlqUrgChanging(value);
                 ReportPropertyChanging("Pdm_BlqUrg");
-                _Pdm_BlqUrg = StructuralObject.SetValidValue(value);
+                _Pdm_BlqUrg = StructuralObject.SetValidValue(value, "Pdm_BlqUrg");
                 ReportPropertyChanged("Pdm_BlqUrg");
                 OnPdm_BlqUrgChanged();
             }
@@ -1463,7 +1460,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_QtdFlmChanging(value);
                 ReportPropertyChanging("Pdm_QtdFlm");
-                _Pdm_QtdFlm = StructuralObject.SetValidValue(value);
+                _Pdm_QtdFlm = StructuralObject.SetValidValue(value, "Pdm_QtdFlm");
                 ReportPropertyChanged("Pdm_QtdFlm");
                 OnPdm_QtdFlmChanged();
             }
@@ -1487,7 +1484,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_CodAmbChanging(value);
                 ReportPropertyChanging("Pdm_CodAmb");
-                _Pdm_CodAmb = StructuralObject.SetValidValue(value, true);
+                _Pdm_CodAmb = StructuralObject.SetValidValue(value, true, "Pdm_CodAmb");
                 ReportPropertyChanged("Pdm_CodAmb");
                 OnPdm_CodAmbChanged();
             }
@@ -1511,7 +1508,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPdm_DscAmbChanging(value);
                 ReportPropertyChanging("Pdm_DscAmb");
-                _Pdm_DscAmb = StructuralObject.SetValidValue(value, true);
+                _Pdm_DscAmb = StructuralObject.SetValidValue(value, true, "Pdm_DscAmb");
                 ReportPropertyChanged("Pdm_DscAmb");
                 OnPdm_DscAmbChanged();
             }
@@ -1522,7 +1519,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1668,7 +1664,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1687,7 +1683,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdTabChanging(value);
                     ReportPropertyChanging("IdTab");
-                    _IdTab = StructuralObject.SetValidValue(value);
+                    _IdTab = StructuralObject.SetValidValue(value, "IdTab");
                     ReportPropertyChanged("IdTab");
                     OnIdTabChanged();
                 }
@@ -1712,7 +1708,7 @@ namespace br.com.totaltiss.Data
             {
                 OnTab_DscChanging(value);
                 ReportPropertyChanging("Tab_Dsc");
-                _Tab_Dsc = StructuralObject.SetValidValue(value, false);
+                _Tab_Dsc = StructuralObject.SetValidValue(value, false, "Tab_Dsc");
                 ReportPropertyChanged("Tab_Dsc");
                 OnTab_DscChanged();
             }
@@ -1723,7 +1719,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1777,7 +1772,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1796,7 +1791,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdTpdChanging(value);
                     ReportPropertyChanging("IdTpd");
-                    _IdTpd = StructuralObject.SetValidValue(value);
+                    _IdTpd = StructuralObject.SetValidValue(value, "IdTpd");
                     ReportPropertyChanged("IdTpd");
                     OnIdTpdChanged();
                 }
@@ -1821,7 +1816,7 @@ namespace br.com.totaltiss.Data
             {
                 OnTpd_DscChanging(value);
                 ReportPropertyChanging("Tpd_Dsc");
-                _Tpd_Dsc = StructuralObject.SetValidValue(value, false);
+                _Tpd_Dsc = StructuralObject.SetValidValue(value, false, "Tpd_Dsc");
                 ReportPropertyChanged("Tpd_Dsc");
                 OnTpd_DscChanged();
             }
@@ -1832,7 +1827,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -1860,7 +1854,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1879,7 +1873,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdTppChanging(value);
                     ReportPropertyChanging("IdTpp");
-                    _IdTpp = StructuralObject.SetValidValue(value);
+                    _IdTpp = StructuralObject.SetValidValue(value, "IdTpp");
                     ReportPropertyChanged("IdTpp");
                     OnIdTppChanged();
                 }
@@ -1904,7 +1898,7 @@ namespace br.com.totaltiss.Data
             {
                 OnTpp_DscChanging(value);
                 ReportPropertyChanging("Tpp_Dsc");
-                _Tpp_Dsc = StructuralObject.SetValidValue(value, false);
+                _Tpp_Dsc = StructuralObject.SetValidValue(value, false, "Tpp_Dsc");
                 ReportPropertyChanged("Tpp_Dsc");
                 OnTpp_DscChanged();
             }
@@ -1915,7 +1909,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1975,7 +1968,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1994,7 +1987,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdOpeChanging(value);
                     ReportPropertyChanging("IdOpe");
-                    _IdOpe = StructuralObject.SetValidValue(value);
+                    _IdOpe = StructuralObject.SetValidValue(value, "IdOpe");
                     ReportPropertyChanged("IdOpe");
                     OnIdOpeChanged();
                 }
@@ -2019,7 +2012,7 @@ namespace br.com.totaltiss.Data
             {
                 OnOpe_NmeChanging(value);
                 ReportPropertyChanging("Ope_Nme");
-                _Ope_Nme = StructuralObject.SetValidValue(value, false);
+                _Ope_Nme = StructuralObject.SetValidValue(value, false, "Ope_Nme");
                 ReportPropertyChanged("Ope_Nme");
                 OnOpe_NmeChanged();
             }
@@ -2043,7 +2036,7 @@ namespace br.com.totaltiss.Data
             {
                 OnOpe_RegAnsChanging(value);
                 ReportPropertyChanging("Ope_RegAns");
-                _Ope_RegAns = StructuralObject.SetValidValue(value);
+                _Ope_RegAns = StructuralObject.SetValidValue(value, "Ope_RegAns");
                 ReportPropertyChanged("Ope_RegAns");
                 OnOpe_RegAnsChanged();
             }
@@ -2067,7 +2060,7 @@ namespace br.com.totaltiss.Data
             {
                 OnOpe_CnpChanging(value);
                 ReportPropertyChanging("Ope_Cnp");
-                _Ope_Cnp = StructuralObject.SetValidValue(value, false);
+                _Ope_Cnp = StructuralObject.SetValidValue(value, false, "Ope_Cnp");
                 ReportPropertyChanged("Ope_Cnp");
                 OnOpe_CnpChanged();
             }
@@ -2091,7 +2084,7 @@ namespace br.com.totaltiss.Data
             {
                 OnOpe_DatIniChanging(value);
                 ReportPropertyChanging("Ope_DatIni");
-                _Ope_DatIni = StructuralObject.SetValidValue(value);
+                _Ope_DatIni = StructuralObject.SetValidValue(value, "Ope_DatIni");
                 ReportPropertyChanged("Ope_DatIni");
                 OnOpe_DatIniChanged();
             }
@@ -2115,7 +2108,7 @@ namespace br.com.totaltiss.Data
             {
                 OnOpe_DatFimChanging(value);
                 ReportPropertyChanging("Ope_DatFim");
-                _Ope_DatFim = StructuralObject.SetValidValue(value);
+                _Ope_DatFim = StructuralObject.SetValidValue(value, "Ope_DatFim");
                 ReportPropertyChanged("Ope_DatFim");
                 OnOpe_DatFimChanged();
             }
@@ -2126,7 +2119,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2214,7 +2206,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2233,7 +2225,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdFchChanging(value);
                     ReportPropertyChanging("IdFch");
-                    _IdFch = StructuralObject.SetValidValue(value);
+                    _IdFch = StructuralObject.SetValidValue(value, "IdFch");
                     ReportPropertyChanged("IdFch");
                     OnIdFchChanged();
                 }
@@ -2258,7 +2250,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_IdOpeChanging(value);
                 ReportPropertyChanging("Fch_IdOpe");
-                _Fch_IdOpe = StructuralObject.SetValidValue(value);
+                _Fch_IdOpe = StructuralObject.SetValidValue(value, "Fch_IdOpe");
                 ReportPropertyChanged("Fch_IdOpe");
                 OnFch_IdOpeChanged();
             }
@@ -2282,7 +2274,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_IdCttChanging(value);
                 ReportPropertyChanging("Fch_IdCtt");
-                _Fch_IdCtt = StructuralObject.SetValidValue(value);
+                _Fch_IdCtt = StructuralObject.SetValidValue(value, "Fch_IdCtt");
                 ReportPropertyChanged("Fch_IdCtt");
                 OnFch_IdCttChanged();
             }
@@ -2306,7 +2298,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_CpcChanging(value);
                 ReportPropertyChanging("Fch_Cpc");
-                _Fch_Cpc = StructuralObject.SetValidValue(value, false);
+                _Fch_Cpc = StructuralObject.SetValidValue(value, false, "Fch_Cpc");
                 ReportPropertyChanged("Fch_Cpc");
                 OnFch_CpcChanged();
             }
@@ -2330,7 +2322,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_AnoChanging(value);
                 ReportPropertyChanging("Fch_Ano");
-                _Fch_Ano = StructuralObject.SetValidValue(value);
+                _Fch_Ano = StructuralObject.SetValidValue(value, "Fch_Ano");
                 ReportPropertyChanged("Fch_Ano");
                 OnFch_AnoChanged();
             }
@@ -2354,7 +2346,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_MesChanging(value);
                 ReportPropertyChanging("Fch_Mes");
-                _Fch_Mes = StructuralObject.SetValidValue(value);
+                _Fch_Mes = StructuralObject.SetValidValue(value, "Fch_Mes");
                 ReportPropertyChanged("Fch_Mes");
                 OnFch_MesChanged();
             }
@@ -2378,7 +2370,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_DatIniChanging(value);
                 ReportPropertyChanging("Fch_DatIni");
-                _Fch_DatIni = StructuralObject.SetValidValue(value);
+                _Fch_DatIni = StructuralObject.SetValidValue(value, "Fch_DatIni");
                 ReportPropertyChanged("Fch_DatIni");
                 OnFch_DatIniChanged();
             }
@@ -2402,7 +2394,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_DatFimChanging(value);
                 ReportPropertyChanging("Fch_DatFim");
-                _Fch_DatFim = StructuralObject.SetValidValue(value);
+                _Fch_DatFim = StructuralObject.SetValidValue(value, "Fch_DatFim");
                 ReportPropertyChanged("Fch_DatFim");
                 OnFch_DatFimChanged();
             }
@@ -2426,7 +2418,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_EntChanging(value);
                 ReportPropertyChanging("Fch_Ent");
-                _Fch_Ent = StructuralObject.SetValidValue(value);
+                _Fch_Ent = StructuralObject.SetValidValue(value, "Fch_Ent");
                 ReportPropertyChanged("Fch_Ent");
                 OnFch_EntChanged();
             }
@@ -2450,7 +2442,7 @@ namespace br.com.totaltiss.Data
             {
                 OnFch_LotChanging(value);
                 ReportPropertyChanging("Fch_Lot");
-                _Fch_Lot = StructuralObject.SetValidValue(value);
+                _Fch_Lot = StructuralObject.SetValidValue(value, "Fch_Lot");
                 ReportPropertyChanged("Fch_Lot");
                 OnFch_LotChanged();
             }
@@ -2461,7 +2453,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2533,7 +2524,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2552,7 +2543,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnGrm_IdOpeChanging(value);
                     ReportPropertyChanging("Grm_IdOpe");
-                    _Grm_IdOpe = StructuralObject.SetValidValue(value);
+                    _Grm_IdOpe = StructuralObject.SetValidValue(value, "Grm_IdOpe");
                     ReportPropertyChanged("Grm_IdOpe");
                     OnGrm_IdOpeChanged();
                 }
@@ -2579,7 +2570,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnGrm_RoleIdChanging(value);
                     ReportPropertyChanging("Grm_RoleId");
-                    _Grm_RoleId = StructuralObject.SetValidValue(value);
+                    _Grm_RoleId = StructuralObject.SetValidValue(value, "Grm_RoleId");
                     ReportPropertyChanged("Grm_RoleId");
                     OnGrm_RoleIdChanged();
                 }
@@ -2606,7 +2597,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnGrm_IdMsgChanging(value);
                     ReportPropertyChanging("Grm_IdMsg");
-                    _Grm_IdMsg = StructuralObject.SetValidValue(value);
+                    _Grm_IdMsg = StructuralObject.SetValidValue(value, "Grm_IdMsg");
                     ReportPropertyChanged("Grm_IdMsg");
                     OnGrm_IdMsgChanged();
                 }
@@ -2618,7 +2609,6 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2766,7 +2756,7 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2785,7 +2775,7 @@ namespace br.com.totaltiss.Data
                 {
                     OnIdPplChanging(value);
                     ReportPropertyChanging("IdPpl");
-                    _IdPpl = StructuralObject.SetValidValue(value);
+                    _IdPpl = StructuralObject.SetValidValue(value, "IdPpl");
                     ReportPropertyChanged("IdPpl");
                     OnIdPplChanged();
                 }
@@ -2810,7 +2800,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_DscChanging(value);
                 ReportPropertyChanging("Ppl_Dsc");
-                _Ppl_Dsc = StructuralObject.SetValidValue(value, false);
+                _Ppl_Dsc = StructuralObject.SetValidValue(value, false, "Ppl_Dsc");
                 ReportPropertyChanged("Ppl_Dsc");
                 OnPpl_DscChanged();
             }
@@ -2834,7 +2824,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_QtdCh_Changing(value);
                 ReportPropertyChanging("Ppl_QtdCh_");
-                _Ppl_QtdCh_ = StructuralObject.SetValidValue(value);
+                _Ppl_QtdCh_ = StructuralObject.SetValidValue(value, "Ppl_QtdCh_");
                 ReportPropertyChanged("Ppl_QtdCh_");
                 OnPpl_QtdCh_Changed();
             }
@@ -2858,7 +2848,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_OpeChanging(value);
                 ReportPropertyChanging("Ppl_Ope");
-                _Ppl_Ope = StructuralObject.SetValidValue(value);
+                _Ppl_Ope = StructuralObject.SetValidValue(value, "Ppl_Ope");
                 ReportPropertyChanged("Ppl_Ope");
                 OnPpl_OpeChanged();
             }
@@ -2882,7 +2872,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_ConChanging(value);
                 ReportPropertyChanging("Ppl_Con");
-                _Ppl_Con = StructuralObject.SetValidValue(value);
+                _Ppl_Con = StructuralObject.SetValidValue(value, "Ppl_Con");
                 ReportPropertyChanged("Ppl_Con");
                 OnPpl_ConChanged();
             }
@@ -2906,7 +2896,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_SdtChanging(value);
                 ReportPropertyChanging("Ppl_Sdt");
-                _Ppl_Sdt = StructuralObject.SetValidValue(value);
+                _Ppl_Sdt = StructuralObject.SetValidValue(value, "Ppl_Sdt");
                 ReportPropertyChanged("Ppl_Sdt");
                 OnPpl_SdtChanged();
             }
@@ -2930,7 +2920,7 @@ namespace br.com.totaltiss.Data
             {
                 OnPpl_PrgLibChanging(value);
                 ReportPropertyChanging("Ppl_PrgLib");
-                _Ppl_PrgLib = StructuralObject.SetValidValue(value);
+                _Ppl_PrgLib = StructuralObject.SetValidValue(value, "Ppl_PrgLib");
                 ReportPropertyChanged("Ppl_PrgLib");
                 OnPpl_PrgLibChanged();
             }
@@ -2941,10 +2931,8 @@ namespace br.com.totaltiss.Data
 
         #endregion
 
-    
     }
 
     #endregion
 
-    
 }

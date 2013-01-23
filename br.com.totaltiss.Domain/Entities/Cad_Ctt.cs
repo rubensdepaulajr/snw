@@ -11,7 +11,6 @@ namespace br.com.totaltiss.Domain.Entities
     public class Atz_Ctt
     {
         [Key]
-        public int IdPrt { get; set; }
         public Int64 IdCtt { get; set; }
 	    public Int16 Ctt_IdTpd { get; set; }
 	    public string Ctt_IdCns { get; set; }

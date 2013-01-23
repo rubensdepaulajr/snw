@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="AppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="AppModelStoreContainer">
-          <EntitySet Name="Ans_Msg" EntityType="AppModel.Store.Ans_Msg" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="aspnet_Roles" EntityType="AppModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Atz_Grp" EntityType="AppModel.Store.Atz_Grp" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Atz_Pdm" EntityType="AppModel.Store.Atz_Pdm" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Atz_Tab" EntityType="AppModel.Store.Atz_Tab" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Atz_Tpd" EntityType="AppModel.Store.Atz_Tpd" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Atz_Tpp" EntityType="AppModel.Store.Atz_Tpp" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Cad_Ope" EntityType="AppModel.Store.Cad_Ope" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Fat_Fch" EntityType="AppModel.Store.Fat_Fch" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Sgn_GrpMsg" EntityType="AppModel.Store.Sgn_GrpMsg" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Sgn_Ppl" EntityType="AppModel.Store.Sgn_Ppl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ans_Msg" EntityType="AppModel.Store.Ans_Msg" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="aspnet_Roles" EntityType="AppModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Atz_Grp" EntityType="AppModel.Store.Atz_Grp" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Atz_Pdm" EntityType="AppModel.Store.Atz_Pdm" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Atz_Tab" EntityType="AppModel.Store.Atz_Tab" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Atz_Tpd" EntityType="AppModel.Store.Atz_Tpd" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Atz_Tpp" EntityType="AppModel.Store.Atz_Tpp" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Cad_Ope" EntityType="AppModel.Store.Cad_Ope" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Fat_Fch" EntityType="AppModel.Store.Fat_Fch" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Sgn_GrpMsg" EntityType="AppModel.Store.Sgn_GrpMsg" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Sgn_Ppl" EntityType="AppModel.Store.Sgn_Ppl" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK_Atz_Pdm_Atz_Grp" Association="AppModel.Store.FK_Atz_Pdm_Atz_Grp">
             <End Role="Atz_Grp" EntitySet="Atz_Grp" />
             <End Role="Atz_Pdm" EntitySet="Atz_Pdm" />
@@ -263,8 +263,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AppModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="AppEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="AppModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AppEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Atz_Pdm" EntityType="AppModel.Atz_Pdm" />
           <EntitySet Name="Atz_Grp" EntityType="AppModel.Atz_Grp" />
           <EntitySet Name="Atz_Tab" EntityType="AppModel.Atz_Tab" />
@@ -309,7 +309,7 @@
           <Key>
             <PropertyRef Name="IdPdm" />
           </Key>
-          <Property Type="Int32" Name="IdPdm" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdPdm" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Byte" Name="Pdm_IdTab" Nullable="false" />
           <Property Type="Byte" Name="Pdm_IdTpp" Nullable="false" />
           <Property Type="Byte" Name="Pdm_IdGrp" Nullable="false" />
@@ -342,7 +342,7 @@
           <Key>
             <PropertyRef Name="IdGrp" />
           </Key>
-          <Property Type="Byte" Name="IdGrp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="IdGrp" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Grp_Dsc" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Atz_Pdm" Relationship="AppModel.FK_Atz_Pdm_Atz_Grp" FromRole="Atz_Grp" ToRole="Atz_Pdm" />
           <Property Type="Int16" Name="Grp_QtdCh_" />
@@ -359,7 +359,7 @@
           <Key>
             <PropertyRef Name="IdTpp" />
           </Key>
-          <Property Type="Byte" Name="IdTpp" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="IdTpp" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Tpp_Dsc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Atz_Pdm" Relationship="AppModel.RefAtz_Tpp21" FromRole="Atz_Tpp" ToRole="Atz_Pdm" />
         </EntityType>
@@ -403,7 +403,7 @@
           <Key>
             <PropertyRef Name="IdPpl" />
           </Key>
-          <Property Type="Int16" Name="IdPpl" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IdPpl" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Ppl_Dsc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Ppl_QtdCh_" Nullable="false" />
           <Property Type="Boolean" Name="Ppl_Ope" />
@@ -415,7 +415,7 @@
           <Key>
             <PropertyRef Name="IdOpe" />
           </Key>
-          <Property Type="Int16" Name="IdOpe" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IdOpe" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Ope_Nme" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Ope_RegAns" Nullable="false" />
           <Property Type="String" Name="Ope_Cnp" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
@@ -500,7 +500,7 @@
           <Key>
             <PropertyRef Name="IdFch" />
           </Key>
-          <Property Type="Int16" Name="IdFch" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IdFch" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int16" Name="Fch_IdOpe" Nullable="false" />
           <Property Type="Int64" Name="Fch_IdCtt" />
           <Property Type="String" Name="Fch_Cpc" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
@@ -535,7 +535,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AppModelStoreContainer" CdmEntityContainer="AppEntities">
           <EntitySetMapping Name="Atz_Pdm">
             <EntityTypeMapping TypeName="AppModel.Atz_Pdm">
@@ -679,7 +679,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -700,7 +700,7 @@
         <EntityTypeShape EntityType="AppModel.Atz_Grp" Width="1.5" PointX="1.125" PointY="3.75" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="AppModel.Atz_Tab" Width="1.5" PointX="1.125" PointY="6.125" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="AppModel.Atz_Tpp" Width="1.5" PointX="1.125" PointY="8.5" Height="1.5956835937499996" />
-        <AssociationConnector Association="AppModel.FK_Atz_Pdm_Atz_Grp" >
+        <AssociationConnector Association="AppModel.FK_Atz_Pdm_Atz_Grp">
           <ConnectorPoint PointX="2.625" PointY="4.6439925130208337" />
           <ConnectorPoint PointX="2.7916666666666665" PointY="4.6439925130208328" />
           <ConnectorPoint PointX="2.9583333333333335" PointY="4.6439925130208337" />
@@ -708,7 +708,7 @@
           <ConnectorPoint PointX="3.2083333333333335" PointY="4.6439925130208337" />
           <ConnectorPoint PointX="3.375" PointY="4.6439925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="AppModel.RefAtz_Tab621" >
+        <AssociationConnector Association="AppModel.RefAtz_Tab621">
           <ConnectorPoint PointX="2.625" PointY="6.6391097005208328" />
           <ConnectorPoint PointX="2.7916666666666665" PointY="6.6391097005208319" />
           <ConnectorPoint PointX="2.9583333333333335" PointY="6.6391097005208328" />
@@ -716,7 +716,7 @@
           <ConnectorPoint PointX="3.2083333333333335" PointY="6.6391097005208328" />
           <ConnectorPoint PointX="3.375" PointY="6.6391097005208328" />
         </AssociationConnector>
-        <AssociationConnector Association="AppModel.RefAtz_Tpp21" >
+        <AssociationConnector Association="AppModel.RefAtz_Tpp21">
           <ConnectorPoint PointX="2.625" PointY="9.297841796875" />
           <ConnectorPoint PointX="2.7916666666666665" PointY="9.297841796875" />
           <ConnectorPoint PointX="2.9583333333333335" PointY="9.297841796875" />
@@ -728,7 +728,7 @@
         <EntityTypeShape EntityType="AppModel.Sgn_Ppl" Width="1.5" PointX="5.375" PointY="0.75" Height="1.59568359375" />
         <EntityTypeShape EntityType="AppModel.Cad_Ope" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906249996" />
         <EntityTypeShape EntityType="AppModel.Sgn_GrpMsg" Width="1.5" PointX="3" PointY="11" Height="1.7879850260416674" />
-        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Cad_Ope" >
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Cad_Ope">
           <ConnectorPoint PointX="2.25" PointY="2.0285953776041667" />
           <ConnectorPoint PointX="3.125" PointY="2.0285953776041667" />
           <ConnectorPoint PointX="3.125" PointY="7.4032194010416656" />
@@ -737,19 +737,19 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="AppModel.Ans_Msg" Width="1.5" PointX="0.75" PointY="11" Height="2.1725878906249996" />
         <EntityTypeShape EntityType="AppModel.aspnet_Roles" Width="1.5" PointX="5.375" PointY="3.875" Height="2.1725878906249996" />
-        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Ans_Msg" >
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_Ans_Msg">
           <ConnectorPoint PointX="2.25" PointY="12.0862939453125" />
           <ConnectorPoint PointX="2.6666666666666665" PointY="12.0862939453125" />
           <ConnectorPoint PointX="2.8333333333333335" PointY="12.0862939453125" />
           <ConnectorPoint PointX="3" PointY="12.0862939453125" />
         </AssociationConnector>
-        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_aspnet_Roles" >
+        <AssociationConnector Association="AppModel.FK_Sgn_GrpMsg_aspnet_Roles">
           <ConnectorPoint PointX="6.125" PointY="6.047587890625" />
           <ConnectorPoint PointX="6.125" PointY="12.0862939453125" />
           <ConnectorPoint PointX="4.5" PointY="12.0862939453125" />
         </AssociationConnector>
         <EntityTypeShape EntityType="AppModel.Fat_Fch" Width="1.5" PointX="3" PointY="14" Height="2.7494921875000031" />
-        <AssociationConnector Association="AppModel.FK_Fat_Fch_Cad_Ope" >
+        <AssociationConnector Association="AppModel.FK_Fat_Fch_Cad_Ope">
           <ConnectorPoint PointX="1.5" PointY="3.3071907552083331" />
           <ConnectorPoint PointX="1.5" PointY="3.5" />
           <ConnectorPoint PointX="2.875" PointY="3.5" />
