@@ -1,4 +1,4 @@
-﻿@model br.com.totaltiss.Domain.Entities.Atz_Brr
+﻿@model br.com.totaltiss.Model.Atz_Mun
 
 @{
     ViewBag.Title = "Delete";
@@ -8,20 +8,27 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Atz_Brr</legend>
+    <legend>Atz_Mun</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Brr_IdMun)
+         @Html.DisplayNameFor(model => model.Mun_Cod)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Brr_IdMun)
+        @Html.DisplayFor(model => model.Mun_Cod)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Brr_Nme)
+         @Html.DisplayNameFor(model => model.Mun_Nme)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Brr_Nme)
+        @Html.DisplayFor(model => model.Mun_Nme)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mun_Est)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mun_Est)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<br.com.totaltiss.Domain.Entities.Atz_Brr>
+﻿@model IEnumerable<br.com.totaltiss.Model.Atz_Mun>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,13 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Brr_IdMun)
+            @Html.DisplayNameFor(model => model.Mun_Cod)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brr_Nme)
+            @Html.DisplayNameFor(model => model.Mun_Nme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mun_Est)
         </th>
         <th></th>
     </tr>
@@ -23,15 +26,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Brr_IdMun)
+            @Html.DisplayFor(modelItem => item.Mun_Cod)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Brr_Nme)
+            @Html.DisplayFor(modelItem => item.Mun_Nme)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdBrr }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdBrr }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdBrr })
+            @Html.DisplayFor(modelItem => item.Mun_Est)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdMun }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdMun }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdMun })
         </td>
     </tr>
 }

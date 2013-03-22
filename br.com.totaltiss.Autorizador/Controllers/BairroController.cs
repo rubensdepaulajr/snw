@@ -18,7 +18,8 @@ namespace br.com.totaltiss.Autorizador.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Bairros.ToList());
+            var bairros = db.Bairros.Include(a => a.Atz_Mun);
+            return View(bairros.ToList());
         }
 
         //
@@ -39,6 +40,7 @@ namespace br.com.totaltiss.Autorizador.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Brr_IdMun = new SelectList(db.Municipios, "IdMun", "Mun_Cod");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace br.com.totaltiss.Autorizador.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Brr_IdMun = new SelectList(db.Municipios, "IdMun", "Mun_Cod", atz_brr.Brr_IdMun);
             return View(atz_brr);
         }
 
@@ -68,6 +71,7 @@ namespace br.com.totaltiss.Autorizador.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Brr_IdMun = new SelectList(db.Municipios, "IdMun", "Mun_Cod", atz_brr.Brr_IdMun);
             return View(atz_brr);
         }
 
@@ -83,6 +87,7 @@ namespace br.com.totaltiss.Autorizador.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Brr_IdMun = new SelectList(db.Municipios, "IdMun", "Mun_Cod", atz_brr.Brr_IdMun);
             return View(atz_brr);
         }
 

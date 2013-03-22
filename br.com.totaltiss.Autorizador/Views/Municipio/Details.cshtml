@@ -1,4 +1,4 @@
-﻿@model br.com.totaltiss.Domain.Entities.Atz_Brr
+﻿@model br.com.totaltiss.Model.Atz_Mun
 
 @{
     ViewBag.Title = "Details";
@@ -7,23 +7,30 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Atz_Brr</legend>
+    <legend>Atz_Mun</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Brr_IdMun)
+         @Html.DisplayNameFor(model => model.Mun_Cod)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Brr_IdMun)
+        @Html.DisplayFor(model => model.Mun_Cod)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Brr_Nme)
+         @Html.DisplayNameFor(model => model.Mun_Nme)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Brr_Nme)
+        @Html.DisplayFor(model => model.Mun_Nme)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mun_Est)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mun_Est)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.IdBrr }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IdMun }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

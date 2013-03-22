@@ -1,4 +1,4 @@
-﻿@model br.com.totaltiss.Model.Atz_Brr
+﻿@model br.com.totaltiss.Model.Atz_Mun
 
 @{
     ViewBag.Title = "Create";
@@ -10,22 +10,30 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Atz_Brr</legend>
+        <legend>Atz_Mun</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Brr_IdMun)
+            @Html.LabelFor(model => model.Mun_Cod)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Brr_IdMun)
-            @Html.ValidationMessageFor(model => model.Brr_IdMun)
+            @Html.EditorFor(model => model.Mun_Cod)
+            @Html.ValidationMessageFor(model => model.Mun_Cod)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Brr_Nme)
+            @Html.LabelFor(model => model.Mun_Nme)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Brr_Nme)
-            @Html.ValidationMessageFor(model => model.Brr_Nme)
+            @Html.EditorFor(model => model.Mun_Nme)
+            @Html.ValidationMessageFor(model => model.Mun_Nme)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mun_Est)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mun_Est)
+            @Html.ValidationMessageFor(model => model.Mun_Est)
         </div>
 
         <p>
