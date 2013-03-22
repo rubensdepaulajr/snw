@@ -1,0 +1,99 @@
+﻿@model IEnumerable<br.com.totaltiss.Model.Atz_Esp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Dsc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Cbo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_SisGst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_AltCpx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Sxo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_IddMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_IddMax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdMax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdMes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdAno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Rtn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Dsc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Cbo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_SisGst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_AltCpx)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Sxo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_IddMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_IddMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdDia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdMes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdAno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Rtn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEsp }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEsp }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEsp })
+        </td>
+    </tr>
+}
+
+</table>

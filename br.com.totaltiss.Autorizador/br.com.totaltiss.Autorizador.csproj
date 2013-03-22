@@ -821,8 +821,10 @@
       <DependentUpon>ver.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BairroController.cs" />
+    <Compile Include="Controllers\EspecialidadeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
+    <Compile Include="Controllers\TipoLogradouroController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -866,8 +868,11 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cad_Brr.cs" />
-    <Compile Include="Models\Cad_Mun.cs" />
+    <Compile Include="Models\Bairro.cs" />
+    <Compile Include="Models\Especialidade.cs" />
+    <Compile Include="Models\Municipio.cs" />
+    <Compile Include="Models\TipoLogradouro.cs" />
+    <Compile Include="Models\Logradouro.cs" />
     <Compile Include="Models\TotalContext.cs" />
     <Compile Include="Models\TotalInitializer.cs" />
     <Compile Include="Mpv\cidcon.aspx.cs">
@@ -1012,6 +1017,11 @@
     </Compile>
     <Compile Include="Old_App_Code\SenderSms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Raiz.master.cs">
       <DependentUpon>Raiz.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1263,6 +1273,21 @@
     <Content Include="Views\Bairro\Create.cshtml" />
     <Content Include="Views\Bairro\Edit.cshtml" />
     <Content Include="Views\Bairro\Delete.cshtml" />
+    <Content Include="Views\TipoLogradouo\Index.cshtml" />
+    <Content Include="Views\TipoLogradouo\Details.cshtml" />
+    <Content Include="Views\TipoLogradouo\Create.cshtml" />
+    <Content Include="Views\TipoLogradouo\Edit.cshtml" />
+    <Content Include="Views\TipoLogradouo\Delete.cshtml" />
+    <Content Include="Views\TipoLogradouro\Index.cshtml" />
+    <Content Include="Views\TipoLogradouro\Details.cshtml" />
+    <Content Include="Views\TipoLogradouro\Create.cshtml" />
+    <Content Include="Views\TipoLogradouro\Edit.cshtml" />
+    <Content Include="Views\TipoLogradouro\Delete.cshtml" />
+    <Content Include="Views\Especialidade\Index.cshtml" />
+    <Content Include="Views\Especialidade\Details.cshtml" />
+    <Content Include="Views\Especialidade\Create.cshtml" />
+    <Content Include="Views\Especialidade\Edit.cshtml" />
+    <Content Include="Views\Especialidade\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1290,6 +1315,10 @@
     <EmbeddedResource Include="App_Rpt\GiaSPSADT.rdlc" />
     <EmbeddedResource Include="App_Rpt\GuiaConsulta.rdlc" />
     <EmbeddedResource Include="App_Rpt\SolSdt.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arq\" />

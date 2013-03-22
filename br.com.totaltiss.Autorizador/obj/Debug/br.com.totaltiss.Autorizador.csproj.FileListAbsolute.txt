@@ -56,3 +56,5 @@ Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\obj\Debug\br.com.totaltiss.Autori
 Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\obj\Debug\br.com.totaltiss.Autorizador.pdb
 Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\bin\Newtonsoft.Json.dll
 Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\bin\Newtonsoft.Json.xml
+Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\obj\Debug\br.com.totaltiss.Autorizador.Properties.Resources.resources
+Z:\Fontes\git\snw\br.com.totaltiss.Autorizador\obj\Debug\br.com.totaltiss.Autorizador.csproj.GenerateResource.Cache

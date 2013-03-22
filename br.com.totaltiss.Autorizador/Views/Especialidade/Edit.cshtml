@@ -1,0 +1,125 @@
+﻿@model br.com.totaltiss.Model.Atz_Esp
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Atz_Esp</legend>
+
+        @Html.HiddenFor(model => model.IdEsp)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_Dsc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_Dsc)
+            @Html.ValidationMessageFor(model => model.Esp_Dsc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_Cbo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_Cbo)
+            @Html.ValidationMessageFor(model => model.Esp_Cbo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_SisGst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_SisGst)
+            @Html.ValidationMessageFor(model => model.Esp_SisGst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_AltCpx)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_AltCpx)
+            @Html.ValidationMessageFor(model => model.Esp_AltCpx)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_Sxo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_Sxo)
+            @Html.ValidationMessageFor(model => model.Esp_Sxo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_IddMin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_IddMin)
+            @Html.ValidationMessageFor(model => model.Esp_IddMin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_IddMax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_IddMax)
+            @Html.ValidationMessageFor(model => model.Esp_IddMax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_QtdMax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_QtdMax)
+            @Html.ValidationMessageFor(model => model.Esp_QtdMax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_QtdDia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_QtdDia)
+            @Html.ValidationMessageFor(model => model.Esp_QtdDia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_QtdMes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_QtdMes)
+            @Html.ValidationMessageFor(model => model.Esp_QtdMes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_QtdAno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_QtdAno)
+            @Html.ValidationMessageFor(model => model.Esp_QtdAno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Esp_Rtn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Esp_Rtn)
+            @Html.ValidationMessageFor(model => model.Esp_Rtn)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

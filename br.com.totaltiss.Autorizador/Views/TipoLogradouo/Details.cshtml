@@ -1,0 +1,22 @@
+﻿@model br.com.totaltiss.Model.Atz_Tpl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Atz_Tpl</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tpl_Dsc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tpl_Dsc)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IdTpl }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

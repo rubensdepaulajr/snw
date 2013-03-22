@@ -1,0 +1,99 @@
+﻿@model br.com.totaltiss.Model.Atz_Esp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Atz_Esp</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_Dsc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_Dsc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_Cbo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_Cbo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_SisGst)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_SisGst)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_AltCpx)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_AltCpx)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_Sxo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_Sxo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_IddMin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_IddMin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_IddMax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_IddMax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_QtdMax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_QtdMax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_QtdDia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_QtdDia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_QtdMes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_QtdMes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_QtdAno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_QtdAno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Esp_Rtn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Esp_Rtn)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IdEsp }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
