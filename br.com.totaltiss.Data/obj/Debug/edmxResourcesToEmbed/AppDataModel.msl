@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AppModelStoreContainer" CdmEntityContainer="AppEntities">
+    <EntitySetMapping Name="Atz_Pdm">
+      <EntityTypeMapping TypeName="AppModel.Atz_Pdm">
+        <MappingFragment StoreEntitySet="Atz_Pdm">
+          <ScalarProperty Name="Pdm_DscAmb" ColumnName="Pdm_DscAmb" />
+          <ScalarProperty Name="Pdm_CodAmb" ColumnName="Pdm_CodAmb" />
+          <ScalarProperty Name="Pdm_QtdFlm" ColumnName="Pdm_QtdFlm" />
+          <ScalarProperty Name="Pdm_BlqUrg" ColumnName="Pdm_BlqUrg" />
+          <ScalarProperty Name="Pdm_QtdCh_" ColumnName="Pdm_QtdCh_" />
+          <ScalarProperty Name="Pdm_Atv" ColumnName="Pdm_Atv" />
+          <ScalarProperty Name="C_nomegfi" ColumnName="_nomegfi" />
+          <ScalarProperty Name="Pdm_Prf" ColumnName="Pdm_Prf" />
+          <ScalarProperty Name="Pdm_Esp" ColumnName="Pdm_Esp" />
+          <ScalarProperty Name="Pdm_Rtn" ColumnName="Pdm_Rtn" />
+          <ScalarProperty Name="Pdm_QtdAno" ColumnName="Pdm_QtdAno" />
+          <ScalarProperty Name="Pdm_QtdMes" ColumnName="Pdm_QtdMes" />
+          <ScalarProperty Name="Pdm_QtdDia" ColumnName="Pdm_QtdDia" />
+          <ScalarProperty Name="Pdm_QtdMax" ColumnName="Pdm_QtdMax" />
+          <ScalarProperty Name="Pdm_IddMax" ColumnName="Pdm_IddMax" />
+          <ScalarProperty Name="Pdm_IddMin" ColumnName="Pdm_IddMin" />
+          <ScalarProperty Name="Pdm_Sxo" ColumnName="Pdm_Sxo" />
+          <ScalarProperty Name="Pdm_DscRsm" ColumnName="Pdm_DscRsm" />
+          <ScalarProperty Name="Pdm_AltCpx" ColumnName="Pdm_AltCpx" />
+          <ScalarProperty Name="Pdm_Dsc" ColumnName="Pdm_Dsc" />
+          <ScalarProperty Name="Pdm_Cod" ColumnName="Pdm_Cod" />
+          <ScalarProperty Name="Pdm_IdGrp" ColumnName="Pdm_IdGrp" />
+          <ScalarProperty Name="Pdm_IdTpp" ColumnName="Pdm_IdTpp" />
+          <ScalarProperty Name="Pdm_IdTab" ColumnName="Pdm_IdTab" />
+          <ScalarProperty Name="IdPdm" ColumnName="IdPdm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atz_Grp">
+      <EntityTypeMapping TypeName="AppModel.Atz_Grp">
+        <MappingFragment StoreEntitySet="Atz_Grp">
+          <ScalarProperty Name="Grp_QtdCh_" ColumnName="Grp_QtdCh_" />
+          <ScalarProperty Name="Grp_Dsc" ColumnName="Grp_Dsc" />
+          <ScalarProperty Name="IdGrp" ColumnName="IdGrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atz_Tab">
+      <EntityTypeMapping TypeName="AppModel.Atz_Tab">
+        <MappingFragment StoreEntitySet="Atz_Tab">
+          <ScalarProperty Name="Tab_Dsc" ColumnName="Tab_Dsc" />
+          <ScalarProperty Name="IdTab" ColumnName="IdTab" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atz_Tpp">
+      <EntityTypeMapping TypeName="AppModel.Atz_Tpp">
+        <MappingFragment StoreEntitySet="Atz_Tpp">
+          <ScalarProperty Name="Tpp_Dsc" ColumnName="Tpp_Dsc" />
+          <ScalarProperty Name="IdTpp" ColumnName="IdTpp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sgn_Ppl">
+      <EntityTypeMapping TypeName="AppModel.Sgn_Ppl">
+        <MappingFragment StoreEntitySet="Sgn_Ppl">
+          <ScalarProperty Name="Ppl_PrgLib" ColumnName="Ppl_PrgLib" />
+          <ScalarProperty Name="Ppl_Sdt" ColumnName="Ppl_Sdt" />
+          <ScalarProperty Name="Ppl_Con" ColumnName="Ppl_Con" />
+          <ScalarProperty Name="Ppl_Ope" ColumnName="Ppl_Ope" />
+          <ScalarProperty Name="Ppl_QtdCh_" ColumnName="Ppl_QtdCh_" />
+          <ScalarProperty Name="Ppl_Dsc" ColumnName="Ppl_Dsc" />
+          <ScalarProperty Name="IdPpl" ColumnName="IdPpl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cad_Ope">
+      <EntityTypeMapping TypeName="AppModel.Cad_Ope">
+        <MappingFragment StoreEntitySet="Cad_Ope">
+          <ScalarProperty Name="Ope_DatFim" ColumnName="Ope_DatFim" />
+          <ScalarProperty Name="Ope_DatIni" ColumnName="Ope_DatIni" />
+          <ScalarProperty Name="Ope_Cnp" ColumnName="Ope_Cnp" />
+          <ScalarProperty Name="Ope_RegAns" ColumnName="Ope_RegAns" />
+          <ScalarProperty Name="Ope_Nme" ColumnName="Ope_Nme" />
+          <ScalarProperty Name="IdOpe" ColumnName="IdOpe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sgn_GrpMsg">
+      <EntityTypeMapping TypeName="AppModel.Sgn_GrpMsg">
+        <MappingFragment StoreEntitySet="Sgn_GrpMsg">
+          <ScalarProperty Name="Grm_IdMsg" ColumnName="Grm_IdMsg" />
+          <ScalarProperty Name="Grm_RoleId" ColumnName="Grm_RoleId" />
+          <ScalarProperty Name="Grm_IdOpe" ColumnName="Grm_IdOpe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ans_Msg">
+      <EntityTypeMapping TypeName="AppModel.Ans_Msg">
+        <MappingFragment StoreEntitySet="Ans_Msg">
+          <ScalarProperty Name="Msg_Loc" ColumnName="Msg_Loc" />
+          <ScalarProperty Name="Msg_Grp" ColumnName="Msg_Grp" />
+          <ScalarProperty Name="Msg_DscAtz" ColumnName="Msg_DscAtz" />
+          <ScalarProperty Name="Msg_Dsc" ColumnName="Msg_Dsc" />
+          <ScalarProperty Name="IdMsg" ColumnName="IdMsg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="AppModel.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="IsOpe" ColumnName="IsOpe" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fat_Fch">
+      <EntityTypeMapping TypeName="AppModel.Fat_Fch">
+        <MappingFragment StoreEntitySet="Fat_Fch">
+          <ScalarProperty Name="Fch_Lot" ColumnName="Fch_Lot" />
+          <ScalarProperty Name="Fch_Ent" ColumnName="Fch_Ent" />
+          <ScalarProperty Name="Fch_DatFim" ColumnName="Fch_DatFim" />
+          <ScalarProperty Name="Fch_DatIni" ColumnName="Fch_DatIni" />
+          <ScalarProperty Name="Fch_Mes" ColumnName="Fch_Mes" />
+          <ScalarProperty Name="Fch_Ano" ColumnName="Fch_Ano" />
+          <ScalarProperty Name="Fch_Cpc" ColumnName="Fch_Cpc" />
+          <ScalarProperty Name="Fch_IdCtt" ColumnName="Fch_IdCtt" />
+          <ScalarProperty Name="Fch_IdOpe" ColumnName="Fch_IdOpe" />
+          <ScalarProperty Name="IdFch" ColumnName="IdFch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atz_Tpd">
+      <EntityTypeMapping TypeName="AppModel.Atz_Tpd">
+        <MappingFragment StoreEntitySet="Atz_Tpd">
+          <ScalarProperty Name="Tpd_Dsc" ColumnName="Tpd_Dsc" />
+          <ScalarProperty Name="IdTpd" ColumnName="IdTpd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

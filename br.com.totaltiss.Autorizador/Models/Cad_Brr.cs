@@ -11,12 +11,11 @@ namespace br.com.totaltiss.Model
     public class Atz_Brr
     {
         [Key]
-        public virtual int IdBrr { get; set; }
-        //public string Brr_IdMun { get; set; }
-	    public virtual string Brr_Nme { get; set; }
+        public int IdBrr { get; set; }
+        public Int16 Brr_IdMun { get; set; }
+	    public string Brr_Nme { get; set; }
 
-        //[ForeignKey("Brr_IdMun")]
-        //public virtual ICollection<Atz_Mun> Atz_Mun { get; set; }
-        //public virtual ICollection<Atz_Mun> Brr_IdMun { get; set; }
+        [ForeignKey("Brr_IdMun")]
+        public virtual Atz_Mun Atz_Mun { get; set; }
     }
 }

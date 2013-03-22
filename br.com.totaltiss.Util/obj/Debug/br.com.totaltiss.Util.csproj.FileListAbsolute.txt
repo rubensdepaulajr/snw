@@ -1,0 +1,5 @@
+Z:\Fontes\git\snw\br.com.totaltiss.Util\bin\Debug\br.com.totaltiss.Util.dll
+Z:\Fontes\git\snw\br.com.totaltiss.Util\bin\Debug\br.com.totaltiss.Util.pdb
+Z:\Fontes\git\snw\br.com.totaltiss.Util\obj\Debug\br.com.totaltiss.Util.csprojResolveAssemblyReference.cache
+Z:\Fontes\git\snw\br.com.totaltiss.Util\obj\Debug\br.com.totaltiss.Util.dll
+Z:\Fontes\git\snw\br.com.totaltiss.Util\obj\Debug\br.com.totaltiss.Util.pdb

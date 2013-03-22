@@ -1,0 +1,8 @@
+Z:\Fontes\git\snw\br.com.totaltiss.Data\bin\Debug\br.com.totaltiss.Data.dll.config
+Z:\Fontes\git\snw\br.com.totaltiss.Data\bin\Debug\br.com.totaltiss.Data.dll
+Z:\Fontes\git\snw\br.com.totaltiss.Data\bin\Debug\br.com.totaltiss.Data.pdb
+Z:\Fontes\git\snw\br.com.totaltiss.Data\obj\Debug\br.com.totaltiss.Data.csprojResolveAssemblyReference.cache
+Z:\Fontes\git\snw\br.com.totaltiss.Data\obj\Debug\br.com.totaltiss.Data.dll
+Z:\Fontes\git\snw\br.com.totaltiss.Data\obj\Debug\br.com.totaltiss.Data.pdb
+Z:\Fontes\git\snw\br.com.totaltiss.Data\bin\Debug\EntityFramework.dll
+Z:\Fontes\git\snw\br.com.totaltiss.Data\bin\Debug\EntityFramework.xml

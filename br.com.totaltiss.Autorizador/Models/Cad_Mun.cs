@@ -11,15 +11,15 @@ namespace br.com.totaltiss.Model
     {
         [Key]
         [Display(Name = "Id.")]
-        public virtual Int16 IdMun { get; set; }
+        public Int16 IdMun { get; set; }
         [Display(Name = "Código")]
         [StringLength(7, ErrorMessage = "Tamanho máximo excedido")]
-        public virtual string Mun_Cod { get; set; }
+        public string Mun_Cod { get; set; }
         [Display(Name = "Nome")]
         [StringLength(30, ErrorMessage = "Tamanho máximo excedido")]
-        public virtual string Mun_Nme { get; set; }
+        public string Mun_Nme { get; set; }
         [Display(Name = "UF")]
         [StringLength(2, ErrorMessage = "Tamanho máximo excedido")]
-        public virtual string Mun_Est { get; set; }
+        public string Mun_Est { get; set; }
     }
 }
