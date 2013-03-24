@@ -9,7 +9,7 @@
 
 
 
-public partial class Cadastros_atzbrr {
+public partial class Ngc_Brr {
     
     /// <summary>
     /// btnNew control.

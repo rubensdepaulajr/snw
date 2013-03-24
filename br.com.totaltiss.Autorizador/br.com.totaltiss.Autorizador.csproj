@@ -486,6 +486,7 @@
     <Content Include="prestador_interno.html" />
     <Content Include="Adm\Web.config" />
     <Content Include="Fat\Web.config" />
+    <Content Include="Ngc\Ngc.master" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -895,6 +896,13 @@
     </Compile>
     <Compile Include="Mpv\execonqtd.aspx.designer.cs">
       <DependentUpon>execonqtd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ngc\Ngc.master.cs">
+      <DependentUpon>Ngc.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ngc\Ngc.master.designer.cs">
+      <DependentUpon>Ngc.master</DependentUpon>
     </Compile>
     <Compile Include="Ngc\atzbrr.aspx.cs">
       <DependentUpon>atzbrr.aspx</DependentUpon>
@@ -1323,6 +1331,8 @@
   <ItemGroup>
     <Folder Include="Arq\" />
     <Folder Include="Controllers\Api\" />
+    <Folder Include="Views\Shared\DisplayTemplate\" />
+    <Folder Include="Views\Shared\EditorTemplate\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\br.com.totaltiss.Data\br.com.totaltiss.Data.csproj">

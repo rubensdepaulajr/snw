@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Cadastros_atzbrr : System.Web.UI.Page
+public partial class Ngc_Brr : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

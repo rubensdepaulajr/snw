@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Atz.master" AutoEventWireup="true" Inherits="Cadastros_atzbrr" Codebehind="atzbrr.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Ngc.master" AutoEventWireup="true" Inherits="Ngc_Brr" Codebehind="atzbrr.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
         <div id="Titulo">
