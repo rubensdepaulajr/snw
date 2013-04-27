@@ -1,0 +1,131 @@
+﻿@model IEnumerable<br.com.totaltiss.Model.Atz_Esp>
+
+
+@Styles.Render("~/Content/jquery.jqGrid/ui.jqgrid.css")
+@Scripts.Render("~/Scripts/jquery-1.9.1.min.js")
+
+
+@{
+    ViewBag.Title = "Especialiddes";
+}
+
+<h2>Especialidades</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Content/jquery.jqGrid/ui.jqGrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Scripts/css/redmond/jquery-ui-1.8.18.custom.css" />
+    @*<script src="~/Scripts/jquery-ui-1.10.2.custom/js/jquery-1.9.1.js"></script>*@
+	
+
+	<script type="text/javascript">
+		var mydata = [
+			    { id : "one", "name" : "row one", "value" : 85 },
+			    { id : "two", "name" : "row two", "value" : 5 },
+			    { id : "three", "name" : "row three", "value" : 59 },
+			    { id : "four", "name" : "row four", "value" : 55 },
+			    { id : "five", "name" : "row five", "value" : 5 },
+			    { id : "six", "name" : "row six", "value" : 15 },
+			    { id : "seven", "name" : "row seven", "value" : 50 },
+			    { id : "eigth", "name" : "row eigth", "value" : 53 },
+			    { id : "niine", "name" : "row nine", "value" : 20 },
+			    { id : "ten", "name" : "row ten", "value" : 25 },
+			    { id : "eleven", "name" : "row eleven", "value" : 5 },
+			    { id : "twoelve", "name" : "row twoelve", "value" : 22 },
+			]; 
+		$(document).ready(function(){
+			$("#grid").jqGrid({ //set your grid id
+				data: mydata, //insert data from the data object we created above
+				datatype: 'local',
+				width: 500, //specify width; optional
+				colNames:['Id','Name','Value'], //define column names
+				colModel:[
+				{name:'id', index:'id', key: true, width:50},
+				{name:'name', index:'name', width:100},
+				{name:'value', index:'value', width:60, align: 'right', formatter: "currency"}
+				], //define column models
+				// Grid total width and height and formatting
+		        width: 650,
+		        height: 200,
+				rowNum:5, //lines per page
+      			rowList:[5,10,20],//
+				pager: '#pager', //set your pager div id
+				sortname: 'id', //the column according to which data is to be sorted; optional
+				viewrecords: true, //if true, displays the total number of records, etc. as: "View X to Y out of Z” optional
+				emptyrecords: 'No records to display.',
+				sortorder: "asc", //sort order; optional
+				caption:"jqGrid Example" //title of grid
+			})
+			.navGrid("#pager",
+		        { refresh: true, add: true, edit: true, del: true },
+		            {}, // settings for edit
+		            {}, // settings for add
+		            {}, // settings for delete
+		            {multipleSearch : true}, // enable the advanced searching
+					{closeOnEscape:true}, /* allow the view dialog to be closed when user press ESC key*/
+		            {sopt: ["cn"]} // Search options. Some options can be set on column level
+		     );
+		});
+
+	</script>
+
+
+ @*<script type="text/javascript">
+    jQuery(document).ready(function(){ 
+      jQuery("#grid").jqGrid({
+          //url: '/Especialidade/Lista/',
+          url: '@Url.Action("Lista", "Especialidade")',
+        datatype: 'json',
+        mtype: 'GET',
+        colNames:['Id','Nome','CBO'],
+        colModel :[
+          {name:'IdEsp', index:'IdEsp', width:40, align:'left' },
+          {name:'Esp_Dsc', index:'Esp_Dsc', width:700, align:'left' },
+          {name:'Esp_Cbo', index:'Esp_Cbo', width:60, align:'left'}],
+        pager: jQuery('#pager'),
+        rowNum:50,
+        rowList:[5,10,20,50],
+        sortname: 'Esp_Dsc',
+        sortorder: "asc",
+        loadComplete: function () {
+            $("tr.jqgrow:odd").removeClass('ui-widget-content');
+            $("tr.jqgrow:odd").addClass('rowColor')
+        },
+        gridComplete: function () {
+            if ($(".ui-pg-input").val() == 1) {
+                var top_rowid = $('#grid tbody:first-child tr:nth-child(2)').attr('id');
+
+                var countCols = jQuery('#grid').jqGrid('getGridParam', 'colNames').length;
+
+                for (j = 0; j <= countCols; j++)
+                    jQuery("#grid").setCell(top_rowid, j, '', 'selectedRow', '', 'true');
+            }
+        },
+        viewrecords: true,
+        imgpath: '/scripts/themes/coffee/images',
+        caption: 'Especialidades',
+        heigth: 600
+      }).navGrid('#pager', { add: false, edit: false, search: false, del: false }, {}, {}, {});
+    }); 
+</script>*@
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+
+<table id="grid" class="scroll" cellpadding="0" cellspacing="0"></table>
+<div id="pager" class="scroll" style="text-align:center;"></div> 
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).hide();
+        });
+    });
+</script>
+

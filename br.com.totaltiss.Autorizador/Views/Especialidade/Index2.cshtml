@@ -1,0 +1,177 @@
+﻿@model IEnumerable<br.com.totaltiss.Model.Atz_Esp>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqGrid")
+
+@{
+    ViewBag.Title = "Especialiddes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+<div style="width: 900px">
+ <script type="text/javascript">
+    jQuery(document).ready(function(){ 
+      jQuery("#list").jqGrid({
+        url:'/Especialidade/Lista/',
+        datatype: 'json',
+        mtype: 'GET',
+        colNames:['Id','Nome','CBO'],
+        colModel :[
+          {name:'IdEsp', index:'IdEsp', width:40, align:'left' },
+          {name:'Esp_Dsc', index:'Esp_Dsc', width:40, align:'left' },
+          {name:'Esp_Cbo', index:'Esp_Cbo', width:200, align:'left'}],
+        pager: jQuery('#pager'),
+        rowNum:10,
+        rowList:[5,10,20,50],
+        sortname: 'IdEsp',
+        sortorder: "desc",
+        viewrecords: true,
+        imgpath: '/scripts/themes/coffee/images',
+        caption: 'Especialidades'
+      }); 
+    }); 
+</script>
+</div>
+ 
+<table id="list" class="scroll" cellpadding="0" cellspacing="0"></table>
+<div id="pager" class="scroll" style="text-align:center;"></div> 
+
+@*@using MvcJqGrid
+@using MvcJqGrid.Enums
+
+<div style="width: 900px">
+@(Html.Grid("Basic")
+    .SetCaption("Basic Grid")
+    .AddColumn(new Column("IdEsp").SetLabel("Id").SetWidth(50))
+    .AddColumn(new Column("Esp_Dsc").SetLabel("Nome").SetWidth(200))
+    .AddColumn(new Column("Esp_Cbo").SetLabel("CBO").SetWidth(80))
+    //.SetUrl("/MvcJqGrid/Home/GridDataBasic")
+    .SetUrl(Url.Action("Lista", "especialidade"))
+    .SetAutoWidth(true)
+    .SetRowNum(10)
+    .SetRowList(new[]{10,15,20})
+    .SetViewRecords(true)
+    .SetPager("pager"))
+</div>*@
+
+
+
+
+@*@using MvcJqGrid
+
+@model IEnumerable<br.com.totaltiss.Model.Atz_Esp>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqgrid")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" /></p>
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.ActionLink("Nome", "Index", new { sortOrder=ViewBag.DscSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("CBO", "Index", new { sortOrder=ViewBag.CBOSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_SisGst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_AltCpx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Sxo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_IddMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_IddMax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdMax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdMes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_QtdAno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Rtn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Dsc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Cbo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_SisGst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_AltCpx)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Sxo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_IddMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_IddMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdMax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdDia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdMes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_QtdAno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Rtn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEsp }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEsp }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEsp })
+        </td>
+    </tr>
+}
+
+</table>*@
